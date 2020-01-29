@@ -1,5 +1,5 @@
 {
-  "name": "InstaGaron",
+  "name": "instagaron",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.8.3",
@@ -12,7 +12,10 @@
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
@@ -22,7 +25,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch --mode=development",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -34,5 +39,13 @@
   "bugs": {
     "url": "https://github.com/GaronHock/InstaGaron/issues"
   },
-  "homepage": "https://github.com/GaronHock/InstaGaron#readme"
+  "engines": {
+    "node": "12.5.0",
+    "npm": "6.9.0"
+  },
+  "homepage": "https://github.com/GaronHock/InstaGaron#readme",
+  "devDependencies": {
+    "css-loader": "^3.4.2",
+    "ts-loader": "^6.2.1"
+  }
 }

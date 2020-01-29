@@ -1,0 +1,208 @@
+.wrapper{
+  display: flex;
+  padding-bottom: 200px;
+  width: 1000px;
+  overflow: hidden;
+}
+.logo{
+  margin-top: 100px;
+  margin-left: 200px;
+  padding-bottom: 200px;
+  background-image: image_url('photo.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 600px;
+  background-position: right;
+  background-color:  rgba(var(--b3f,250,250,250),1);
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+   align-items: center;
+   background-color: white;
+}
+.form-signupform-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form{
+ 
+  width: 379px;
+  margin-top: 110px;
+  height: 379px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  flex-direction: column;
+} 
+
+.noAccount{
+  border: 1px solid #e6e6e6;
+  margin-top: 500px;
+  margin-left: 8px;
+  width: 379px;
+ // background-color: white;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  position: absolute;
+  line-height: 14px;
+  color: #262626;
+  font-size: 14px;
+}
+.account-text{
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  background-color: white;
+}
+
+#instagram{
+  margin-top: 10px;
+  font-family: 'Cookie', cursive;
+  font-size: 75px;
+  background-color: white;
+  display: flex;
+  justify-self: flex-start;
+  padding-bottom: 20px;
+}
+
+.signup-link{
+  color: rgba(var(--h5f,56,151,240),1);
+}
+
+
+.username-input{
+  border: 1px solid #e6e6e6; 
+  margin-bottom: 20px;
+  padding-right: 80px;
+  padding-left: 2px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.username-input::placeholder{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  padding-left: 5px;
+}
+
+.email::placeholder{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  padding-left: 5px;
+}
+.username-password::placeholder{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  padding-left: 5px;
+}
+
+
+.loginButton{
+    background-color: rgba(var(--h5f,56,151,240),1);
+    color: rgba(var(--eca,255,255,255),1);
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+
+    cursor: pointer;
+    font-weight: 600;
+    padding: 5px 9px;
+  
+    padding-right: 105px;
+    padding-left: 105px;
+}
+
+.errors-list{
+  color: red;
+  text-align: center;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background-color: white;
+}
+
+.sign-up-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.form{
+  width: 379px;
+  margin-top: 110px;
+  height: 379px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  flex-direction: column;
+} 
+
+.signup-form{
+  width: 379px;
+  margin-top: 110px;
+  height: 400px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  flex-direction: column;
+}
+.sign-up-description{
+  color: #999;
+  text-align: center;
+  font-weight: 600;
+  font-size: 17px;
+  margin: 0 40px 10px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+
+}
+
+#instagram-signup{
+  font-family: 'Cookie', cursive;
+  font-size: 75px;
+  background-color: white;
+  display: flex;
+  justify-self: flex-start;
+  padding-top: 20px;
+
+}
+
+.haveAccount{
+  border: 1px solid #e6e6e6;
+  margin-top: 530px;
+  margin-left: 8px;
+  width: 379px;
+  background-color: white;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  position: absolute;
+  line-height: 14px;
+  color: #262626;
+  font-size: 14px;
+}
+
+.sign-up-button{
+    background-color: rgba(var(--h5f,56,151,240),1);
+    color: rgba(var(--eca,255,255,255),1);
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+  //  text-rendering: auto;
+  //  box-sizing: border-box;
+    cursor: pointer;
+    padding: 5px 9px;
+    padding-right: 90px;
+ //   display: flex;
+    padding-left: 90px;
+    text-align: center;
+}
+
+// .sign-up-text{
+//   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+//   color: rgba(var(--eca,255,255,255),1);
+//   background-color: rgba(var(--h5f,56,151,240),1);
+//   padding-left: 20px;
+//   align-items: center;
+
+// }
+
