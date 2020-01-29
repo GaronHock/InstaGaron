@@ -2,8 +2,6 @@ import { withRouter, Redirect, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import React from 'react';
 const Auth = ({ component: Component, path, loggedIn, exact }) => {
-
-  console.log(loggedIn);
   return <Route
       path={path}
       exact={exact}
