@@ -15,13 +15,24 @@ class Greeting extends React.Component {
 
 
   render() {
-
     if (this.props.currentUser) {
       return (
         <div>
-          <p>Hello, {this.props.currentUser.username}</p>
-          <br />
+          <div className="top-nav">
+            <div className='camera-pic'href="#news"></div>
+            <div className="dummy-className"></div>
+            <div className='vl'></div>
+            <div className="instatext" href="#home">InstaGaron</div>
+            <input className='search-text-area' type='text' autoCapitalize='none' placeholder='Search' size='26' results='0'/>
+            <div className='compass-heart-link-profile-link-wrapper'>
+            <div className="compass"></div>
+            <div className="heart-link"></div>
+            <div className="profile-link"></div>
+            </div>
+          </div>
+          <div>
           <button onClick={this.handleClick}>Log Out</button>
+          </div>
         </div>
       )
     } else {

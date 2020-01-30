@@ -1,6 +1,5 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
-//import Logo from '../../../app/assets/images/ig_phone/insagram_phone.png'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -13,14 +12,17 @@ class LoginForm extends React.Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(this.props.history.push('/welcome'))
+    this.props.processForm(user)
+ 
   }
+
+
+
 
   handleInput(type) {
     return (e) => {

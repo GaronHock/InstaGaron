@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   window.logout = logout;
+  //let preloadedState = undefined;
   let store;
   if (window.currentUser) {
     const preloadedState = {

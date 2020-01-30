@@ -28,7 +28,6 @@
   align-items: center;
 }
 .form{
- 
   width: 379px;
   margin-top: 110px;
   height: 379px;
@@ -187,22 +186,91 @@
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 18px;
-  //  text-rendering: auto;
-  //  box-sizing: border-box;
     cursor: pointer;
     padding: 5px 9px;
     padding-right: 90px;
- //   display: flex;
     padding-left: 90px;
     text-align: center;
 }
+.top-nav {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #e6e6e6;
+}
 
-// .sign-up-text{
-//   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-//   color: rgba(var(--eca,255,255,255),1);
-//   background-color: rgba(var(--h5f,56,151,240),1);
-//   padding-left: 20px;
-//   align-items: center;
+.camera-pic{
+    background-image: image_url('insta.png');
+    background-size: 100% 100%;
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    margin-top: 24px;
+    margin-left:160px;
+    background-color: white;
+}
+.vl{
+    border-left: 1px solid gray;
+    height: 30px;
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 205px;
+}
 
-// }
+.instatext{
+  font-family: 'Cookie', cursive;  
+  background-color: #fff;
+  font-size: 35px;
+  margin-top: 22px;
+  padding-left: 30px;
+}
+.search-text-area{
+  border: solid 1px #dbdbdb;
+  border-radius: 3px;
+  height: 25px;
+  margin-top: 30px;
+  text-align: center;
+ // border-color: #e6e6e7;
+  font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
 
+.compass-heart-link-profile-link-wrapper{
+  display: flex;
+  background-color: white;
+  margin-right: 150px;
+  justify-content: space-evenly;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 14px;
+}
+
+.compass{
+  background-image: image_url('compass.png');
+  height: 40px;
+  width:40px;
+  background-color: white;
+  background-repeat: no-repeat;
+  margin-top: 15px;
+  margin-left: 5px;
+ // margin-left: 150px;
+}
+
+.heart-link{
+  background-image: image-url('heart1.png');
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-color: white;
+    margin-left: 5px;
+}
+.profile-link{
+  background-image: image-url('profiler.png');
+  height: 40px;
+  width: 40px;
+  margin-top: 10px;
+  background-repeat: no-repeat;
+  background-color: white;
+    margin-left: 5px;
+}
