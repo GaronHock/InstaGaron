@@ -9,7 +9,6 @@ class LoginForm extends React.Component {
       password: "",
       email: ""
     };
-
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -18,11 +17,7 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
- 
   }
-
-
-
 
   handleInput(type) {
     return (e) => {
@@ -32,18 +27,11 @@ class LoginForm extends React.Component {
     }
   }
 
-  
-
-
   render() {
-
-
    const otherForm = this.props.formType === 'login' ? 'signup' : 'login'
     const errorsList = <ul>
       {this.props.errors.map(error => <li>{error}</li>)}
       </ul>
-
-    
     return (
       <div className="wrapper">
         <br/>
@@ -57,20 +45,20 @@ class LoginForm extends React.Component {
                   placeholder="Username"
                   value={this.state.username}
                   onChange={this.handleInput('username')} />
-              <input
+                <input
                 className='email username-input'
                 type="text"
                 placeholder='email'
                 value={this.state.email}
                 onChange={this.handleInput('email')} />
-              <input
+               <input
                 className='username-password username-input'
-              placeholder='password'
+                placeholder='password'
                 type="password"
                 value={this.state.password}
                 onChange={this.handleInput('password')} />
-            <button className='loginButton' onClick={this.handleSubmit}>Log In</button>
-              <ul className="errors-list">{errorsList}</ul>
+               <button className='loginButton' onClick={this.handleSubmit}>Log In</button>
+               <ul className="errors-list">{errorsList}</ul>
                </form>
             </div>
             <div className="noAccount">

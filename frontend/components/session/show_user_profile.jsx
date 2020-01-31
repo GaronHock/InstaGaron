@@ -18,9 +18,7 @@ class ShowUserProfile extends React.Component{
     e.preventDefault;
     this.props.history.push('/welcome')
   }
-
-
-
+  
   handleClickGear(){
       document.querySelector('.popup').style.display = 'flex';
   }
@@ -57,7 +55,7 @@ class ShowUserProfile extends React.Component{
           <div className="no-profile-pic"></div>
           <div className="username-edit-gear-wrapper">
           <div className='current-user-username'>{this.props.currentUser.username}</div>
-          <div className="edit-profile-button"><button>Edit Profile</button></div>
+          <Link to={`/users/${this.props.currentUser.id}/edit`}><div className="edit-profile-button"><button>Edit Profile</button></div></Link>
           <div className="gear" onClick={this.handleClickGear}></div>
           </div>
           </div>
