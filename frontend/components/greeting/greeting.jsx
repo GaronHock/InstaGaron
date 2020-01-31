@@ -18,7 +18,7 @@ class Greeting extends React.Component {
     if (this.props.currentUser) {
       return (
         <div>
-          <div className="top-nav">
+            <div className="top-nav">
             <div className='camera-pic'href="#news"></div>
             <div className="dummy-className"></div>
             <div className='vl'></div>
@@ -27,12 +27,12 @@ class Greeting extends React.Component {
             <div className='compass-heart-link-profile-link-wrapper'>
             <div className="compass"></div>
             <div className="heart-link"></div>
-            <div className="profile-link"></div>
+            <Link className="make-fully-white-link"to={`/users/${this.props.currentUser.id}`}><div className="profile-link"></div></Link>
             </div>
-          </div>
-          <div>
-          <button onClick={this.handleClick}>Log Out</button>
-          </div>
+            </div>
+            <div>
+            <button onClick={this.handleClick}>Log Out</button>
+            </div>
         </div>
       )
     } else {

@@ -32,8 +32,6 @@ class SignupForm extends React.Component {
 
 
   render() {
-
-
     const otherForm = this.props.formType === 'login' ? 'signup' : 'login'
     const errorsList = <ul>
       {this.props.errors.map(error => <li>{error}</li>)}

@@ -43,7 +43,6 @@
   margin-top: 500px;
   margin-left: 8px;
   width: 379px;
- // background-color: white;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   position: absolute;
   line-height: 14px;
@@ -209,6 +208,7 @@
     margin-top: 24px;
     margin-left:160px;
     background-color: white;
+    cursor: pointer;
 }
 .vl{
     border-left: 1px solid gray;
@@ -224,6 +224,7 @@
   font-size: 35px;
   margin-top: 22px;
   padding-left: 30px;
+  cursor: pointer;
 }
 .search-text-area{
   border: solid 1px #dbdbdb;
@@ -253,7 +254,7 @@
   background-repeat: no-repeat;
   margin-top: 15px;
   margin-left: 5px;
- // margin-left: 150px;
+  cursor: pointer;
 }
 
 .heart-link{
@@ -264,6 +265,7 @@
   background-repeat: no-repeat;
   background-color: white;
     margin-left: 5px;
+    cursor: pointer;
 }
 .profile-link{
   background-image: image-url('profiler.png');
@@ -272,5 +274,111 @@
   margin-top: 10px;
   background-repeat: no-repeat;
   background-color: white;
-    margin-left: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.make-fully-white-link{
+  background-color: white;
+}
+
+.profile-info-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+.no-profile-pic{
+  background-image: image-url('user.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width:140px;
+  height:140px;
+  margin-left: 225px;
+  margin-top: 60px;
+}
+.username-edit-gear-wrapper{
+  display:flex;
+  flex-direction: row;
+  height: 50px;
+  justify-content: space-between;
+  margin-left: 100px;
+  width:400px;
+  margin-top: 70px;
+}
+.current-user-username{
+  font-family: 'Martel Sans', sans-serif;
+  font-size: 24px;
+  font-weight:300;
+  height:40px;
+  margin-left: 30px;
+  position: relative;
+  top: -5px;
+}
+.edit-profile-button{
+  border: 1px solid rgba(var(--d0b,219,219,219),1);
+  padding:5px 10px 7px 10px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  height:15px;
+  font-family: 'Lato', sans-serif;
+  margin-top: 14px;
+  margin-bottom: 10px;
+   position: relative;
+  top: -17px;
+  left: -10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.gear{
+  background-image: image-url('geary.png');
+  width: 30px;
+  height:30px;
+  background-color:  rgba(var(--b3f,250,250,250),1);
+   position: relative;
+  top: -1px;
+    background-repeat: no-repeat;
+  left:-27px;
+  cursor: pointer;
+}
+
+.popup{
+  background: rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content{
+  height: 60px;
+  width: 300px;
+  background: #fff;
+  //padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  background-color:  none;
+}
+
+.pop-up-delete-button{
+  position: relative;
+  height:25px;
+  width: 100%;
+  background-color:  rgba(0,0,0,0);
+  text-align: center;
+  border-bottom: 1px solid rgba(var(--d0b,219,219,219),1);
+  padding-top: 5px;
+  cursor: pointer;
+}
+.cancel{
+  position: relative;
+  height:25px;
+  width: 100%;
+  background-color:  rgba(0,0,0,0);
+  text-align: center;
+  //border-bottom: 1px solid rgba(var(--d0b,219,219,219),1);
+  padding-top: 5px;
+  cursor: pointer;
 }

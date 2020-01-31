@@ -5,6 +5,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import {Switch} from 'react-router-dom';
+import ShowUserProfileContainer from './session/show_form_container'
 
 
 
@@ -13,6 +14,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path='/' component ={LoginFormContainer}/>
       <ProtectedRoute path='/welcome' component={GreetingContainer}/>
+      <ProtectedRoute exact path='/users/:userId' component={ShowUserProfileContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
     </Switch>
@@ -20,3 +22,5 @@ const App = () => (
 );
 
 export default App;
+
+
