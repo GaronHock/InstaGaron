@@ -47,26 +47,45 @@ class EditForm extends React.Component{
         </div>
         <div className="edit-profile-wrapper">
               <form className='edit-form'>
-                <input className='username-input'
-                  type="text"
-                  placeholder="Username"
-                  value={this.state.username}
-                  onChange={this.handleInput('username')} />
-                <input
-                  className='email username-input'
-                  type="text"
-                  placeholder='email'
-                  value={this.state.email}
-                  onChange={this.handleInput('email')} />
-                <input
-                  className='biography username-input'
-                  type="text"
-                  placeholder='biography'
-                  value={this.state.biography}
-                  onChange={this.handleInput('biography')} />
-                <button className='loginButton' onClick={this.handleSubmit}>Submit</button>
+            <h2 className='edit-profile-text'>Edit your profile</h2>
+                <h2 className="edit-form-username">{this.props.currentUser.username}</h2>
+
+
+
+                        <div className='form-input-element'>
+              <label className='username-edit-label'>Username</label>
+                   
+                      <input className='edit-username-input'
+                      type="text"
+                        value={this.state.username}
+                        onChange={this.handleInput('username')} />
+                          </div>        
+
+
+                          <div className='form-input-element'>
+                            <label className='email-edit-label'>Email</label>
+                            <input
+                              className='edit-email-input'
+                              type="text"
+                              value={this.state.email}
+                              onChange={this.handleInput('email')} />
+                         
+                            </div> 
+
+
+                            <div className='form-input-element'>  
+                                  <label className='bio-edit-label'> Bio  </label>
+                                  <textarea
+                                    className='bio-edit-textarea'
+                                    type="text"
+                                    value={this.state.biography}
+                                    onChange={this.handleInput('biography')} />
+                            </div> 
+            <div className="flex-update-user-info-button">
+                <button className='update-user-info-button' onClick={this.handleSubmit}>Submit</button>
+                </div>
                 </form>
-      </div> 
+          </div> 
     </div>
     )
   }

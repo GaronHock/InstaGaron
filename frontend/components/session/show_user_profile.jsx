@@ -6,7 +6,7 @@ class ShowUserProfile extends React.Component{
     this.handleClick = this.handleClick.bind(this)
     this.handleInstagramAndCameraPicClick = this.handleInstagramAndCameraPicClick.bind(this);
   }
-    // <p>Hello {this.props.currentUser.username}</p>
+
 
   handleClick(e) {
     e.preventDefault();
@@ -27,13 +27,6 @@ class ShowUserProfile extends React.Component{
     document.querySelector('.popup').style.display = 'none';
   }
 
-  
-
-//           {
-//   document.querySelector('.gear').addEventListener('click', () => {
-//     document.querySelector('.popup').style.display = 'flex'
-//   })
-// }
 
   render(){
     return(
@@ -52,11 +45,12 @@ class ShowUserProfile extends React.Component{
           </div>
           <div>
           <div className="profile-info-wrapper">
-          <div className="no-profile-pic"></div>
+            <div className="no-profile-pic"></div>
           <div className="username-edit-gear-wrapper">
           <div className='current-user-username'>{this.props.currentUser.username}</div>
           <Link to={`/users/${this.props.currentUser.id}/edit`}><div className="edit-profile-button"><button>Edit Profile</button></div></Link>
           <div className="gear" onClick={this.handleClickGear}></div>
+          <div className='current-user-biography'>{this.props.currentUser.biography}</div>
           </div>
           </div>
         </div>
@@ -72,3 +66,5 @@ class ShowUserProfile extends React.Component{
 }
 
 export default ShowUserProfile;
+
+//<div className="no-profile-pic"></div>

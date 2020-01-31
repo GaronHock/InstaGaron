@@ -5,13 +5,14 @@
   overflow: hidden;
 }
 .logo{
-  margin-top: 100px;
   margin-left: 200px;
+  margin-right: 50px;
   padding-bottom: 200px;
   background-image: image_url('photo.png');
-  background-size: 100% 100%;
+  background-size: 100%;
   background-repeat: no-repeat;
-  width: 600px;
+  height: 500px;
+  width: 400px;
   background-position: right;
   background-color:  rgba(var(--b3f,250,250,250),1);
 }
@@ -23,7 +24,7 @@
 }
 .form{
   width: 379px;
-  margin-top: 110px;
+  margin-top: 10px;
   height: 379px;
   margin-left: 15px;
   display: flex;
@@ -372,44 +373,139 @@
   width: 100%;
   background-color:  rgba(0,0,0,0);
   text-align: center;
-  //border-bottom: 1px solid rgba(var(--d0b,219,219,219),1);
   padding-top: 5px;
   cursor: pointer;
 }
+
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+
 
 .edit-profile-wrapper{
   height: 1000px;
   display: flex;
   flex-direction: column;
-  background-color: pink;
+  background-color:  rgba(var(--b3f,250,250,250),1);
   border: 1px solid black;
-}
-
-.login-form{
-  display: flex;
-  flex-direction: column;
-   align-items: center;
-   background-color: white;
 }
 
 
 .edit-form{
-  display: block;
+
+ display: block;
   margin: auto;
   width: 70%;
   min-width: 500px;
-  height: 800px;
+  height: 400px;
   flex-direction: column;
   align-items: center;
   background-color: white;
   margin-top: 30px;
   padding-top: 10%;
+  border: 1px solid lightgray;
+
 }
 
-.edit-form input, .edit-form button{
-  width: 60%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+// .edit-form label{
+//   align-content: right;
+// }
+
+.edit-form input, .edit-form textarea{
+  background-color: white;
+  border: 1px solid lightgray;
+  align-content: right;
+  
 }
+
+.edit-profile-text{
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    position: relative;
+    bottom: 80px;
+    text-align: center;
+    background-color: white;
+}
+
+.edit-form-username{
+  font-family: 'Martel Sans', sans-serif;
+  text-align: center;
+  position: relative;
+  bottom: 50px;
+  background-color: white;
+}
+
+// .username-edit-label{
+//   margin-right: 30px;
+// }
+.email-edit-label{
+  margin-left: 27px;
+   margin-bottom:20px;
+   background-color: white;
+}
+
+.form-input-element{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.username-edit-label{
+  margin-bottom:20px;
+  background-color: white;
+}
+.bio-edit-label{
+     margin-bottom: 20px;
+    margin-left: 40px;
+    padding-right: 10px;
+    background-color: white;
+
+}
+.edit-username-input{
+      margin-bottom:20px;
+      margin-left: 20px;
+      background-color: white;
+}
+.edit-email-input{
+   margin-bottom:20px;
+  margin-left: 20px;
+}
+.bio-edit-textarea{
+  margin-bottom: 20px;
+    margin-left: 10px;
+    width: 150px;
+    padding-right: 11px;
+}
+.form-input-element{
+  background-color: white;
+}
+
+ .flex-update-user-info-button{
+   display:flex;
+   justify-content: center;
+   background-color: white;
+ }
+
+ .update-user-info-button{
+     background-color: rgba(var(--h5f,56,151,240),1);
+    color: rgba(var(--eca,255,255,255),1);
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding: 10px 8px 8px 10px;
+     border-radius: 3px;
+     margin-right: 7px;
+ }
+.current-user-biography{
+  background-color: red;
+}
+
+
+
+
+
+
 
