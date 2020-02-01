@@ -18,6 +18,9 @@ export const receiveSessionErrors = (errors) => ({
   errors
 })
 
+
+
+
 export const login = user => dispatch => (
   APIUtil.loginUser(user)
     .then(user => dispatch(receiveCurrentUser(user)),
