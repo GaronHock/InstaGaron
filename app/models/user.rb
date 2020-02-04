@@ -1,11 +1,20 @@
 class User < ApplicationRecord
   attr_reader :password
 
-  validates :username, :password_digest, :session_token, presence: true
+  validates :username, :password_digest, :session_token, :email, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
-  validates :username, uniqueness: true
+  validates :username, :email, uniqueness: true
 
   after_initialize :ensure_session_token
+
+
+  has_one_attached :profile_photo
+
+
+  has_many :published_photos,
+  foreign_key: :user_id,
+  class_name: :Photo
+
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

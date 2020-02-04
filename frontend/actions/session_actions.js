@@ -6,7 +6,8 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
 export const receiveCurrentUser = (current_user) => ({
   type: RECEIVE_CURRENT_USER,
-  current_user
+  user: current_user.user,   /// keys i set up in jbuilder file
+  photos: current_user.photos
 })
 
 export const logoutCurrentUser = () => ({

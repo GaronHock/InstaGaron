@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/e8db114735.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <%if current_user%>
+        <%if current_user%>
     <script>
     window.current_user = {
       'id': <%=current_user.id%>,
@@ -26,3 +26,4 @@
     <%= yield %>
   </body>
 </html>
+  

@@ -9,7 +9,7 @@ class Greeting extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    this.props.logout()
+    this.props.logout();
     (this.props.history.push('/'));
   }
 

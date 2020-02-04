@@ -25,7 +25,6 @@ class EditForm extends React.Component{
   }
 
   handleSubmit(e){
-    debugger;
     e.preventDefault();
     this.props.updateUserInformation(this.state);
   }
@@ -50,30 +49,21 @@ class EditForm extends React.Component{
               <form className='edit-form'>
             <h2 className='edit-profile-text'>Edit your profile</h2>
                 <h2 className="edit-form-username">{this.props.currentUser.username}</h2>
-
-
-
-                        <div className='form-input-element'>
+              <div className='form-input-element'>
               <label className='username-edit-label'>Username</label>
-                   
                       <input className='edit-username-input'
                       type="text"
                         value={this.state.username}
                         onChange={this.handleInput('username')} />
                           </div>        
-
-
                           <div className='form-input-element'>
                             <label className='email-edit-label'>Email</label>
                             <input
                               className='edit-email-input'
                               type="text"
                               value={this.state.email}
-                              onChange={this.handleInput('email')} />
-                         
+                              onChange={this.handleInput('email')} />    
                             </div> 
-
-
                             <div className='form-input-element'>  
                                   <label className='bio-edit-label'> Bio  </label>
                                   <textarea
@@ -82,7 +72,7 @@ class EditForm extends React.Component{
                                     value={this.state.biography}
                                     onChange={this.handleInput('biography')} />
                             </div> 
-            <div className="flex-update-user-info-button">
+                <div className="flex-update-user-info-button">
                 <button className='update-user-info-button' onClick={this.handleSubmit}>Submit</button>
                 </div>
                 </form>
@@ -96,9 +86,3 @@ class EditForm extends React.Component{
 export default EditForm;
 
 
-{/* <input
-  className='username-password username-input'
-  placeholder='password'
-  type="password"
-  value={this.state.password}
-  onChange={this.handleInput('password')} /> */}

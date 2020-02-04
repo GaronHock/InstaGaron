@@ -2,7 +2,7 @@ export const signupUser = user => (
   $.ajax({
     url: '/api/users',
     method: 'POST',
-    data: { user } 
+    data: { user } // user - usrname, email, biography-null/ gets this from the form sends it to the controller
   })
 )
 
@@ -20,6 +20,13 @@ export const updateUser = user =>(
     url: `api/users/${user.id}`,
     method: 'PATCH',
     data: {user}
+  })
+)
+export const showUsersPhotos = user => (
+  $.ajax({
+    url: `api/users/${user.id}`,
+    method: 'GET',
+    data: { user }
   })
 )
 
