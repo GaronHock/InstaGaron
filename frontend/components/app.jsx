@@ -7,6 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import {Switch} from 'react-router-dom';
 import ShowUserProfileContainer from './session/show_form_container';
 import EditUserProfileContainer from './session/edit_form_container';
+import AddPictureContainer from './session/add_picture_container';
 
 
 const App = () => (

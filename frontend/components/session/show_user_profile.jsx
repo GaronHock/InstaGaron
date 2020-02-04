@@ -15,6 +15,7 @@ class ShowUserProfile extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handlePublishedPhotosOnPage = this.handlePublishedPhotosOnPage.bind(this);
+    this.handleAddPictureButtonIfNotCurrentUser = this.handleAddPictureButtonIfNotCurrentUser.bind(this);
   }
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId);
@@ -43,7 +44,6 @@ class ShowUserProfile extends React.Component{
   }
 
   handleClickCancel(){
-    debugger;
     document.querySelector('.popup').style.display = 'none';
   }
 
@@ -51,6 +51,12 @@ class ShowUserProfile extends React.Component{
     if(this.props.currentUser.id == this.props.match.params.userId){
     return <Link to={`/users/${this.props.currentUser.id}/edit`}>
       <div className="edit-profile-button"><button>Edit Profile</button></div></Link>
+    }
+  }
+
+  handleAddPictureButtonIfNotCurrentUser(){
+    if(this.props.currentUser.id == this.props.match.params.userId){
+      return <Link to={`/users/${this.props.currentUser.id}/newPhoto`}><div><button>Add A Picture</button></div></Link>
     }
   }
 
@@ -121,7 +127,7 @@ class ShowUserProfile extends React.Component{
             <div className='current-user-username'>{this.props.user.username}</div>
             {this.handleEditButtonHiddenIfNotCurrentUser()}
             <div className="gear" onClick={this.handleClickGear}></div>
-            <div><button>Add A Picture</button></div>
+           {this.handleAddPictureButtonIfNotCurrentUser()}
             <div className='current-user-biography'>{this.props.user.biography}</div>
             </div>
             </div>
