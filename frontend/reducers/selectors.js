@@ -1,12 +1,3 @@
-// export const selectAllPokemon = state => Object.values(state.entities.pokemon);
-
-// export const selectPokeItems = (state, poke) => {
-//   return poke ? poke.item_ids.map(id => state.entities.items[id]) : [];
-// };
-
-// export const selectPokemonItem = (state, id) => {
-//   return state.entities.items[id];
-// };
 
 export const selectSpecificUserPhotos = (state, ownProps) => {
   
@@ -15,11 +6,12 @@ export const selectSpecificUserPhotos = (state, ownProps) => {
   const photos = Object.values(state.entities.photos);
   
   photos.map( photo => {
-    if (userId.published_photo_ids.includes(photo.id)){
-      array.push(photo)
+    if(userId && userId.published_photo_ids){
+      if (userId.published_photo_ids.includes(photo.id)){
+        array.push(photo)
       }
-    
-    })
+    }
+  })
   return array;
 }
 

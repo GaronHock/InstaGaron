@@ -37,7 +37,6 @@ class ShowUserProfile extends React.Component{
   }
   
   handleClickGear(){
-
       document.querySelector('.popup').style.display = 'flex';
   }
 
@@ -54,7 +53,7 @@ class ShowUserProfile extends React.Component{
 
   handleAddPictureButtonIfNotCurrentUser(){
     if(this.props.currentUser.id == this.props.match.params.userId){
-      return <Link to={`/users/${this.props.currentUser.id}/newPhoto`}><div><button>Add A Picture</button></div></Link>
+      return <Link className="add-profile-button"to={`/users/${this.props.currentUser.id}/newPhoto`}><div><button>Add A Picture</button></div></Link>
     }
   }
 
@@ -67,59 +66,59 @@ class ShowUserProfile extends React.Component{
       }
             </ul>
     }
-
-  
-
-
-  
+    handleShowPostsCount(){
+      return this.props.photos.length;
+    }
 
   render(){
-       const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     if(!this.props.user){
       return null;
     }else{
     return(
         <div>
           <div className="top-nav">
-                <div className='camera-pic' onClick={this.handleInstagramAndCameraPicClick}></div>
-                  <div className="dummy-className"></div>
-                  <div className='vl'></div>
-                  <div className="instatext" onClick={this.handleInstagramAndCameraPicClick}>InstaGaron</div>
-                  <input className='search-text-area' 
-                  type='text' 
-                  autoCapitalize='none'
-                  placeholder='Search' 
-                  size='26' 
-                  results='0' />
-
-                <div className='compass-heart-link-profile-link-wrapper'>
-                    <div className="compass"></div>
-                    <div className="heart-link"></div>
-                    <Link className="make-fully-white-link" 
-                    to={`/users/${this.props.user.id}`}>
-                    <div className="profile-link"></div>
-                    </Link>
-                </div>
+            <div className='camera-pic' onClick={this.handleInstagramAndCameraPicClick}></div>
+            <div className="dummy-className"></div>
+            <div className='vl'></div>
+            <div className="instatext" onClick={this.handleInstagramAndCameraPicClick}>InstaGaron</div>
+            <input className='search-text-area' 
+              type='text' 
+                autoCapitalize='none'
+                placeholder='Search' 
+                size='26' 
+                results='0'/>
+            <div className='compass-heart-link-profile-link-wrapper'>
+              <div className="compass"></div>
+              <div className="heart-link"></div>
+              <Link className="make-fully-white-link" 
+                to={`/users/${this.props.user.id}`}>
+              <div className="profile-link"></div>
+                </Link>
             </div>
-            <div> 
-                <div className="profile-info-wrapper">
-                <div className="no-profile-pic"></div>
-                  <div className="username-edit-gear-wrapper">
-                  <div className='current-user-username'>{this.props.user.username}</div>
-                  {this.handleEditButtonHiddenIfNotCurrentUser()}
-                  <div className="gear" onClick={this.handleClickGear}></div>
-                  {this.handleAddPictureButtonIfNotCurrentUser()}
-                  <div className='current-user-biography'>{this.props.user.biography}</div>
-                  </div>
-                  </div>
+          </div>
+          <div className="profile-info-wrapper">
+           <div className="no-profile-pic"></div>
+            <div className="username-edit-gear-wrapper">
+              <div className='current-user-username'>{this.props.user.username}</div>
+              {this.handleEditButtonHiddenIfNotCurrentUser()}
+              {this.handleAddPictureButtonIfNotCurrentUser()}
+              <div className="gear" onClick={this.handleClickGear}></div>
             </div>
+          </div>
+        <div className="posts-followers-following-flex-container">
+          <span>{this.handleShowPostsCount()}</span>
+          <span className="posts-followers-following-font">posts</span>
+          0<span className="posts-followers-following-font">following</span>
+          0<span className="posts-followers-following-font">followers</span>
+        </div>
+        <div className='current-user-biography'>{this.props.user.biography}</div>
           <div className="popup">
               <div className='popup-content'>
                   <div className="pop-up-delete-button" onClick={this.handleClick}>Log Out</div>
                   <div className="cancel" onClick={this.handleClickCancel}>Cancel</div>
               </div>
           </div>
-          {this.handlePublishedPhotosOnPage()}
+          {this.handlePublishedPhotosOnPage()}     
         </div>   
       )
     }
@@ -127,5 +126,4 @@ class ShowUserProfile extends React.Component{
 }
 export default ShowUserProfile;
 
-//{ this.handlePublishedPhotosOnPage }
 

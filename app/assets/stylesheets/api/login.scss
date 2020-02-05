@@ -294,8 +294,7 @@
 .username-edit-gear-wrapper{
   display:flex;
   flex-direction: row;
-  height: 50px;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-left: 100px;
   width:400px;
   margin-top: 70px;
@@ -312,16 +311,17 @@
 .edit-profile-button{
   border: 1px solid rgba(var(--d0b,219,219,219),1);
   padding:5px 10px 7px 10px;
-  text-align: center;
   font-size: 14px;
-  line-height: 18px;
-  height:15px;
   font-family: 'Lato', sans-serif;
-  margin-top: 14px;
-  margin-bottom: 10px;
-   position: relative;
-  top: -17px;
-  left: -10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.add-profile-button{
+    border: 1px solid rgba(var(--d0b,219,219,219),1);
+  padding:5px 10px 9px 10px;
+  font-size: 14px;
+  height: 16px;
+  font-family: 'Lato', sans-serif;
   border-radius: 3px;
   cursor: pointer;
 }
@@ -330,11 +330,30 @@
   width: 30px;
   height:30px;
   background-color:  rgba(var(--b3f,250,250,250),1);
-   position: relative;
   top: -1px;
     background-repeat: no-repeat;
-  left:-27px;
   cursor: pointer;
+}
+
+.posts-followers-following-flex-container{
+     display: flex;
+    justify-content: space-around;
+    width: 30%;
+    position: absolute;
+    top: 27%;
+    left: 39%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    align-items: baseline;
+
+}
+
+.posts-followers-following-font{
+    font-family: 'Martel Sans', sans-serif;
+}
+
+.current-user-biography{
+  background-color: red;
 }
 
 .popup{
@@ -500,9 +519,7 @@
      border-radius: 3px;
      margin-right: 7px;
  }
-.current-user-biography{
-  background-color: red;
-}
+
 .flex-wrap-photos{
   display: flex;
     padding-left: 100px;
@@ -549,12 +566,17 @@
   top: 30%;
   border: 1px solid lightgray;
 }
+.image-preview > img{
+  height:auto;
+  width: auto;
+}
 
 .choose-file-button{
     position: absolute;
-    bottom: 9%;
+    bottom: 17%;
     left: 43%;
     background-color: white;
+
 }
 
 .preview-flex{
@@ -583,7 +605,6 @@
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     padding: 10px 8px 8px 10px;
      border-radius: 3px;
-     margin-right: 7px;
      margin-top: 20px;
 }
 
