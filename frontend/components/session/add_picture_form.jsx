@@ -12,7 +12,8 @@ class AddPictureForm extends React.Component{
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
-    this.handlePublishedPhotosOnPage = this.handlePublishedPhotosOnPage.bind(this);
+    this.handleClick = this.handleClick.bind(this)
+    this.handleInstagramAndCameraPicClick = this.handleInstagramAndCameraPicClick.bind(this);
   }
 
   handleInput(e) {
@@ -29,16 +30,6 @@ class AddPictureForm extends React.Component{
     if (file) {
       fileReader.readAsDataURL(file);
     }
-  }
-  handlePublishedPhotosOnPage() {
-    return <ul>
-      {this.props.photos.map(photo => {
-        return <li>
-          <img className="show_page_images" src={photo.photoUrl}></img>
-        </li>
-      })
-      }
-    </ul>
   }
 
 
@@ -57,23 +48,62 @@ class AddPictureForm extends React.Component{
     this.props.history.push(`/users/${this.props.currentUser.id}`)
   }
 
+
+  handleClick(e) {
+    e.preventDefault();
+    this.props.logout()
+    this.props.history.push('/');
+  }
+
+  handleInstagramAndCameraPicClick(e) {
+    e.preventDefault();
+    this.props.history.push('/welcome')
+  }
+
   render(){
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     return(
         <div>
-          <form>
-            <label htmlFor="photo-description">Body of Post</label>
-            <input type="text"
+          <div className="top-nav">
+              <div className='camera-pic' onClick={this.handleInstagramAndCameraPicClick}></div>
+              <div className="dummy-className"></div>
+              <div className='vl'></div>
+              <div className="instatext" onClick={this.handleInstagramAndCameraPicClick}>InstaGaron</div>
+              <input className='search-text-area' type='text' autoCapitalize='none' placeholder='Search' size='26' results='0' />
+              <div className='compass-heart-link-profile-link-wrapper'>
+              <div className="compass"></div>
+              <div className="heart-link"></div>
+              <Link className="make-fully-white-link" to={`/users/${this.props.currentUser.id}`}><div className="profile-link"></div></Link>
+          </div>
+      </div>
+        <div className='edit-profile-wrapper'>
+
+        <form className='add-form'>
+          
+          <h2 className='add-photo-text'>Add a New Photo!</h2>
+            <div className='image-preview'>{preview}</div>
+            <input className='choose-file-button' type="file"
+              onChange={this.handleFile} />
+            <div className='preview-flex'>
+             
+
+              <label
+                htmlFor="photo-description">
+            <input 
+            className ='caption-textarea'
+            rows="4" cols="50"
+            type="textarea"
+            placeholder = "Write a caption..."
               id="photo-description"
               value={this.state.description}
               onChange={this.handleInput} />
-            <input type="file"
-              onChange={this.handleFile} />
-            <h3>Image preview </h3>
-            {preview}
-            <button onClick={this.handleSubmit}>Make a new Post!</button>
-          </form>
+              </label>
+          <button className='add-photo-submit'onClick={this.handleSubmit}>Make a new Post!</button>
+          </div>
+        </form>
+        </div>
       </div>
+
     )
   }
 }

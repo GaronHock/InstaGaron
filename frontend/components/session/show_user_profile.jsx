@@ -11,9 +11,6 @@ class ShowUserProfile extends React.Component{
     this.handleClick = this.handleClick.bind(this)
     this.handleInstagramAndCameraPicClick = this.handleInstagramAndCameraPicClick.bind(this);
     this.handleEditButtonHiddenIfNotCurrentUser = this.handleEditButtonHiddenIfNotCurrentUser.bind(this);
-    this.handleInput = this.handleInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleFile = this.handleFile.bind(this);
     this.handlePublishedPhotosOnPage = this.handlePublishedPhotosOnPage.bind(this);
     this.handleAddPictureButtonIfNotCurrentUser = this.handleAddPictureButtonIfNotCurrentUser.bind(this);
  
@@ -61,47 +58,20 @@ class ShowUserProfile extends React.Component{
     }
   }
 
-  handleInput(e) {
-    this.setState({ description: e.currentTarget.value });
-  }
 
-  handleFile(e) {
-    const file = e.currentTarget.files[0];
-    const fileReader = new FileReader();
-    fileReader.onloadend = () => {
-
-      this.setState({ photoFile: file, photoUrl: fileReader.result });
-    };
-    if (file) {
-      fileReader.readAsDataURL(file);
-    }
-  }
     handlePublishedPhotosOnPage(){
-          return  <ul>
-              {this.props.photos.map(photo =>{
-                
-              return  <li>
-                  <img className="show_page_images"src={photo.photoUrl}></img>
-                </li>
-              })
-          }
-          </ul>
-  }
-
+    return <ul className= 'flex-wrap-photos'>
+        {this.props.photos.reverse().map(photo =>{          
+          return  <li><img className="show_page_images" src={photo.photoUrl}></img></li>
+         })
+      }
+            </ul>
+    }
 
   
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('photo[description]', this.state.description);
-    if (this.state.photoFile) {
 
-      formData.append('photo[photo]', this.state.photoFile);
-    }
-
-    this.props.createPhoto(formData);
-  }
+  
 
   render(){
        const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
@@ -111,34 +81,43 @@ class ShowUserProfile extends React.Component{
     return(
         <div>
           <div className="top-nav">
-            <div className='camera-pic' onClick={this.handleInstagramAndCameraPicClick}></div>
-            <div className="dummy-className"></div>
-            <div className='vl'></div>
-            <div className="instatext" onClick={this.handleInstagramAndCameraPicClick}>InstaGaron</div>
-            <input className='search-text-area' type='text' autoCapitalize='none' placeholder='Search' size='26' results='0' />
-            <div className='compass-heart-link-profile-link-wrapper'>
-            <div className="compass"></div>
-            <div className="heart-link"></div>
-            <Link className="make-fully-white-link" to={`/users/${this.props.user.id}`}><div className="profile-link"></div></Link>
+                <div className='camera-pic' onClick={this.handleInstagramAndCameraPicClick}></div>
+                  <div className="dummy-className"></div>
+                  <div className='vl'></div>
+                  <div className="instatext" onClick={this.handleInstagramAndCameraPicClick}>InstaGaron</div>
+                  <input className='search-text-area' 
+                  type='text' 
+                  autoCapitalize='none'
+                  placeholder='Search' 
+                  size='26' 
+                  results='0' />
+
+                <div className='compass-heart-link-profile-link-wrapper'>
+                    <div className="compass"></div>
+                    <div className="heart-link"></div>
+                    <Link className="make-fully-white-link" 
+                    to={`/users/${this.props.user.id}`}>
+                    <div className="profile-link"></div>
+                    </Link>
+                </div>
             </div>
-            </div>
-            <div>
-            <div className="profile-info-wrapper">
-            <div className="no-profile-pic"></div>
-            <div className="username-edit-gear-wrapper">
-            <div className='current-user-username'>{this.props.user.username}</div>
-            {this.handleEditButtonHiddenIfNotCurrentUser()}
-            <div className="gear" onClick={this.handleClickGear}></div>
-           {this.handleAddPictureButtonIfNotCurrentUser()}
-            <div className='current-user-biography'>{this.props.user.biography}</div>
-            </div>
-            </div>
+            <div> 
+                <div className="profile-info-wrapper">
+                <div className="no-profile-pic"></div>
+                  <div className="username-edit-gear-wrapper">
+                  <div className='current-user-username'>{this.props.user.username}</div>
+                  {this.handleEditButtonHiddenIfNotCurrentUser()}
+                  <div className="gear" onClick={this.handleClickGear}></div>
+                  {this.handleAddPictureButtonIfNotCurrentUser()}
+                  <div className='current-user-biography'>{this.props.user.biography}</div>
+                  </div>
+                  </div>
             </div>
           <div className="popup">
-            <div className='popup-content'>
-              <div className="pop-up-delete-button" onClick={this.handleClick}>Log Out</div>
-              <div className="cancel" onClick={this.handleClickCancel}>Cancel</div>
-            </div>
+              <div className='popup-content'>
+                  <div className="pop-up-delete-button" onClick={this.handleClick}>Log Out</div>
+                  <div className="cancel" onClick={this.handleClickCancel}>Cancel</div>
+              </div>
           </div>
           {this.handlePublishedPhotosOnPage()}
         </div>   

@@ -13,18 +13,13 @@ export const selectSpecificUserPhotos = (state, ownProps) => {
   const array = [];
   const userId = state.entities.users[ownProps.match.params.userId]
   const photos = Object.values(state.entities.photos);
-
- 
-     photos.map( photo => {
-       if (userId.published_photo_ids.includes(photo.id)){
-        array.push(photo)
+  
+  photos.map( photo => {
+    if (userId.published_photo_ids.includes(photo.id)){
+      array.push(photo)
       }
     
     })
-
-  
-  
-  
   return array;
 }
 
