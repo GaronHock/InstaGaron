@@ -16,6 +16,7 @@ class ShowUserProfile extends React.Component{
     this.handleFile = this.handleFile.bind(this);
     this.handlePublishedPhotosOnPage = this.handlePublishedPhotosOnPage.bind(this);
     this.handleAddPictureButtonIfNotCurrentUser = this.handleAddPictureButtonIfNotCurrentUser.bind(this);
+ 
   }
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId);
@@ -78,13 +79,14 @@ class ShowUserProfile extends React.Component{
     handlePublishedPhotosOnPage(){
           return  <ul>
               {this.props.photos.map(photo =>{
+                
               return  <li>
                   <img className="show_page_images"src={photo.photoUrl}></img>
                 </li>
               })
           }
           </ul>
-    }
+  }
 
 
   
@@ -137,20 +139,6 @@ class ShowUserProfile extends React.Component{
               <div className="pop-up-delete-button" onClick={this.handleClick}>Log Out</div>
               <div className="cancel" onClick={this.handleClickCancel}>Cancel</div>
             </div>
-          </div>
-          <div>
-          <form>
-            <label htmlFor="photo-description">Body of Post</label>
-            <input type="text"
-              id="photo-description"
-              value={this.state.description}
-              onChange={this.handleInput} />
-            <input type="file"
-              onChange={this.handleFile} />
-            <h3>Image preview </h3>
-            {preview}
-            <button onClick={this.handleSubmit}>Make a new Post!</button>
-          </form>
           </div>
           {this.handlePublishedPhotosOnPage()}
         </div>   

@@ -4,11 +4,12 @@ import { logout } from '../../actions/session_actions'
 import {fetchUser} from '../../actions/user_actions'
 import {fetchAllPhotos} from '../../actions/photo_actions'
 import {createPhoto} from '../../actions/photo_actions'
+import {selectSpecificUserPhotos} from  '../../reducers/selectors'
 
 const mSTP = (state, ownProps) =>({
   currentUser: state.entities.users[state.session.id],
   user: state.entities.users[ownProps.match.params.userId],
-  photos: Object.values(state.entities.photos),
+  photos: selectSpecificUserPhotos(state, ownProps)
   //published_photos: state.entities.user.id.published_photo_ids
 })
 
