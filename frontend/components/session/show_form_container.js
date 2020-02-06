@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import ShowUserProfile from './show_user_profile';
 import { logout } from '../../actions/session_actions'
 import {fetchUser} from '../../actions/user_actions'
-import {fetchAllPhotos} from '../../actions/photo_actions'
 import {createPhoto} from '../../actions/photo_actions'
 import {selectSpecificUserPhotos} from  '../../reducers/selectors'
+import { fetchAllPhotos } from '../../actions/photo_actions'
+import {fetchPhoto} from '../../actions/photo_actions'
 
 const mSTP = (state, ownProps) =>({
   currentUser: state.entities.users[state.session.id],
@@ -14,6 +15,8 @@ const mSTP = (state, ownProps) =>({
 })
 
 const mDTP = (dispatch) =>({
+  fetchPhoto: (photo) => dispatch(fetchPhoto(photo)),
+  fetchAllPhotos: (photos) => dispatch(fetchAllPhotos(photos)),
   fetchUser: (userId) => dispatch(fetchUser(userId)),
   logout: () => dispatch(logout()),
   createPhoto: (photo) => dispatch(createPhoto(photo))

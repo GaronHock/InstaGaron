@@ -17,12 +17,14 @@ class ShowUserProfile extends React.Component{
   }
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId);
+    //this.props.fetchPhoto(this.props.photos.id);
   }
 
   componentDidUpdate(prevProps){
     if (this.props.match.params.userId !== prevProps.match.params.userId){
       this.props.fetchUser(this.props.match.params.userId);
     }
+    console.log('component did mount')
   }
 
   handleClick(e) {
@@ -111,14 +113,23 @@ class ShowUserProfile extends React.Component{
           0<span className="posts-followers-following-font">following</span>
           0<span className="posts-followers-following-font">followers</span>
         </div>
+        <div className='biography-flex-container'>
         <div className='current-user-biography'>{this.props.user.biography}</div>
+        </div>
+        <div className="border-between-profile-info-and-images"></div>
           <div className="popup">
               <div className='popup-content'>
                   <div className="pop-up-delete-button" onClick={this.handleClick}>Log Out</div>
                   <div className="cancel" onClick={this.handleClickCancel}>Cancel</div>
               </div>
           </div>
-          {this.handlePublishedPhotosOnPage()}     
+          
+          
+          
+          
+          <div className="photo-container">
+          {this.handlePublishedPhotosOnPage()}  
+        </div>   
         </div>   
       )
     }
