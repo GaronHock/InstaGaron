@@ -7,12 +7,12 @@ class AddPictureForm extends React.Component{
     this.state = {
       description: "",
       photoFile: null,
-      photoUrl: null
+      photoUrl: null,
+      photos:null,
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
-    this.handleClick = this.handleClick.bind(this)
     this.handleInstagramAndCameraPicClick = this.handleInstagramAndCameraPicClick.bind(this);
   }
 
@@ -32,9 +32,6 @@ class AddPictureForm extends React.Component{
     }
   }
 
-
-
-
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
@@ -43,18 +40,8 @@ class AddPictureForm extends React.Component{
 
       formData.append('photo[photo]', this.state.photoFile);
     }
-
-    this.props.createPhoto(formData);
-    this.props.history.push(`/users/${this.props.currentUser.id}`)
+    this.props.createPhoto(formData).then(() =>(this.props.history.push(`/users/${this.props.currentUser.id}`)))
   }
-
-
-  handleClick(e) {
-    e.preventDefault();
-    this.props.logout()
-    this.props.history.push('/');
-  }
-
   handleInstagramAndCameraPicClick(e) {
     e.preventDefault();
     this.props.history.push('/welcome')
@@ -85,8 +72,6 @@ class AddPictureForm extends React.Component{
             <input className='choose-file-button' type="file"
               onChange={this.handleFile} />
             <div className='preview-flex'>
-             
-
               <label
                 htmlFor="photo-description">
             <input 

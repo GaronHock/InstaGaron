@@ -15,13 +15,15 @@ export const loginUser = user => (
 )
 
 
-export const updateUser = user =>(
-  $.ajax({
-    url: `api/users/${user.id}`,
+export const updateUser = user =>{
+  return $.ajax({
+    url: `api/users/${user.get('user[id]')}`,///user.id was trying to get it from form data have to use .get
     method: 'PATCH',
-    data: {user}
+    data: user,
+    contentType: false,
+    processData: false
   })
-)
+}
 export const showUsersPhotos = user => (
   $.ajax({
     url: `api/users/${user.id}`,

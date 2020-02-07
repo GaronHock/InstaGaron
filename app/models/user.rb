@@ -7,14 +7,15 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-
-  has_one_attached :profile_photo
-
-
   has_many :published_photos,
   foreign_key: :user_id,
   class_name: :Photo
 
+  # belongs_to :photo,
+  # foreign_key: :profile_picture_id,
+  # class_name: :Photo, optional: true
+
+  has_one_attached :profile_picture
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

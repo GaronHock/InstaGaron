@@ -16,26 +16,14 @@
   background-position: right;
   background-color:  rgba(var(--b3f,250,250,250),1);
 }
-
 .form-signupform-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.form{
-  width: 379px;
-  margin-top: 10px;
-  height: 379px;
-  margin-left: 15px;
-  display: flex;
-  align-items: center;
-  background-color: white;
-  flex-direction: column;
 } 
-
 .noAccount{
   border: 1px solid #e6e6e6;
-  margin-top: 500px;
+  margin-top: 510px;
   margin-left: 8px;
   width: 379px;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -50,38 +38,27 @@
   padding-bottom: 20px;
   background-color: white;
 }
-
 #instagram{
   margin-top: 10px;
   font-family: 'Cookie', cursive;
   font-size: 75px;
   background-color: white;
-  display: flex;
-  justify-self: flex-start;
   padding-bottom: 20px;
 }
-
 .signup-link{
   color: rgba(var(--h5f,56,151,240),1);
   background-color: white;
 }
-
-
 .username-input{
   border: 1px solid #e6e6e6; 
   margin-bottom: 20px;
-  padding-right: 80px;
-  padding-left: 2px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding: 8px 80px 8px 2px;
 }
-
 .username-input::placeholder{
   font-family: 'Open Sans', sans-serif;
   font-size: 13px;
   padding-left: 5px;
 }
-
 .email::placeholder{
   font-family: 'Open Sans', sans-serif;
   font-size: 13px;
@@ -92,35 +69,26 @@
   font-size: 13px;
   padding-left: 5px;
 }
-
-
 .loginButton{
     background-color: rgba(var(--h5f,56,151,240),1);
     color: rgba(var(--eca,255,255,255),1);
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 18px;
-
     cursor: pointer;
     font-weight: 600;
-    padding: 5px 9px;
-  
-    padding-right: 105px;
-    padding-left: 105px;
+    padding: 5px 105px 5px 105px;
 }
-
 .errors-list{
   color: red;
   text-align: center;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   background-color: white;
 }
-
 .sign-up-wrapper{
   display: flex;
   justify-content: center;
 }
-
 .form{
   width: 379px;
   margin-top: 110px;
@@ -130,18 +98,10 @@
   align-items: center;
   background-color: white;
   flex-direction: column;
+  border: solid 1px #dbdbdb;
 } 
 
-.signup-form{
-  width: 379px;
-  margin-top: 110px;
-  height: 400px;
-  margin-left: 15px;
-  display: flex;
-  align-items: center;
-  background-color: white;
-  flex-direction: column;
-}
+
 .sign-up-description{
   color: #999;
   text-align: center;
@@ -152,6 +112,25 @@
 
 }
 
+.login-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+////signup
+.signup-form{
+  width: 379px;
+  margin-top: 110px;
+  height: 400px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  flex-direction: column;
+  border: solid 1px #dbdbdb;
+}
 #instagram-signup{
   font-family: 'Cookie', cursive;
   font-size: 75px;
@@ -159,9 +138,7 @@
   display: flex;
   justify-self: flex-start;
   padding-top: 20px;
-
 }
-
 .haveAccount{
   border: 1px solid #e6e6e6;
   margin-top: 530px;
@@ -174,7 +151,6 @@
   color: #262626;
   font-size: 14px;
 }
-
 .sign-up-button{
     background-color: rgba(var(--h5f,56,151,240),1);
     color: rgba(var(--eca,255,255,255),1);
@@ -187,6 +163,10 @@
     padding-left: 90px;
     text-align: center;
 }
+
+//navbar
+
+
 .top-nav {
   background-color: #fff;
   display: flex;
@@ -194,7 +174,6 @@
   padding-bottom: 7px;
   border-bottom: 1px solid #e6e6e6;
 }
-
 .camera-pic{
     background-image: image_url('insta.png');
     background-size: 100% 100%;
@@ -213,7 +192,6 @@
     margin-top: 25px;
     margin-left: 205px;
 }
-
 .instatext{
   font-family: 'Cookie', cursive;  
   background-color: #fff;
@@ -228,20 +206,16 @@
   height: 25px;
   margin-top: 30px;
   text-align: center;
- // border-color: #e6e6e7;
   font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
-
 .compass-heart-link-profile-link-wrapper{
   display: flex;
   background-color: white;
   margin-right: 150px;
-  justify-content: space-evenly;
   padding-right: 20px;
   padding-left: 20px;
   padding-top: 14px;
 }
-
 .compass{
   background-image: image_url('compass.png');
   height: 40px;
@@ -252,7 +226,6 @@
   margin-left: 5px;
   cursor: pointer;
 }
-
 .heart-link{
   background-image: image-url('heart1.png');
   height: 50px;
@@ -273,9 +246,12 @@
   margin-left: 5px;
   cursor: pointer;
 }
-
 .make-fully-white-link{
   background-color: white;
+}
+
+.border-between-profile-info-and-images{
+    border-top: 1px solid #e6e6e6;
 }
 
 .profile-info-wrapper{
@@ -285,16 +261,15 @@
 }
 .no-profile-pic{
   background-image: image-url('user.png');
-  background-repeat: no-repeat;
   background-size: 100% 100%;
   width:140px;
   height:140px;
   margin-left: 225px;
   margin-top: 60px;
+  background-color: white;
 }
 .username-edit-gear-wrapper{
   display:flex;
-  flex-direction: row;
   justify-content: space-around;
   margin-left: 100px;
   width:400px;
@@ -335,20 +310,17 @@
     background-repeat: no-repeat;
   cursor: pointer;
 }
-
 .posts-followers-following-flex-container{
-     display: flex;
+    display: flex;
     justify-content: space-around;
     width: 30%;
     position: absolute;
-    top: 27%;
+    top: 29%;
     left: 39%;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     align-items: baseline;
-
 }
-
 .posts-followers-following-font{
     font-family: 'Martel Sans', sans-serif;
 }
@@ -359,11 +331,10 @@
 .current-user-biography{
     width: 30%;
     position: absolute;
-    top: 32%;
-    left: 40%;
+    top: 35%;
+    left: 40.2%;
     font-family: 'Roboto', sans-serif;
 }
-
 .popup{
   background: rgba(0,0,0,0.6);
   width: 100%;
@@ -374,7 +345,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .popup-content{
   height: 60px;
   width: 300px;
@@ -383,7 +353,6 @@
   position: relative;
   background-color:  none;
 }
-
 .pop-up-delete-button{
   position: relative;
   height:25px;
@@ -403,47 +372,113 @@
   padding-top: 5px;
   cursor: pointer;
 }
+///images
 
+.flex-wrap-photos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.photo-container{
+  display: flex;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 3%;
+}
+.show_page_images{
+  margin: 15px;
+  width:295px;
+  height: 295px;
+}
 
-.login-form{
+///add photos
+.add-form{
+ display: block;
+  margin: auto;
+  width: 70%;
+  height: 650px;
+  background-color: white;
+  margin-top: 30px;
+  padding-top: 10%;
+  border: 1px solid lightgray;
+}
+.add-photo-text{
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    position: relative;
+    bottom: 80px;
+    text-align: center;
+    background-color: white;
+    font-size: 25px;
+}
+.image-preview{
+  height:340px;
+  width: 400px;
+  position: absolute;
+  left: 34%;
+  border: 1px solid black;
+  top: 30%;
+  border: 1px solid lightgray;
+}
+.image-preview > img{
+  height:340px;
+  width: 100%;
+}
+.choose-file-button{
+    position: absolute;
+    bottom: 10%;
+    left: 43%;
+    background-color: white;
+}
+.preview-flex{
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  top:55%;
+  height:120px;
   background-color: white;
 }
+.caption-textarea{
+ background-color: white;
+  border: 1px solid lightgray;
+  align-content: right;
+  background: url(images/benice.png) center center no-repeat; 
+  outline: none;
+  width: 400px;
+  height: 100px;
+}
+.add-photo-submit{
+     background-color: rgba(var(--h5f,56,151,240),1);
+    color: rgba(var(--eca,255,255,255),1);
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding: 10px 8px 8px 10px;
+     border-radius: 3px;
+     margin-top: 20px;
+}
 
-
+//edit form
 
 .edit-profile-wrapper{
   height: 1000px;
   display: flex;
   flex-direction: column;
   background-color:  rgba(var(--b3f,250,250,250),1);
-
 }
-
 .edit-form{
- display: block;
   margin: auto;
   width: 70%;
-  min-width: 500px;
   height: 400px;
-  flex-direction: column;
-  align-items: center;
   background-color: white;
   margin-top: 30px;
   padding-top: 10%;
   border: 1px solid lightgray;
-
 }
-
 .edit-form input, .edit-form textarea{
   background-color: white;
   border: 1px solid lightgray;
-  align-content: right;
-  
+  align-content: right; 
 }
-
 .edit-profile-text{
     font-family: 'Lato', sans-serif;
     font-weight: bold;
@@ -452,34 +487,34 @@
     text-align: center;
     background-color: white;
 }
-
 .edit-form-username{
   font-family: 'Martel Sans', sans-serif;
   text-align: center;
   position: relative;
-  bottom: 50px;
+  bottom: 75px;
   background-color: white;
 }
-
-
 .email-edit-label{
   margin-left: 27px;
-   margin-bottom:20px;
+   margin-bottom:30px;
    background-color: white;
 }
-
 .form-input-element{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.file-input-field-wrapper-edit{
+  position: relative;
+  bottom: 50px;
+  background-color: white;
+}
 .username-edit-label{
-  margin-bottom:20px;
+  margin-bottom:30px;
   background-color: white;
 }
 .bio-edit-label{
-     margin-bottom: 20px;
+     margin-bottom: 30px;
     margin-left: 40px;
     padding-right: 10px;
     background-color: white;
@@ -503,13 +538,11 @@
 .form-input-element{
   background-color: white;
 }
-
- .flex-update-user-info-button{
+.flex-update-user-info-button{
    display:flex;
    justify-content: center;
    background-color: white;
- }
-
+}
  .update-user-info-button{
     background-color: rgba(var(--h5f,56,151,240),1);
     color: rgba(var(--eca,255,255,255),1);
@@ -518,101 +551,31 @@
     border-radius: 3px;
     margin-right: 7px;
  }
-.border-between-profile-info-and-images{
-    border-top: 1px solid #e6e6e6;
-}
-.flex-wrap-photos{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.photo-container{
-  display: flex;
-  margin-left: 100px;
-  margin-right: 100px;
-  padding-top: 3%;
-}
-.show_page_images{
-  margin: 15px;
-  width:295px;
-  height: 295px;
-}
-
-.add-form{
-
- display: block;
-  margin: auto;
-  width: 70%;
-  min-width: 500px;
-  height: 650px;
-  flex-direction: column;
-  align-items: center;
+ .edit-profile-pic{
+  background-image: image-url('user.png');
+  background-size: 100% 100%;
+  width:140px;
+  height:140px;
+  left: 42%;
+  position: relative;
+  bottom: 18%;
   background-color: white;
-  margin-top: 30px;
-  padding-top: 10%;
-  border: 1px solid lightgray;
-}
+ }
 
-.add-photo-text{
+ .choose-profile-picture-file-button{
+   position: relative;
+   left:36%;
+   top:-15px;
+   background-color: white;
+ }
+
+ .edit-profile-picture-text{
     font-family: 'Lato', sans-serif;
     font-weight: bold;
     position: relative;
-    bottom: 80px;
+    bottom: 20%;
     text-align: center;
-    background-color: white;
-    font-size: 25px;
-}
-
-.image-preview{
-  height:340px;
-  width: 400px;
-  position: absolute;
-  left: 34%;
-  border: 1px solid black;
-  top: 30%;
-  border: 1px solid lightgray;
-}
-.image-preview > img{
-  height:340px;
-  width: 100%;
-}
-
-.choose-file-button{
-    position: absolute;
-    bottom: 17%;
-    left: 43%;
-    background-color: white;
-}
-
-.preview-flex{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  top:55%;
-  height:120px;
-  background-color: white;
-}
-
-.caption-textarea{
- background-color: white;
-  border: 1px solid lightgray;
-  align-content: right;
-  background: url(images/benice.png) center center no-repeat; 
-  outline: none;
-  width: 400px;
-  height: 100px;
-}
-
-.add-photo-submit{
-     background-color: rgba(var(--h5f,56,151,240),1);
-    color: rgba(var(--eca,255,255,255),1);
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    padding: 10px 8px 8px 10px;
-     border-radius: 3px;
-     margin-top: 20px;
-}
-
+ }
 
 
 

@@ -5,15 +5,13 @@ class Greeting extends React.Component {
     super(props)
     this.handleClick = this.handleClick.bind(this);
   }
-
-
   handleClick(e) {
     e.preventDefault();
     this.props.logout();
     (this.props.history.push('/'));
   }
 
-
+  
   render() {
     if (this.props.currentUser) {
       return (

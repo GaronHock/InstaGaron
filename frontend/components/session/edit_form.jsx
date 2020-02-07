@@ -8,14 +8,15 @@ class EditForm extends React.Component{
       id: this.props.currentUser.id,
       username: this.props.currentUser.username,
       email: this.props.currentUser.email,
-      biography: this.props.currentUser.biography
+      biography: this.props.currentUser.biography,  
+      photoFile: this.props.currentUser.photoUrl,
+      photoUrl: null
     };
-
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
+    this.handleInstagramAndCameraPicClick = this.handleInstagramAndCameraPicClick.bind(this);
   }
-
-
 
   handleInput(type){
     return (e) =>{
@@ -24,10 +25,34 @@ class EditForm extends React.Component{
     }
   }
 
-  handleSubmit(e){
-    e.preventDefault();
-    this.props.updateUserInformation(this.state);
-  }
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+    this.setState({ photoFile: file, photoUrl: fileReader.result });
+    };
+    if (file) {
+    fileReader.readAsDataURL(file);
+      }
+    }
+    handleSubmit(e) {
+      e.preventDefault();
+      const formData = new FormData();
+      if (this.state.photoFile) {
+        formData.append('user[profile_picture]', this.state.photoFile);
+      }
+      formData.append('user[id]', this.state.id)
+      formData.append('user[username]', this.state.username);
+      formData.append('user[biography]', this.state.biography);
+      formData.append('user[email]', this.state.email);
+     this.props.updateUserInformation(formData).then( () =>{
+       this.props.history.push(`/users/${this.props.currentUser.id}`)
+      })
+    }
+    handleInstagramAndCameraPicClick(e) {
+      e.preventDefault();
+      this.props.history.push('/welcome')
+    }
 
   render(){
     return(
@@ -49,6 +74,13 @@ class EditForm extends React.Component{
               <form className='edit-form'>
             <h2 className='edit-profile-text'>Edit your profile</h2>
                 <h2 className="edit-form-username">{this.props.currentUser.username}</h2>
+
+            <div className="edit-profile-pic"></div>
+     
+            <div className='file-input-field-wrapper-edit'>
+            <input className='choose-profile-picture-file-button' type="file"
+              onChange={this.handleFile}/>
+           
               <div className='form-input-element'>
               <label className='username-edit-label'>Username</label>
                       <input className='edit-username-input'
@@ -71,17 +103,20 @@ class EditForm extends React.Component{
                                     type="text"
                                     value={this.state.biography}
                                     onChange={this.handleInput('biography')} />
-                            </div> 
+                            </div>
+
                 <div className="flex-update-user-info-button">
                 <button className='update-user-info-button' onClick={this.handleSubmit}>Submit</button>
                 </div>
+                  </div>
                 </form>
+               
           </div> 
     </div>
     )
   }
 }
-
+//<button className='add-photo-submit' onClick={this.handleFileSubmit}>Make a new Post!</button>
 
 export default EditForm;
 

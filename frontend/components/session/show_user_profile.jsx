@@ -1,32 +1,32 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
+
 class ShowUserProfile extends React.Component{
   constructor(props){
     super(props)
     this.state = {
       description: "",
       photoFile: null,
-      photoUrl: null
+      photoUrl: null,
+      photos: null,
     };
     this.handleClick = this.handleClick.bind(this)
     this.handleInstagramAndCameraPicClick = this.handleInstagramAndCameraPicClick.bind(this);
     this.handleEditButtonHiddenIfNotCurrentUser = this.handleEditButtonHiddenIfNotCurrentUser.bind(this);
     this.handlePublishedPhotosOnPage = this.handlePublishedPhotosOnPage.bind(this);
     this.handleAddPictureButtonIfNotCurrentUser = this.handleAddPictureButtonIfNotCurrentUser.bind(this);
- 
+    this.showProfilePicture = this.showProfilePicture.bind(this);
+    //this.showPhotosOnRefresh = this.showPhotosOnRefresh.bind(this);
   }
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId);
-    //this.props.fetchPhoto(this.props.photos.id);
   }
 
   componentDidUpdate(prevProps){
-    if (this.props.match.params.userId !== prevProps.match.params.userId){
+    if (this.props.match.params.userId !== prevProps.match.params.userId ){
       this.props.fetchUser(this.props.match.params.userId);
     }
-    console.log('component did mount')
   }
-
   handleClick(e) {
     e.preventDefault();
     this.props.logout()
@@ -59,15 +59,39 @@ class ShowUserProfile extends React.Component{
     }
   }
 
+  // incrementCount() {
+  //   this.setState((state) => {
+  //     // Important: read `state` instead of `this.state` when updating.
+  //     return { count: state.count + 1 }
+  //   });
+  // }
+
+  // showPhotosOnRefresh(){
+  //   this.setState((state) =>{
+  //     return{photos: state.photos}
+  //   })
+  // }
+
 
     handlePublishedPhotosOnPage(){
+  //    this.showPhotosOnRefresh();
     return <ul className= 'flex-wrap-photos'>
         {this.props.photos.reverse().map(photo =>{          
           return  <li><img className="show_page_images" src={photo.photoUrl}></img></li>
          })
       }
-            </ul>
+      </ul>
     }
+
+    showProfilePicture(){
+      if (!this.props.user.photoUrl){
+        return <div className='no-profile-pic'></div>
+      }else{
+      return <img className="profile_picture_photo" src={this.props.user.photoUrl}></img>
+      }
+    }
+
+
     handleShowPostsCount(){
       return this.props.photos.length;
     }
@@ -130,6 +154,7 @@ class ShowUserProfile extends React.Component{
           <div className="photo-container">
           {this.handlePublishedPhotosOnPage()}  
         </div>   
+        {this.showProfilePicture()}
         </div>   
       )
     }
