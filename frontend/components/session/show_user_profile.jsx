@@ -34,7 +34,7 @@ class ShowUserProfile extends React.Component{
   }
 
   handlePhotoClick(photo){
-    this.props.history.push(`/users/photo/${this.props.user.id}/${photo.id}`)
+    this.props.history.push(`/users/photo/${photo.id}`)
   }
 
   handleInstagramAndCameraPicClick(e){
