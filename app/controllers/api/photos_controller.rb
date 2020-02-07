@@ -4,7 +4,7 @@ class Api::PhotosController < ApplicationController
     
   end
   def show
-    @photo = Photo.find_by(:user_id[:id])
+    @photo = Photo.find(params[:id]) #find by accepts argument , fiindby(username), find(params[id), find that id
   end
 
   def create

@@ -3,10 +3,7 @@
 export const fetchPhoto = photoId => (
   $.ajax({
     url: `api/photos/${photoId}`,
-    method: 'GET',
-    data: {photo},
-    contentType: false,
-    processData: false
+    method: 'GET'
   })
 )
 

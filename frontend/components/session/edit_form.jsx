@@ -16,6 +16,7 @@ class EditForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleInstagramAndCameraPicClick = this.handleInstagramAndCameraPicClick.bind(this);
+    this.showProfilePicture = this.showProfilePicture.bind(this)
   }
 
   handleInput(type){
@@ -45,7 +46,7 @@ class EditForm extends React.Component{
       formData.append('user[username]', this.state.username);
       formData.append('user[biography]', this.state.biography);
       formData.append('user[email]', this.state.email);
-     this.props.updateUserInformation(formData).then( () =>{
+      this.props.updateUserInformation(formData).then( () =>{
        this.props.history.push(`/users/${this.props.currentUser.id}`)
       })
     }
@@ -53,6 +54,16 @@ class EditForm extends React.Component{
       e.preventDefault();
       this.props.history.push('/welcome')
     }
+  showProfilePicture() {
+    if (!this.props.user.photoUrl) {
+      return <div className='edit-profile-pic'></div>
+    }
+    else {
+      return <div className='edit-new-profile-pic-wrapper'>
+        <img className="edit-profile-picture-photo" src={this.props.user.photoUrl}></img>
+        </div>
+    }
+  }
 
   render(){
     return(
@@ -75,7 +86,7 @@ class EditForm extends React.Component{
             <h2 className='edit-profile-text'>Edit your profile</h2>
                 <h2 className="edit-form-username">{this.props.currentUser.username}</h2>
 
-            <div className="edit-profile-pic"></div>
+            {this.showProfilePicture()};
      
             <div className='file-input-field-wrapper-edit'>
             <input className='choose-profile-picture-file-button' type="file"

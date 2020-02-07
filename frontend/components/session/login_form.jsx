@@ -11,6 +11,7 @@ class LoginForm extends React.Component {
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleSubmit(e) {
@@ -25,6 +26,15 @@ class LoginForm extends React.Component {
       let input = e.target.value
       this.setState({ [type]: input });
     }
+  }
+
+  handleClick(){
+    let Demo = {
+      username: "Demo User",
+      email: 'DemoUser@yahoo.com',
+      password: 'hunter12',
+    }
+    this.props.processForm(Demo);
   }
 
   render() {
@@ -58,6 +68,7 @@ class LoginForm extends React.Component {
                 value={this.state.password}
                 onChange={this.handleInput('password')} />
                <button className='loginButton' onClick={this.handleSubmit}>Log In</button>
+               <button className='demo-login-button' onClick ={this.handleClick}>Demo Log In</button>
                <ul className="errors-list">{errorsList}</ul>
                </form>
             </div>

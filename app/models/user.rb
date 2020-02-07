@@ -11,9 +11,7 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: :Photo
 
-  # belongs_to :photo,
-  # foreign_key: :profile_picture_id,
-  # class_name: :Photo, optional: true
+
 
   has_one_attached :profile_picture
 

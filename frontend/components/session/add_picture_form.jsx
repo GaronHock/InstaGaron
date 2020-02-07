@@ -47,6 +47,8 @@ class AddPictureForm extends React.Component{
     this.props.history.push('/welcome')
   }
 
+
+
   render(){
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     return(

@@ -10,11 +10,12 @@ import {fetchPhoto} from '../../actions/photo_actions'
 const mSTP = (state, ownProps) =>({
   currentUser: state.entities.users[state.session.id],
   user: state.entities.users[ownProps.match.params.userId],
-  photos: selectSpecificUserPhotos(state, ownProps)
+  photos: selectSpecificUserPhotos(state, ownProps),
+  //showPhotos: state.entities.photos
   //published_photos: state.entities.user.id.published_photo_ids
 })
 
-const mDTP = (dispatch) =>({
+const mDTP = (dispatch) =>({  
   fetchPhoto: (photo) => dispatch(fetchPhoto(photo)),
   fetchAllPhotos: (photos) => dispatch(fetchAllPhotos(photos)),
   fetchUser: (userId) => dispatch(fetchUser(userId)),

@@ -79,6 +79,20 @@
     font-weight: 600;
     padding: 5px 105px 5px 105px;
 }
+
+.demo-login-button{
+    background-color: rgb(74, 209, 74);
+    color: rgba(var(--eca,255,255,255),1);
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 5px 84px 5px 84px;
+    margin-top: 10px;
+    
+
+}
 .errors-list{
   color: red;
   text-align: center;
@@ -100,8 +114,6 @@
   flex-direction: column;
   border: solid 1px #dbdbdb;
 } 
-
-
 .sign-up-description{
   color: #999;
   text-align: center;
@@ -266,8 +278,25 @@
   height:140px;
   margin-left: 225px;
   margin-top: 60px;
-  background-color: white;
+  background-color: rgba(var(--b3f,250,250,250),1);
 }
+.show-profile-photo-wrapper{
+    width: 130px;
+    height: 130px;
+    margin-left: 237px;
+    margin-top: 60px;
+    left: 5%;
+    border: 1px solid rgba(var(--d0b,219,219,219),1);
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.profile_picture_photo{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(var(--b3f,250,250,250),1);
+}
+
 .username-edit-gear-wrapper{
   display:flex;
   justify-content: space-around;
@@ -389,6 +418,17 @@
   margin: 15px;
   width:295px;
   height: 295px;
+  -webkit-transition: all 0.1s ease;
+   -moz-transition: all 0.1s ease;
+   -o-transition: all 0.1s ease;
+   -ms-transition: all 0.1s ease;
+   transition: all 0.1s ease
+}
+
+.show_page_images:hover{
+  cursor: pointer;
+   -webkit-filter: brightness(80%);
+   filter: brightness(80%);
 }
 
 ///add photos
@@ -426,8 +466,8 @@
 }
 .choose-file-button{
     position: absolute;
-    bottom: 10%;
-    left: 43%;
+    left: 42%;
+    bottom: 17%;
     background-color: white;
 }
 .preview-flex{
@@ -455,6 +495,7 @@
     padding: 10px 8px 8px 10px;
      border-radius: 3px;
      margin-top: 20px;
+     right: 1%;
 }
 
 //edit form
@@ -562,6 +603,25 @@
   background-color: white;
  }
 
+ .edit-new-profile-pic-wrapper{
+  height:140px;
+  width:140px;
+  border: 1px solid black;
+  left: 42%;
+  position: relative;
+  bottom: 18%;
+  background-color: white;
+  border-radius: 50%;
+   border: 1px solid #e6e6e6;
+   overflow: hidden;
+ }
+
+ .edit-profile-picture-photo{
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
  .choose-profile-picture-file-button{
    position: relative;
    left:36%;
@@ -577,9 +637,7 @@
     text-align: center;
  }
 
-
-
-
-
-
-
+ .show-photo{
+   width: 150px;
+   height: 150px;
+ }

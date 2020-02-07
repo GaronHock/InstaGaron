@@ -8,6 +8,7 @@ import {Switch} from 'react-router-dom';
 import ShowUserProfileContainer from './session/show_form_container';
 import EditUserProfileContainer from './session/edit_form_container';
 import AddPictureContainer from './session/add_picture_container';
+import ShowPictureContainer from './session/show_picture_container';
 
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
       <ProtectedRoute exact path='/users/:userId' component={ShowUserProfileContainer} />
       <ProtectedRoute path='/users/:userId/edit' component={EditUserProfileContainer} />
       <ProtectedRoute path='/users/:userId/newPhoto' component ={AddPictureContainer} />
+      <ProtectedRoute path='/users/photo/:photoId' component={ShowPictureContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
     </Switch>

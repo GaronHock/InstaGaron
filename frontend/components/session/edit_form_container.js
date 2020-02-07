@@ -3,8 +3,9 @@ import EditForm from './edit_form';
 import { update } from '../../actions/session_actions';
 import {createPhoto} from '../../actions/photo_actions';
 
-const mSTP = (state) =>({
+const mSTP = (state, ownProps) =>({
   currentUser: state.entities.users[state.session.id],
+  user: state.entities.users[ownProps.match.params.userId],
   formType: 'Update'
 })
 
@@ -16,3 +17,7 @@ const mDTP = dispatch =>({
 })
 
 export default connect(mSTP,mDTP)(EditForm)
+
+// currentUser: state.entities.users[state.session.id],
+//   user: state.entities.users[ownProps.match.params.userId],
+//     photos: selectSpecificUserPhotos(state, ownProps)

@@ -10,7 +10,6 @@ const usersReducer = (state = {}, action) =>{
       return Object.assign({},state, {[action.user.id]: action.user})  
     case RECEIVE_NEW_PHOTO:
        let user = Object.assign({}, state[action.new_photo.user_id])
-       debugger; // user i want to update making a copy 
       let newArray = user.published_photo_ids.slice() // making  copy of published photos 
        newArray.push(action.new_photo.id); // pushing id into new array 
       user.published_photo_ids = newArray;
@@ -19,5 +18,4 @@ const usersReducer = (state = {}, action) =>{
       return state;
   }   
 }    
-
 export default usersReducer;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     

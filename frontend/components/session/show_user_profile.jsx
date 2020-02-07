@@ -16,7 +16,7 @@ class ShowUserProfile extends React.Component{
     this.handlePublishedPhotosOnPage = this.handlePublishedPhotosOnPage.bind(this);
     this.handleAddPictureButtonIfNotCurrentUser = this.handleAddPictureButtonIfNotCurrentUser.bind(this);
     this.showProfilePicture = this.showProfilePicture.bind(this);
-    //this.showPhotosOnRefresh = this.showPhotosOnRefresh.bind(this);
+    this.handlePhotoClick = this.handlePhotoClick.bind(this);
   }
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId);
@@ -31,6 +31,10 @@ class ShowUserProfile extends React.Component{
     e.preventDefault();
     this.props.logout()
     this.props.history.push('/');
+  }
+
+  handlePhotoClick(photo){
+    this.props.history.push(`/users/photo/${photo.id}`)
   }
 
   handleInstagramAndCameraPicClick(e){
@@ -58,27 +62,11 @@ class ShowUserProfile extends React.Component{
       return <Link className="add-profile-button"to={`/users/${this.props.currentUser.id}/newPhoto`}><div><button>Add A Picture</button></div></Link>
     }
   }
-
-  // incrementCount() {
-  //   this.setState((state) => {
-  //     // Important: read `state` instead of `this.state` when updating.
-  //     return { count: state.count + 1 }
-  //   });
-  // }
-
-  // showPhotosOnRefresh(){
-  //   this.setState((state) =>{
-  //     return{photos: state.photos}
-  //   })
-  // }
-
-
     handlePublishedPhotosOnPage(){
-  //    this.showPhotosOnRefresh();
     return <ul className= 'flex-wrap-photos'>
-        {this.props.photos.reverse().map(photo =>{          
-          return  <li><img className="show_page_images" src={photo.photoUrl}></img></li>
-         })
+        {this.props.photos.reverse().map((photo) =>{          
+          return  <li><img onClick={() => this.handlePhotoClick(photo)} className="show_page_images" src={photo.photoUrl}></img></li>
+         })///explain anonymous callback micheal by giving it the callback it doesnt automattially invoke it
       }
       </ul>
     }
@@ -87,10 +75,9 @@ class ShowUserProfile extends React.Component{
       if (!this.props.user.photoUrl){
         return <div className='no-profile-pic'></div>
       }else{
-      return <img className="profile_picture_photo" src={this.props.user.photoUrl}></img>
+        return <div className='show-profile-photo-wrapper'><img className="profile_picture_photo" src={this.props.user.photoUrl}></img></div>
       }
     }
-
 
     handleShowPostsCount(){
       return this.props.photos.length;
@@ -123,7 +110,7 @@ class ShowUserProfile extends React.Component{
             </div>
           </div>
           <div className="profile-info-wrapper">
-           <div className="no-profile-pic"></div>
+          {this.showProfilePicture()}
             <div className="username-edit-gear-wrapper">
               <div className='current-user-username'>{this.props.user.username}</div>
               {this.handleEditButtonHiddenIfNotCurrentUser()}
@@ -153,8 +140,7 @@ class ShowUserProfile extends React.Component{
           
           <div className="photo-container">
           {this.handlePublishedPhotosOnPage()}  
-        </div>   
-        {this.showProfilePicture()}
+        </div>  
         </div>   
       )
     }
