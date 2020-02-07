@@ -34,7 +34,7 @@ class ShowUserProfile extends React.Component{
   }
 
   handlePhotoClick(photo){
-    this.props.history.push(`/users/photo/${photo.id}`)
+    this.props.history.push(`/users/photo/${this.props.user.id}/${photo.id}`)
   }
 
   handleInstagramAndCameraPicClick(e){
@@ -67,7 +67,9 @@ class ShowUserProfile extends React.Component{
         {this.props.photos.reverse().map((photo) =>{          
           return  <li><img onClick={() => this.handlePhotoClick(photo)} className="show_page_images" src={photo.photoUrl}></img></li>
          })///explain anonymous callback micheal by giving it the callback it doesnt automattially invoke it
-      }
+
+         ///the callback invookes the function once it is ran 
+      } 
       </ul>
     }
 

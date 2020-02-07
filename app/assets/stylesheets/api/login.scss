@@ -344,7 +344,7 @@
     justify-content: space-around;
     width: 30%;
     position: absolute;
-    top: 29%;
+    top: 26%;
     left: 39%;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
@@ -357,10 +357,10 @@
   display: flex;
   justify-content: center;
 }
-.current-user-biography{
+.current-user-biography{ 
     width: 30%;
     position: absolute;
-    top: 35%;
+    top: 32%;
     left: 40.2%;
     font-family: 'Roboto', sans-serif;
 }
@@ -637,7 +637,18 @@
     text-align: center;
  }
 
- .show-photo{
-   width: 150px;
-   height: 150px;
+ .photo-wrapper{
+    display: flex;
+    margin: auto;
+    vertical-align: top;
+    background-color: white;
+    margin-top: 30px;
+    border: 1px solid lightgray;
+ }
+
+  .show-photo{
+    height: 425px;
+    width: 50%;
+    background-color: white;
+    border: 1px solid lightgray;
  }
