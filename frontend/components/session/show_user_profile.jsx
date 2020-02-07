@@ -59,7 +59,7 @@ class ShowUserProfile extends React.Component{
 
   handleAddPictureButtonIfNotCurrentUser(){
     if(this.props.currentUser.id == this.props.match.params.userId){
-      return <Link className="add-profile-button"to={`/users/${this.props.currentUser.id}/newPhoto`}><div><button>Add A Picture</button></div></Link>
+      return <Link className="add-profile-button"to={`/users/${this.props.currentUser.id}/newPhoto`}><div className="add-button"><button>Add A Picture</button></div></Link>
     }
   }
     handlePublishedPhotosOnPage(){

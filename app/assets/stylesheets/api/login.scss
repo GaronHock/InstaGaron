@@ -321,6 +321,12 @@
   border-radius: 3px;
   cursor: pointer;
 }
+.edit-profile-button:hover{
+  background-color: lightblue;
+}
+.edit-profile-button button:hover{
+  background-color: lightblue;
+}
 .add-profile-button{
     border: 1px solid rgba(var(--d0b,219,219,219),1);
   padding:5px 10px 9px 10px;
@@ -329,6 +335,13 @@
   font-family: 'Lato', sans-serif;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.add-profile-button:hover{
+  background-color: lightblue;
+}
+.add-profile-button button:hover{
+  background-color: lightblue;
 }
 .gear{
   background-image: image-url('geary.png');
