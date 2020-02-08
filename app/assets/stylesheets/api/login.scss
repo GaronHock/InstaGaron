@@ -665,4 +665,17 @@
     width: 50%;
     background-color: white;
     border: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
  }
+
+ .description{
+    position: relative;
+    left: 20%;
+    top: 50%;
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    font-family: 'Martel Sans', sans-serif;
+ }
+

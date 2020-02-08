@@ -40,6 +40,7 @@ class ShowPicture extends React.Component{
       <div className='edit-profile-wrapper'>
       <div className='photo-wrapper'>
     <img className="show-photo" src={this.props.photo.photoUrl}></img>
+            <div className="description">{this.props.photo.description}</div>
       </div>
     </div>
     </div>
