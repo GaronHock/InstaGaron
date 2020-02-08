@@ -286,6 +286,7 @@
     margin-left: 237px;
     margin-top: 60px;
     left: 5%;
+    padding-right: 10px;
     border: 1px solid rgba(var(--d0b,219,219,219),1);
     border-radius: 50%;
     overflow: hidden;
@@ -357,7 +358,7 @@
     justify-content: space-around;
     width: 30%;
     position: absolute;
-    top: 26%;
+    top: 28%;
     left: 39%;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
@@ -373,7 +374,7 @@
 .current-user-biography{ 
     width: 30%;
     position: absolute;
-    top: 32%;
+    top: 34%;
     left: 40.2%;
     font-family: 'Roboto', sans-serif;
 }
@@ -480,7 +481,7 @@
 .choose-file-button{
     position: absolute;
     left: 42%;
-    bottom: 17%;
+    bottom: 10%;
     background-color: white;
 }
 .preview-flex{
