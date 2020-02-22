@@ -1,9 +1,7 @@
 import {RECEIVE_ALL_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_NEW_PHOTO} from '../actions/photo_actions';
 import {RECEIVE_USER} from '../actions/user_actions'
- 
-const PhotosReducer = (state = {}, action) => {
-  
-
+import {RECEIVE_ALL_COMMENTS} from '../actions/comment_actions'
+const photosReducer = (state = {}, action) => {
   Object.freeze(state)
   switch (action.type) {
     case RECEIVE_ALL_PHOTOS:
@@ -12,6 +10,8 @@ const PhotosReducer = (state = {}, action) => {
       return Object.assign({}, state, action.photos)
     case RECEIVE_PHOTO:
       return Object.assign({}, state, {[action.photo.id]: action.photo})
+    case RECEIVE_ALL_COMMENTS:
+      return Object.assign({}, state, action.allComments)
     case RECEIVE_NEW_PHOTO:
       return Object.assign({}, state, { [action.new_photo.id]: action.new_photo })
     case REMOVE_PHOTO:
@@ -23,4 +23,4 @@ const PhotosReducer = (state = {}, action) => {
   }
 }
 
-export default PhotosReducer;
+export default photosReducer;

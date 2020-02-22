@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
+import NavBarContainer from '../nav-bar/nav_bar_container'
 
 class ShowUserProfile extends React.Component{
   constructor(props){
@@ -11,7 +12,6 @@ class ShowUserProfile extends React.Component{
       photos: null,
     };
     this.handleClick = this.handleClick.bind(this)
-    this.handleInstagramAndCameraPicClick = this.handleInstagramAndCameraPicClick.bind(this);
     this.handleEditButtonHiddenIfNotCurrentUser = this.handleEditButtonHiddenIfNotCurrentUser.bind(this);
     this.handlePublishedPhotosOnPage = this.handlePublishedPhotosOnPage.bind(this);
     this.handleAddPictureButtonIfNotCurrentUser = this.handleAddPictureButtonIfNotCurrentUser.bind(this);
@@ -37,10 +37,7 @@ class ShowUserProfile extends React.Component{
     this.props.history.push(`/users/photo/${photo.id}`)
   }
 
-  handleInstagramAndCameraPicClick(e){
-    e.preventDefault();
-    this.props.history.push('/welcome')
-  }
+ 
   
   handleClickGear(){
       document.querySelector('.popup').style.display = 'flex';
@@ -63,9 +60,12 @@ class ShowUserProfile extends React.Component{
     }
   }
     handlePublishedPhotosOnPage(){
+      
     return <ul className= 'flex-wrap-photos'>
         {this.props.photos.reverse().map((photo) =>{          
-          return  <li><img onClick={() => this.handlePhotoClick(photo)} className="show_page_images" src={photo.photoUrl}></img></li>
+          return  <li><img onClick={() => this.handlePhotoClick(photo)} 
+          className="show_page_images" 
+          src={photo.photoUrl}></img></li>
          })///explain anonymous callback micheal by giving it the callback it doesnt automattially invoke it
 
          ///the callback invookes the function once it is ran 
@@ -90,36 +90,17 @@ class ShowUserProfile extends React.Component{
       return null;
     }else{
     return(
-        <div>
-          <div className="top-nav">
-            <div className='camera-pic' onClick={this.handleInstagramAndCameraPicClick}></div>
-            <div className="dummy-className"></div>
-            <div className='vl'></div>
-            <div className="instatext" onClick={this.handleInstagramAndCameraPicClick}>InstaGaron</div>
-            <input className='search-text-area' 
-              type='text' 
-                autoCapitalize='none'
-                placeholder='Search' 
-                size='26' 
-                results='0'/>
-            <div className='compass-heart-link-profile-link-wrapper'>
-              <div className="compass"></div>
-              <div className="heart-link"></div>
-              <Link className="make-fully-white-link" 
-                to={`/users/${this.props.user.id}`}>
-              <div className="profile-link"></div>
-                </Link>
-            </div>
-          </div>
-          <div className="profile-info-wrapper">
+      <div>
+        <NavBarContainer />
+        <div className="profile-info-wrapper">
           {this.showProfilePicture()}
-            <div className="username-edit-gear-wrapper">
-              <div className='current-user-username'>{this.props.user.username}</div>
-              {this.handleEditButtonHiddenIfNotCurrentUser()}
-              {this.handleAddPictureButtonIfNotCurrentUser()}
-              <div className="gear" onClick={this.handleClickGear}></div>
-            </div>
+          <div className="username-edit-gear-wrapper">
+            <div className='current-user-username'>{this.props.user.username}</div>
+            {this.handleEditButtonHiddenIfNotCurrentUser()}
+            {this.handleAddPictureButtonIfNotCurrentUser()}
+            <div className="gear" onClick={this.handleClickGear}></div>
           </div>
+        </div>
         <div className="posts-followers-following-flex-container">
           <span>{this.handleShowPostsCount()}</span>
           <span className="posts-followers-following-font">posts</span>
@@ -127,23 +108,19 @@ class ShowUserProfile extends React.Component{
           0<span className="posts-followers-following-font">followers</span>
         </div>
         <div className='biography-flex-container'>
-        <div className='current-user-biography'>{this.props.user.biography}</div>
+          <div className='current-user-biography'>{this.props.user.biography}</div>
         </div>
         <div className="border-between-profile-info-and-images"></div>
-          <div className="popup">
-              <div className='popup-content'>
-                  <div className="pop-up-delete-button" onClick={this.handleClick}>Log Out</div>
-                  <div className="cancel" onClick={this.handleClickCancel}>Cancel</div>
-              </div>
+        <div className="popup">
+          <div className='popup-content'>
+            <div className="pop-up-delete-button" onClick={this.handleClick}>Log Out</div>
+            <div className="cancel" onClick={this.handleClickCancel}>Cancel</div>
           </div>
-          
-          
-          
-          
-          <div className="photo-container">
+        </div>
+        <div className="photo-container">
           {this.handlePublishedPhotosOnPage()}  
         </div>  
-        </div>   
+    </div>   
       )
     }
   }

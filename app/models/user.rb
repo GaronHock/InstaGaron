@@ -11,7 +11,9 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: :Photo
 
-
+  has_many :comments,
+  foreign_key: :user_id,
+  class_name: :Comment
 
   has_one_attached :profile_picture
 

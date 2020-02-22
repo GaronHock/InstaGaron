@@ -28,7 +28,8 @@ class LoginForm extends React.Component {
     }
   }
 
-  handleClick(){
+  handleClick(e){
+    e.preventDefault();
     let Demo = {
       username: "Demo User",
       email: 'DemoUser@yahoo.com',
@@ -46,37 +47,37 @@ class LoginForm extends React.Component {
       <div className="wrapper">
         <br/>
         <div className='logo'></div>
-          <div className="form-signupform-container">
-            <div className='form'>
+        <div className="form-signupform-container">
+          <div className='form'>
             <h2 id='instagram'>InstaGaron</h2>
-              <form className='login-form'>
-                <input className='username-input'
-                  type="text"
-                  placeholder="Username"
-                  value={this.state.username}
-                  onChange={this.handleInput('username')} />
-                <input
+            <form className='login-form'>
+              <input className='username-input'
+                type="text"
+                placeholder="Username"
+                value={this.state.username}
+                onChange={this.handleInput('username')} />
+              <input
                 className='email username-input'
                 type="text"
                 placeholder='email'
                 value={this.state.email}
                 onChange={this.handleInput('email')} />
-               <input
+              <input
                 className='username-password username-input'
                 placeholder='password'
                 type="password"
                 value={this.state.password}
                 onChange={this.handleInput('password')} />
-               <button className='loginButton' onClick={this.handleSubmit}>Log In</button>
-               <button className='demo-login-button' onClick ={this.handleClick}>Demo Log In</button>
-               <ul className="errors-list">{errorsList}</ul>
-               </form>
-            </div>
-            <div className="noAccount">
+              <button className='loginButton' onClick={this.handleSubmit}>Log In</button>
+              <button className='demo-login-button' onClick ={this.handleClick}>Demo Log In</button>
+              <ul className="errors-list">{errorsList}</ul>
+            </form>
+          </div>
+          <div className="noAccount">
             <p className="account-text">Dont have an account?<Link className="signup-link"to={`/${otherForm}`}>    Sign Up</Link></p>
-            </div>
+          </div>
         </div>
-    </div>
+      </div>
     )
   }
 }

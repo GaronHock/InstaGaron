@@ -9,6 +9,9 @@ Rails.application.routes.draw do
      # resources :photos, only: [:edit]
    # end
     resource :session, only: [:create, :destroy]
-    resources :photos, only: [:show, :create, :post, :update,:destroy]
+    resources :photos, only: [:show, :create, :post, :update,:destroy] do
+      resources :comments, only: [:index] 
+    end
+    resources :comments, only: [:show, :create, :update, :destroy]
   end
 end

@@ -7,7 +7,7 @@ end
 json.photos do
   @user.published_photos.map do |photo|
     json.set! photo.id do
-      json.partial! 'api/photos/photos', photo: photo
+      json.partial! 'api/photos/photo', photo: photo
     end   
   end
 end

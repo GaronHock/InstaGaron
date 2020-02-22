@@ -11,9 +11,10 @@ const receiveAllPhotos = allPhotos =>({
   type: RECEIVE_ALL_PHOTOS,
   allPhotos
 })
-const receivePhoto = photo => ({
+const receivePhoto = payload => ({
   type: RECEIVE_PHOTO,
-  photo
+  photo: payload.photo,
+  comments: payload.comments
 })
 
 const receiveNewPhoto = (new_photo) =>({
@@ -36,15 +37,15 @@ export const fetchAllPhotos = (user) => dispatch =>(
   errors => dispatch(receivePhotoErrors(errors.responseJSON)))
 )
 
-export const fetchPhoto = photo => dispatch => (
-  PhotoAPIUtil.fetchPhoto(photo).then(photo => dispatch(receivePhoto(photo)),
+export const fetchPhoto = photo => dispatch => {
+ return PhotoAPIUtil.fetchPhoto(photo).then(photo => dispatch(receivePhoto(photo)),
     errors => dispatch(receivePhotoErrors(errors.responseJSON)))
-)
+}
 
-export const createPhoto = photo => dispatch => (
-  PhotoAPIUtil.createPhoto(photo).then(photo => dispatch(receiveNewPhoto(photo)),
+export const createPhoto = photo => dispatch => {
+  return PhotoAPIUtil.createPhoto(photo).then(photo => dispatch(receiveNewPhoto(photo)),
     errors => dispatch(receivePhotoErrors(errors.responseJSON)))
-)
+}
 
 export const updatePhoto = photo => dispatch => (
   PhotoAPIUtil.updatePhoto(photo).then(photo => dispatch(receivePhoto(photo)),

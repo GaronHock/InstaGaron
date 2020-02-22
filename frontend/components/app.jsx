@@ -1,14 +1,14 @@
 import React from 'react';
-import GreetingContainer from './greeting/greeting_container';
+import GreetingContainer from './photo_feed/photo_feed_container';
 import { Route } from 'react-router-dom';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import {Switch} from 'react-router-dom';
-import ShowUserProfileContainer from './session/show_form_container';
-import EditUserProfileContainer from './session/edit_form_container';
-import AddPictureContainer from './session/add_picture_container';
-import ShowPictureContainer from './session/show_picture_container';
+import ShowUserProfileContainer from './profile/show_profile_container';
+import EditUserProfileContainer from './profile/edit_form_container';
+import AddPictureContainer from './profile/add_picture_container';
+import ShowPictureContainer from './profile/show_picture_container';
 
 
 const App = () => (

@@ -322,12 +322,12 @@
   border-radius: 3px;
   cursor: pointer;
 }
-.edit-profile-button:hover{
-  background-color: lightblue;
-}
-.edit-profile-button button:hover{
-  background-color: lightblue;
-}
+// .edit-profile-button:hover{
+//   background-color: lightblue;
+// }
+// .edit-profile-button button:hover{
+//   background-color: lightblue;
+// }
 .add-profile-button{
     border: 1px solid rgba(var(--d0b,219,219,219),1);
   padding:5px 10px 9px 10px;
@@ -338,12 +338,12 @@
   cursor: pointer;
 }
 
-.add-profile-button:hover{
-  background-color: lightblue;
-}
-.add-profile-button button:hover{
-  background-color: lightblue;
-}
+// .add-profile-button:hover{
+//   background-color: lightblue;
+// }
+// // .add-profile-button button:hover{
+// //   background-color: lightblue;
+// // }
 .gear{
   background-image: image-url('geary.png');
   width: 30px;
@@ -446,6 +446,12 @@
 }
 
 ///add photos
+.add-profile-wrapper{
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  background-color:  rgba(var(--b3f,250,250,250),1);
+}
 .add-form{
  display: block;
   margin: auto;
@@ -481,7 +487,7 @@
 .choose-file-button{
     position: absolute;
     left: 42%;
-    bottom: 10%;
+    bottom: 16.5%;
     background-color: white;
 }
 .preview-flex{
@@ -650,7 +656,12 @@
     bottom: 20%;
     text-align: center;
  }
-
+ .show-photo-wrapper{
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  background-color:  rgba(var(--b3f,250,250,250),1);
+ }
  .photo-wrapper{
     display: flex;
     margin: auto;

@@ -1,5 +1,5 @@
 
-export const selectSpecificUserPhotos = (state, ownProps) => {
+export const fetchSpecificUserPhotos = (state, ownProps) => {
   
   const array = [];
   const userId = state.entities.users[ownProps.match.params.userId]
@@ -14,6 +14,22 @@ export const selectSpecificUserPhotos = (state, ownProps) => {
   })
   return array;
 }
+
+export const fetchCommentsForASpecificPhoto = (state, ownProps) => {
+  const array = [];
+  const photoId = state.entities.photos[ownProps.match.params.photoId];
+  const comments = Object.values(state.entities.comments)
+
+  comments.map(comment => {
+    if(photoId && photoId.comment_ids){
+      if(photoId.comment_ids.includes(comment.id)){
+        array.push(comment);
+      }
+    }
+  })
+  return array;
+}
+
 
 
 //make a selector
