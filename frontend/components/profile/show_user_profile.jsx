@@ -37,8 +37,6 @@ class ShowUserProfile extends React.Component{
     this.props.history.push(`/users/photo/${photo.id}`)
   }
 
- 
-  
   handleClickGear(){
       document.querySelector('.popup').style.display = 'flex';
   }
@@ -77,7 +75,9 @@ class ShowUserProfile extends React.Component{
       if (!this.props.user.photoUrl){
         return <div className='no-profile-pic'></div>
       }else{
-        return <div className='show-profile-photo-wrapper'><img className="profile_picture_photo" src={this.props.user.photoUrl}></img></div>
+        return <div className='show-profile-photo-wrapper'>
+                <img className="profile_picture_photo" src={this.props.user.photoUrl}></img>
+              </div>
       }
     }
 

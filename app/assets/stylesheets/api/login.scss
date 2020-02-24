@@ -657,36 +657,28 @@
     text-align: center;
  }
  .show-photo-wrapper{
-  height: 1000px;
-  display: flex;
-  flex-direction: column;
-  background-color:  rgba(var(--b3f,250,250,250),1);
- }
- .photo-wrapper{
+    width: 70%;
     display: flex;
     margin: auto;
+    background-color: rgba(var(--b3f, 250, 250, 250), 1);
+ }
+ .photo-wrapper{
+   display: flex;
     vertical-align: top;
     background-color: white;
     margin-top: 30px;
-    border: 1px solid lightgray;
+    border: 5px solid black;
  }
 
   .show-photo{
-    height: 425px;
     width: 50%;
-    background-color: white;
     border: 1px solid lightgray;
     display: flex;
     justify-content: center;
  }
 
  .description{
-    position: relative;
-    left: 20%;
-    top: 50%;
-    width: 200px;
-    height: 100px;
-    background-color: white;
     font-family: 'Martel Sans', sans-serif;
+    border: 5px solid black;
  }
 

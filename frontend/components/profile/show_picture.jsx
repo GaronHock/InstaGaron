@@ -22,7 +22,6 @@ class ShowPicture extends React.Component{
       return <li>{comment.body}</li>
     })}
     </ul>
-
   }
   handleSubmit(e){
     e.preventDefault();
@@ -45,21 +44,21 @@ class ShowPicture extends React.Component{
     return(
       <div>
         <NavBarContainer />
-        <div className ="show-photo-wrapper">
+        <div className="show-photo-wrapper">
           <div className='photo-wrapper'>
             <img className="show-photo" src={this.props.photo.photoUrl}></img>
+          <div className="description-comments-wrapper">
             <div className="description">{this.props.photo.description}</div>
             <form>
               <label>
                 Comment on this photo!
-                  <input
+                <input
                   type="text"
                   value={this.state.comment}
-                onChange={this.handleInput('comment')} />    
+                  onChange={this.handleInput('comment')} />    
               </label>
               <button onClick={this.handleSubmit}>Create Comment!</button> 
             </form>
-            <div>
             {this.handleComments()}
             </div>
           </div>
