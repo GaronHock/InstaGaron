@@ -10,6 +10,7 @@ class ShowPicture extends React.Component{
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleComments = this.handleComments.bind(this);
+    this.showProfilePicture = this.showProfilePicture.bind(this);
   }
 
   componentDidMount(){
@@ -34,6 +35,15 @@ class ShowPicture extends React.Component{
       let input = e.target.value;
       this.setState({ [type]: input });
     }
+  } 
+  showProfilePicture() {
+    if (!this.props.user.photoUrl) {
+      return <div className='no-profile-pic'></div>
+    } else {
+      return <div className='show-profile-photo-wrapper'>
+        <img className="profile_picture_photo" src={this.props.user.photoUrl}></img>
+      </div>
+    }
   }
   render(){
     if(!this.props.photo || !this.props.comments){  //this is done so that when page is refreshed it doesnt have the photos slice 
@@ -48,6 +58,7 @@ class ShowPicture extends React.Component{
           <div className='photo-wrapper'>
             <img className="show-photo" src={this.props.photo.photoUrl}></img>
           <div className="description-comments-wrapper">
+            {this.showProfilePicture}
             <div className="description">{this.props.photo.description}</div>
             <form>
               <label>

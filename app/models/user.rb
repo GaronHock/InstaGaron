@@ -15,6 +15,24 @@ class User < ApplicationRecord
   foreign_key: :user_id,
   class_name: :Comment
 
+  has_many :follows, ###someone following me
+  foreign_key: :follower_id,
+  class_name: :Follow
+
+  has_many :followees, # me folloowing someone
+  foreign_key: :followed_user_id,
+  class_name: :Follow
+  
+  has_many :followers,
+  through: :follows,
+  source: :followers
+
+  has_many :followings,
+  through: :followees,
+  source: :followeee
+
+
+
   has_one_attached :profile_picture
 
   def self.find_by_credentials(username, password)

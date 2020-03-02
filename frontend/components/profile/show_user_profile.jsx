@@ -17,6 +17,7 @@ class ShowUserProfile extends React.Component{
     this.handleAddPictureButtonIfNotCurrentUser = this.handleAddPictureButtonIfNotCurrentUser.bind(this);
     this.showProfilePicture = this.showProfilePicture.bind(this);
     this.handlePhotoClick = this.handlePhotoClick.bind(this);
+    this.handleFollowUser = this.handleFollowUser.bind(this);
   }
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId);
@@ -61,7 +62,7 @@ class ShowUserProfile extends React.Component{
       
     return <ul className= 'flex-wrap-photos'>
         {this.props.photos.reverse().map((photo) =>{          
-          return  <li><img onClick={() => this.handlePhotoClick(photo)} 
+          return  <li key={photo.id}><img onClick={() => this.handlePhotoClick(photo)} 
           className="show_page_images" 
           src={photo.photoUrl}></img></li>
          })///explain anonymous callback micheal by giving it the callback it doesnt automattially invoke it
@@ -85,6 +86,14 @@ class ShowUserProfile extends React.Component{
       return this.props.photos.length;
     }
 
+    handleFollowUser(e){
+      e.preventDefault();
+      if(this.props.currentUser.id !== this.props.match.params.userId){
+        const followed_user_id = this.props.match.params.userId
+       const follow = { follower_id: this.props.currentUser.id, followed_user_id} 
+      this.props.createFollower(follow)
+      }
+    }
   render(){
     if(!this.props.user){
       return null;
@@ -109,6 +118,7 @@ class ShowUserProfile extends React.Component{
         </div>
         <div className='biography-flex-container'>
           <div className='current-user-biography'>{this.props.user.biography}</div>
+          <button onClick={this.handleFollowUser}>Follow</button>
         </div>
         <div className="border-between-profile-info-and-images"></div>
         <div className="popup">
@@ -119,7 +129,7 @@ class ShowUserProfile extends React.Component{
         </div>
         <div className="photo-container">
           {this.handlePublishedPhotosOnPage()}  
-        </div>  
+        </div>
     </div>   
       )
     }

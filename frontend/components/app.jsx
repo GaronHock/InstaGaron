@@ -14,7 +14,7 @@ import ShowPictureContainer from './profile/show_picture_container';
 const App = () => (
   <div>
     <Switch>
-      <AuthRoute exact path='/' component ={LoginFormContainer}/>
+      <AuthRoute exact path='/' component ={LoginFormContainer}/> 
       <ProtectedRoute path='/welcome' component={GreetingContainer}/>
       <ProtectedRoute exact path='/users/:userId' component={ShowUserProfileContainer} />
       <ProtectedRoute path='/users/:userId/edit' component={EditUserProfileContainer} />

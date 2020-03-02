@@ -5,7 +5,10 @@ export const RECEIVE_USER = "RECEIVE_USER";
 const receiveUser = (payload) =>{
  return {type: RECEIVE_USER,
          user: payload.user,
-         photos: payload.photos}
+         photos: payload.photos,
+         followers: payload.followers
+        }
+
 }
   
 

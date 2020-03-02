@@ -1,9 +1,3 @@
-
-
-
-
-
-
 json.photo do 
   json.partial! 'api/photos/photo', photo: @photo
 end
@@ -15,6 +9,3 @@ json.comments do
     end
   end
 end
-
-
-
