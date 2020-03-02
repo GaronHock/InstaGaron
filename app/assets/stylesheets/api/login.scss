@@ -134,7 +134,6 @@ body{
   background-color: white;
 }
 
-////signup
 .signup-form{
   width: 379px;
   margin-top: 110px;
@@ -178,9 +177,6 @@ body{
     padding-left: 90px;
     text-align: center;
 }
-
-//navbar
-
 
 .top-nav {
   background-color: #fff;
@@ -290,20 +286,12 @@ body{
     margin-top: 60px;
     left: 5%;
     border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
-  //  border-radius: 50%;
-  //  overflow: hidden;
     position: relative;
-  //  position: relative;
-    /* width: 20vw; */
-    /* height: 20vw; */
     overflow: hidden;
     border-radius: 50%;
 }
-.profile_picture_photo{
-  // height: 100%;
-  // width: 100%;
-  // background-color: rgba(var(--b3f,250,250,250),1);
-      width: 100%;
+.profile-picture-photo{
+     width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -332,12 +320,7 @@ body{
   border-radius: 3px;
   cursor: pointer;
 }
-// .edit-profile-button:hover{
-//   background-color: lightblue;
-// }
-// .edit-profile-button button:hover{
-//   background-color: lightblue;
-// }
+
 .add-profile-button{
     border: 1px solid rgba(var(--d0b,219,219,219),1);
   padding:5px 10px 9px 10px;
@@ -348,12 +331,6 @@ body{
   cursor: pointer;
 }
 
-// .add-profile-button:hover{
-//   background-color: lightblue;
-// }
-// // .add-profile-button button:hover{
-// //   background-color: lightblue;
-// // }
 .gear{
   background-image: image-url('geary.png');
   width: 30px;
@@ -680,6 +657,33 @@ body{
     margin-top: 30px;
     border: 5px solid black;
  }
+
+ .no-profile-pic-show{
+  background-image: image-url('user.png');
+  background-size: 100% 100%;
+  width:140px;
+  height:140px;
+  margin-left: 225px;
+  margin-top: 60px;
+  background-color: rgba(var(--b3f,250,250,250),1);
+ }
+
+ .show-profile-photo-wrapper-show{
+    width: 130px;
+    height: 130px;
+    margin-left: 237px;
+    margin-top: 60px;
+    left: 5%;
+    border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+ }
+.profile-picture-photo-show{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
   .show-photo{
    width: 500px;

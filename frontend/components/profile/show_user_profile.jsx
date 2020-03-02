@@ -35,7 +35,7 @@ class ShowUserProfile extends React.Component{
   }
 
   handlePhotoClick(photo){
-    this.props.history.push(`/users/photo/${photo.id}`)
+    this.props.history.push(`/users/${this.props.match.params.userId}/${photo.id}`)
   }
 
   handleClickGear(){
@@ -77,7 +77,7 @@ class ShowUserProfile extends React.Component{
         return <div className='no-profile-pic'></div>
       }else{
         return <div className='show-profile-photo-wrapper'>
-                <img className="profile_picture_photo" src={this.props.user.photoUrl}></img>
+                <img className="profile-picture-photo" src={this.props.user.photoUrl}></img>
               </div>
       }
     }

@@ -15,12 +15,13 @@ class ShowPicture extends React.Component{
 
   componentDidMount(){
     this.props.fetchPhoto(this.props.match.params.photoId);
+    this.props.fetchUser(this.props.match.params.userId);
   }
 
   handleComments(){
     return <ul>
     {this.props.comments.map(comment =>{
-      return <li>{comment.body}</li>
+      return <li key={comment.id}>{comment.body}</li>
     })}
     </ul>
   }
@@ -38,10 +39,10 @@ class ShowPicture extends React.Component{
   } 
   showProfilePicture() {
     if (!this.props.user.photoUrl) {
-      return <div className='no-profile-pic'></div>
+      return <div className='no-profile-pic-show'></div>
     } else {
-      return <div className='show-profile-photo-wrapper'>
-        <img className="profile_picture_photo" src={this.props.user.photoUrl}></img>
+      return <div className='show-profile-photo-wrapper-show'>
+        <img className="profile-picture-photo-show" src={this.props.user.photoUrl}></img>
       </div>
     }
   }
@@ -57,22 +58,29 @@ class ShowPicture extends React.Component{
         <div className="show-photo-wrapper">
           <div className='photo-wrapper'>
             <img className="show-photo" src={this.props.photo.photoUrl}></img>
-          <div className="description-comments-wrapper">
-            {this.showProfilePicture}
-            <div className="description">{this.props.photo.description}</div>
-            <form>
-              <label>
-                Comment on this photo!
-                <input
-                  type="text"
-                  value={this.state.comment}
-                  onChange={this.handleInput('comment')} />    
-              </label>
-              <button onClick={this.handleSubmit}>Create Comment!</button> 
-            </form>
-            {this.handleComments()}
+          <div className="photo-accessories-wrapper">
+            <div className="show-profile-picture-wrapper">
+            {this.showProfilePicture()}
+            </div>
+            <div className="description-comments-wrapper">
+              <div className="description">
+                {this.props.photo.description}
+              </div>
+              <form>
+                <label>
+                  Comment on this photo!
+                  <input
+                    type="text"
+                    value={this.state.comment}
+                    onChange={this.handleInput('comment')} 
+                  />    
+                </label>
+                <button onClick={this.handleSubmit}>Create Comment!</button> 
+              </form>
+              {this.handleComments()}
             </div>
           </div>
+          </div> 
         </div>
       </div>  
     )
