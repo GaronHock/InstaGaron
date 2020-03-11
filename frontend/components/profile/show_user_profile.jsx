@@ -55,7 +55,12 @@ class ShowUserProfile extends React.Component{
 
   handleAddPictureButtonIfNotCurrentUser(){
     if(this.props.currentUser.id == this.props.match.params.userId){
-      return <Link className="add-profile-button"to={`/users/${this.props.currentUser.id}/newPhoto`}><div className="add-button"><button>Add A Picture</button></div></Link>
+      return <Link className="add-profile-button"
+              to={`/users/${this.props.currentUser.id}/newPhoto`}>
+              <div className="add-button">
+                <button>Add A Picture</button>
+              </div>
+            </Link>
     }
   }
     handlePublishedPhotosOnPage(){
@@ -63,7 +68,7 @@ class ShowUserProfile extends React.Component{
     return <ul className= 'flex-wrap-photos'>
         {this.props.photos.reverse().map((photo) =>{          
           return  <li key={photo.id}><img onClick={() => this.handlePhotoClick(photo)} 
-          className="show_page_images" 
+          className="show-page-images" 
           src={photo.photoUrl}></img></li>
          })///explain anonymous callback micheal by giving it the callback it doesnt automattially invoke it
 

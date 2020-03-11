@@ -1,10 +1,13 @@
   class Api::CommentsController < ApplicationController
   def index
     @comments = Comment.where(photo_id: params[:photo_id])
+    render :index
   end
 
   def show
-    @comment = Comment.find(params[:id]) #find by accepts argument ,
+    @comment = Comment.find(params[:id]) 
+    render :show
+    #find by accepts argument ,
     # fiindby(username), 
     #find(params[id),
     # find that id

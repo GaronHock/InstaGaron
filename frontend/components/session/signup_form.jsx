@@ -61,7 +61,7 @@ class SignupForm extends React.Component {
             <ul className="errors-list">{errorsList}</ul>
           </form>
           </div>
-          <div className="haveAccount">
+          <div className="have-account">
             <p className="account-text">Already have an account?<Link className="signup-link" to={`/${otherForm}`}>Log In</Link></p>
           </div>
         </div>

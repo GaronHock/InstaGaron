@@ -68,12 +68,12 @@ class LoginForm extends React.Component {
                 type="password"
                 value={this.state.password}
                 onChange={this.handleInput('password')} />
-              <button className='loginButton' onClick={this.handleSubmit}>Log In</button>
+              <button className='login-button' onClick={this.handleSubmit}>Log In</button>
               <button className='demo-login-button' onClick ={this.handleClick}>Demo Log In</button>
               <ul className="errors-list">{errorsList}</ul>
             </form>
           </div>
-          <div className="noAccount">
+          <div className="no-account">
             <p className="account-text">Dont have an account?<Link className="signup-link"to={`/${otherForm}`}>    Sign Up</Link></p>
           </div>
         </div>

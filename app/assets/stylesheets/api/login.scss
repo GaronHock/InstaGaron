@@ -24,7 +24,7 @@ body{
   flex-direction: column;
   align-items: center;
 } 
-.noAccount{
+.no-account{
   border: 1px solid #e6e6e6;
   margin-top: 510px;
   margin-left: 8px;
@@ -72,7 +72,7 @@ body{
   font-size: 13px;
   padding-left: 5px;
 }
-.loginButton{
+.login-button{
     background-color: rgba(var(--h5f,56,151,240),1);
     color: rgba(var(--eca,255,255,255),1);
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -100,6 +100,10 @@ body{
   color: red;
   text-align: center;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background-color: white;
+}
+
+.errors-list li{
   background-color: white;
 }
 .sign-up-wrapper{
@@ -153,7 +157,7 @@ body{
   justify-self: flex-start;
   padding-top: 20px;
 }
-.haveAccount{
+.have-account{
   border: 1px solid #e6e6e6;
   margin-top: 530px;
   margin-left: 8px;
@@ -345,7 +349,7 @@ body{
     justify-content: space-around;
     width: 30%;
     position: absolute;
-    top: 28%;
+    top: 31%;
     left: 39%;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
@@ -361,7 +365,7 @@ body{
 .current-user-biography{ 
     width: 30%;
     position: absolute;
-    top: 34%;
+    top: 36%;
     left: 40.2%;
     font-family: 'Roboto', sans-serif;
 }
@@ -415,7 +419,7 @@ body{
   margin-right: 100px;
   padding-top: 3%;
 }
-.show_page_images{
+.show-page-images{
   margin: 15px;
   width:295px;
   height: 295px;
@@ -426,7 +430,7 @@ body{
    transition: all 0.1s ease
 }
 
-.show_page_images:hover{
+.show-page-images:hover{
   cursor: pointer;
    -webkit-filter: brightness(80%);
    filter: brightness(80%);
@@ -464,7 +468,7 @@ body{
   position: absolute;
   left: 34%;
   border: 1px solid black;
-  top: 30%;
+  top: 33%;
   border: 1px solid lightgray;
 }
 .image-preview > img{
@@ -474,7 +478,7 @@ body{
 .choose-file-button{
     position: absolute;
     left: 42%;
-    bottom: 16.5%;
+    bottom: 2%;
     background-color: white;
 }
 .preview-flex{
@@ -655,43 +659,84 @@ body{
     vertical-align: top;
     background-color: white;
     margin-top: 30px;
-    border: 5px solid black;
+    border: 1px solid #e6e6e6;
+ }
+
+  .show-profile-picture-wrapper{
+   height: 10%;
+   display: flex;
+  border-bottom: 1px solid #e6e6e6;
+  background-color: white;
  }
 
  .no-profile-pic-show{
   background-image: image-url('user.png');
-  background-size: 100% 100%;
-  width:140px;
-  height:140px;
-  margin-left: 225px;
-  margin-top: 60px;
-  background-color: rgba(var(--b3f,250,250,250),1);
+   background-size: 100% 100%;
+   width: 40px;
+   height: 40px;
+   background-color: rgba(var(--b3f, 250, 250, 250), 1);
  }
 
+
  .show-profile-photo-wrapper-show{
-    width: 130px;
-    height: 130px;
-    margin-left: 237px;
-    margin-top: 60px;
-    left: 5%;
+   height: 40px;
+    width: 40px;
+    top: 7%;
+    left: 20%;
     border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
     position: relative;
     overflow: hidden;
     border-radius: 50%;
+    background-color: white;
  }
+
 .profile-picture-photo-show{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+.show-profile-username{
+  font-family: 'Signika', sans-serif;
+    font-weight: bolder;
+    position: relative;
+    left: 5%;
+    height: fit-content;
+    top: 17%;
+    background-color: white;
+}
+.description{
+    font-family: 'Martel Sans', sans-serif;
+    display: flex;
+    background-color: white;
+ }
+.show-profile-username-description{
+  font-family: 'Signika', sans-serif;
+    font-weight: bolder;
+    position: relative;
+    height: fit-content;
+    top: 17%;
+    background-color: white;
+}
 
+.photo-description{
+    font-family: 'Martel Sans', sans-serif;
+    position: relative;
+    height: fit-content;
+    top: 17%;
+    background-color: white;
+}
   .show-photo{
    width: 500px;
     height: 500px;
+    border-right: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
  }
 
- .description{
-    font-family: 'Martel Sans', sans-serif;
-    border: 5px solid black;
+ .user-comments-wrapper{
+   height: 350px;
+  border: 1px solid black;
+   border: 1px solid black;
  }
+
+
+
 
