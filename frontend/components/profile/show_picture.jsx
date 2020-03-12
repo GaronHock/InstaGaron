@@ -84,7 +84,7 @@ class ShowPicture extends React.Component{
             <img className="show-photo" 
               src={this.props.photo.photoUrl}>
             </img>
-            <div className="photo-accessories-wrapper">
+            <div className="photo-accessories-wrapper" style={{backgroundColor: "white"}}>
               <div className="show-profile-picture-wrapper">
                 <div style={{backgroundColor: 'white'}}>
                   {this.showProfilePicture()}
@@ -92,20 +92,21 @@ class ShowPicture extends React.Component{
                 <h1 className='show-profile-username'>{this.props.user.username}</h1>
               </div>
                 <div className="description-comments-wrapper">
-                {this.handlePhotoDescription()}
-                {this.handleComments()}
-                  <form>
-                    <label>
-                      Comment on this photo!
-                      <input
+                  {this.handlePhotoDescription()}
+                  {this.handleComments()}
+                </div>
+              
+                  <form className="comment-form-input">
+                    <div className="comment-input-wrapper">
+                      <input style={{width: "100%", backgroundColor: "white"}}
+                        placeholder='Add a comment...'
                         type="text"
                         value={this.state.comment}
                         onChange={this.handleInput('comment')} 
-                      />    
-                    </label>
-                    <button onClick={this.handleSubmit}>Create Comment!</button> 
+                      />
+                    </div>    
+                    <button className="comment-form-button"onClick={this.handleSubmit}>Post</button> 
                   </form>
-                </div>
             </div>
           </div> 
         </div>

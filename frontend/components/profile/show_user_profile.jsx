@@ -64,18 +64,27 @@ class ShowUserProfile extends React.Component{
     }
   }
     handlePublishedPhotosOnPage(){
-      
+      //height: "310px", width: "310px"
     return <ul className= 'flex-wrap-photos'>
         {this.props.photos.reverse().map((photo) =>{          
-          return  <li key={photo.id}><img onClick={() => this.handlePhotoClick(photo)} 
-          className="show-page-images" 
-          src={photo.photoUrl}></img></li>
+          return <li className="show-page-image-li" key={photo.id}> 
+                    <img onClick={() => this.handlePhotoClick(photo)} 
+                      className="show-page-images"  
+                      src={photo.photoUrl}>
+                    </img>
+            <div className="show-page-image-comment-hover">
+              {photo.comment_ids.length}
+            </div>
+                  </li>
          })///explain anonymous callback micheal by giving it the callback it doesnt automattially invoke it
 
          ///the callback invookes the function once it is ran 
       } 
       </ul>
     }
+
+
+    
 
     showProfilePicture(){
       if (!this.props.user.photoUrl){
