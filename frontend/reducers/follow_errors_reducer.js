@@ -7,7 +7,6 @@ const followErrorsReducer = (state = [], action) => {
     case RECEIVE_FOLLOWER:
       return [];
     case RECEIVE_FOLLOW_ERRORS:
-      debugger;
       return action.errors;
     default:
       return state;

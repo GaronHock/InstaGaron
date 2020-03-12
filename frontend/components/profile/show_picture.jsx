@@ -12,6 +12,7 @@ class ShowPicture extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleComments = this.handleComments.bind(this);
     this.showProfilePicture = this.showProfilePicture.bind(this);
+    this.handlePhotoDescription = this.handlePhotoDescription.bind(this);
   }
 
   componentDidMount(){
@@ -24,7 +25,12 @@ class ShowPicture extends React.Component{
     return <div className='user-comments-wrapper'>
       <ul className='user-comments'>
     {this.props.comments.map(comment =>{
-      return <li key={comment.id}>{comment.body}</li>
+      return  <li className="comment-username-wrapper">
+                {comment.user}
+                <div className="comment-body">
+                  {comment.body}
+                </div>  
+              </li>
     })}
     </ul>
     </div>
@@ -55,6 +61,15 @@ class ShowPicture extends React.Component{
     }
   }
 
+  handlePhotoDescription(){
+    if(this.props.photo.description){
+      return <div className="description">
+          <strong className="show-profile-username-description">{this.props.user.username}</strong>
+          <div className="photo-description">{this.props.photo.description}</div>
+        </div>
+    }
+  }
+
   render(){
     if(!this.props.photo || !this.props.comments){  //this is done so that when page is refreshed it doesnt have the photos slice 
       //state immediately redux store is empty once it is done running triggers component did mount 
@@ -71,16 +86,13 @@ class ShowPicture extends React.Component{
             </img>
             <div className="photo-accessories-wrapper">
               <div className="show-profile-picture-wrapper">
-                <div>
-                {this.showProfilePicture()}
+                <div style={{backgroundColor: 'white'}}>
+                  {this.showProfilePicture()}
                 </div>
                 <h1 className='show-profile-username'>{this.props.user.username}</h1>
               </div>
                 <div className="description-comments-wrapper">
-                  <div className="description">
-                  <strong className="show-profile-username-description">{this.props.user.username}</strong>
-                  <div className="photo-description">{this.props.photo.description}</div>
-                  </div>
+                {this.handlePhotoDescription()}
                 {this.handleComments()}
                   <form>
                     <label>

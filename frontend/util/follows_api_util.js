@@ -5,7 +5,7 @@ export const fetchAllFollowers = (user) => {
   })
 }
 export const createFollower = (follow) => {
-  debugger;
+  
   return $.ajax({
     url: '/api/follows',
     method: 'POST',

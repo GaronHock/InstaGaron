@@ -11,6 +11,7 @@ import {fetchAllComments} from  '../../actions/comment_actions';
 const mSTP = (state, ownProps) => ({
   currentUser: state.entities.users[state.session.id],
   user: state.entities.users[ownProps.match.params.userId],
+  users: state.entities.users,
   photo: state.entities.photos[ownProps.match.params.photoId],
   comment:{ body: ''},
   comments: fetchCommentsForASpecificPhoto(state,ownProps),

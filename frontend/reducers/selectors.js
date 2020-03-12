@@ -19,6 +19,10 @@ export const fetchCommentsForASpecificPhoto = (state, ownProps) => {
   const array = [];
   const photoId = state.entities.photos[ownProps.match.params.photoId];
   const comments = Object.values(state.entities.comments)
+  const users = Object.values(state.entities.users);
+  console.log(users);
+  console.log(photoId);
+  console.log(comments);
 
   comments.map(comment => {
     if(photoId && photoId.comment_ids){
@@ -29,6 +33,13 @@ export const fetchCommentsForASpecificPhoto = (state, ownProps) => {
   })
   return array;
 }
+
+
+// export const fetchUserForSpecificComment = (state, ownProps) => {
+//   const users = Object.values(state.entities.users);
+//   const photoId = state.entities.photos[ownProps.match.params.photoId];
+
+//}
 
 
 
