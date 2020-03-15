@@ -8,8 +8,11 @@
     
     @follow = Follow.new(follow_params)
     @follow.follower_id = current_user.id 
-   @follow.save
+   if @follow.save
     render "api/follows/show"
+   else
+    render @follow.errors.full_messages
+   end
   end
   
   def destroy

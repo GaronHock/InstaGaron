@@ -1,13 +1,35 @@
 import { connect } from 'react-redux';
 import Greeting from './photo_feed';
 import { logout } from '../../actions/session_actions';
+import {fetchAllFollowers} from '../../actions/follows_actions'
+import {fetchUser} from '../../actions/user_actions';
 
-const mapStateToProps = ({ entities, session}) => ({
-  currentUser: entities.users[session.id]
+const mapStateToProps = (state) => ({
+  currentUser: state.session.id,
+  followers: state.entities.follows
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  fetchAllFollowers: (followers) => dispatch(fetchAllFollowers(followers)),
+  fetchUser: (user) => dispatch(fetchUser(user))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
+
+
+
+// const mSTP = (state, ownProps) => ({
+//   currentUser: state.entities.users[state.session.id],
+//   user: state.entities.users[ownProps.match.params.userId],
+//   photos: fetchSpecificUserPhotos(state, ownProps),
+//   followers: state.entities.follower
+// })
+
+// const mDTP = (dispatch) => ({
+//   fetchAllPhotos: (photos) => dispatch(fetchAllPhotos(photos)),
+//   createFollower: (follow) => dispatch(createFollower(follow)),
+//   fetchUser: (userId) => dispatch(fetchUser(userId)),
+//   fetchAllFollowers: (followers) => dispatch(fetchAllFollowers(followers)),
+//   logout: () => dispatch(logout()),
+// })

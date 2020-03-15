@@ -11,7 +11,7 @@ class ShowUserProfile extends React.Component{
       photoUrl: null,
       photos: null,
     };
-    this.handleClick = this.handleClick.bind(this)
+
     this.handleEditButtonHiddenIfNotCurrentUser = this.handleEditButtonHiddenIfNotCurrentUser.bind(this);
     this.handlePublishedPhotosOnPage = this.handlePublishedPhotosOnPage.bind(this);
     this.handleAddPictureButtonIfNotCurrentUser = this.handleAddPictureButtonIfNotCurrentUser.bind(this);
@@ -28,23 +28,12 @@ class ShowUserProfile extends React.Component{
       this.props.fetchUser(this.props.match.params.userId);
     }
   }
-  handleClick(e) {
-    e.preventDefault();
-    this.props.logout()
-    this.props.history.push('/');
-  }
+
 
   handlePhotoClick(photo){
     this.props.history.push(`/users/${this.props.match.params.userId}/${photo.id}`)
   }
 
-  handleClickGear(){
-      document.querySelector('.popup').style.display = 'flex';
-  }
-
-  handleClickCancel(){
-    document.querySelector('.popup').style.display = 'none';
-  }
 
   handleEditButtonHiddenIfNotCurrentUser(){
     if(this.props.currentUser.id == this.props.match.params.userId){
@@ -73,7 +62,8 @@ class ShowUserProfile extends React.Component{
                       src={photo.photoUrl}>
                     </img>
             <div className="show-page-image-comment-hover">
-              {photo.comment_ids.length}
+              <i className="fas fa-comment comment-logo"></i>
+              <div className="photo-comments-length">{photo.comment_ids.length}</div>
             </div>
                   </li>
          })///explain anonymous callback micheal by giving it the callback it doesnt automattially invoke it
@@ -84,7 +74,6 @@ class ShowUserProfile extends React.Component{
     }
 
 
-    
 
     showProfilePicture(){
       if (!this.props.user.photoUrl){
@@ -121,7 +110,6 @@ class ShowUserProfile extends React.Component{
             <div className='current-user-username'>{this.props.user.username}</div>
             {this.handleEditButtonHiddenIfNotCurrentUser()}
             {this.handleAddPictureButtonIfNotCurrentUser()}
-            <div className="gear" onClick={this.handleClickGear}></div>
           </div>
         </div>
         <div className="posts-followers-following-flex-container">
@@ -135,12 +123,6 @@ class ShowUserProfile extends React.Component{
           <button onClick={this.handleFollowUser}>Follow</button>
         </div>
         <div className="border-between-profile-info-and-images"></div>
-        <div className="popup">
-          <div className='popup-content'>
-            <div className="pop-up-delete-button" onClick={this.handleClick}>Log Out</div>
-            <div className="cancel" onClick={this.handleClickCancel}>Cancel</div>
-          </div>
-        </div>
         <div className="photo-container">
           {this.handlePublishedPhotosOnPage()}  
         </div>

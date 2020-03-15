@@ -1,5 +1,8 @@
 class Follow < ApplicationRecord
-  validates :followee, uniqueness: true
+  validates :followee, uniqueness: {scope: :followers}
+
+
+ # validates :user, presence: true, uniqueness: { scope: :friend 
 
   belongs_to :followers, # this is someone following me 
   foreign_key: :follower_id,

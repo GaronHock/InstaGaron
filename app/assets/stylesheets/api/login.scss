@@ -183,86 +183,94 @@ body{
 }
 
 .top-nav {
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 7px;
-  border-bottom: 1px solid #e6e6e6;
+background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    padding-bottom: 7px;
+    border-bottom: 1px solid #e6e6e6;
 }
 .camera-pic{
-    background-image: image_url('insta.png');
+    background-image: image-url("insta.png");
     background-size: 100% 100%;
-    position: absolute;
+    /* position: relative; */
     height: 30px;
     width: 30px;
     margin-top: 24px;
-    margin-left:160px;
+    margin-left: 150px;
+    /* left: 200px; */
+    /* padding-left: 160px; */
     background-color: white;
     cursor: pointer;
 }
 .vl{
     border-left: 1px solid gray;
     height: 30px;
-    position: absolute;
+    /* position: relative; */
     margin-top: 25px;
-    margin-left: 205px;
+    /* left: 10%; */
+    padding-left: 20px;
+    margin-left: 20px;
 }
 .instatext{
-  font-family: 'Cookie', cursive;  
-  background-color: #fff;
-  font-size: 35px;
-  margin-top: 22px;
-  padding-left: 30px;
-  cursor: pointer;
+    font-family: 'Cookie', cursive;
+    background-color: #fff;
+    font-size: 35px;
+    margin-top: 22px;
+    cursor: pointer;
 }
-.search-text-area{
-  border: solid 1px #dbdbdb;
-  border-radius: 3px;
-  height: 25px;
-  margin-top: 30px;
-  text-align: center;
-  font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+.search-text-area {
+    border: solid 1px #dbdbdb;
+    border-radius: 3px;
+    height: 25px;
+    margin-top: 30px;
+    text-align: center;
+    margin-left: 170px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
-.compass-heart-link-profile-link-wrapper{
-  display: flex;
-  background-color: white;
-  margin-right: 150px;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-top: 14px;
-}
-.compass{
-  background-image: image_url('compass.png');
-  height: 40px;
-  width:40px;
-  background-color: white;
-  background-repeat: no-repeat;
-  margin-top: 15px;
-  margin-left: 5px;
-  cursor: pointer;
-}
-.heart-link{
-  background-image: image-url('heart1.png');
-  height: 50px;
-  width: 50px;
-  margin-right: 10px;
-  background-repeat: no-repeat;
-  background-color: white;
-    margin-left: 5px;
+
+
+// .compass{
+//   background-image: image_url('compass.png');
+//   height: 40px;
+//   width:40px;
+//   background-color: white;
+//   background-repeat: no-repeat;
+//   margin-top: 15px;
+//   margin-left: 5px;
+//   cursor: pointer;
+// }
+.add-photo-link{
+font-size: 30px;
+    background-repeat: no-repeat;
+    background-color: white;
+    margin-left: 230px;
+    margin-top: 30px;
     cursor: pointer;
 }
 .profile-link{
-  background-image: image-url('profiler.png');
-  height: 40px;
-  width: 40px;
-  margin-top: 10px;
-  background-repeat: no-repeat;
-  background-color: white;
-  margin-left: 5px;
-  cursor: pointer;
+      font-size: 30px;
+    margin-top: 10px;
+    background-repeat: no-repeat;
+    background-color: white;
+    margin-left: 30px;
+    cursor: pointer;
+
 }
+
 .make-fully-white-link{
   background-color: white;
+}
+
+
+.nav-log-out-cog{
+    font-size: 30px;
+    color: black;
+    background-color: white;
+    background-repeat: no-repeat;
+    /* margin-top: 15px; */
+    margin-left: 30px;
+    cursor: pointer;
 }
 
 .border-between-profile-info-and-images{
@@ -438,6 +446,7 @@ body{
 .show-page-images:hover{
   cursor: pointer;
    -webkit-filter: brightness(80%);
+   transition: 0.5s;
    filter: brightness(80%);
 }
 
@@ -445,14 +454,25 @@ body{
   display: none;
   position: relative;
   bottom: 200px;
-  left: 150px;
+  left: 130px;
 
+}
+
+.comment-logo{
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  font-size: 30px;
 }
 
 .show-page-images:hover + .show-page-image-comment-hover{///TARGET THIS BROTHER
-  display: inline-block;
+  display: flex;
 }
-
+.photo-comments-length{
+  color: white; 
+  font-size: 20px;
+  padding-left: 15px;
+  padding-top: 5px;
+}
 ///add photos
 .add-profile-wrapper{
   height: 1000px;
@@ -668,7 +688,7 @@ body{
     width: 70%;
     display: flex;
     margin: auto;
-    background-color: rgba(var(--b3f, 250, 250, 250), 1);
+    background-color: white
  }
  .photo-wrapper{
     display: flex;
