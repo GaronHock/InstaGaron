@@ -12,12 +12,12 @@ json.photos do
   end
 end
 
-#json.followers do 
-###  @user.followers.map do |follow|
-#    json.set! follow.id do 
-#     json.partial! 'api/follows/follows', follow: follow
-##   end
-# end
-#end  
+json.followeees do 
+  @user.followees.map do |follow|
+   json.set! follow.id do 
+   json.partial! 'api/follows/follows', follow: follow
+   end
+  end
+end  
 
 

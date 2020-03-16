@@ -9,7 +9,7 @@ const mSTP = (state, ownProps) =>({
   currentUser: state.entities.users[state.session.id],
   user: state.entities.users[ownProps.match.params.userId],
   photos: fetchSpecificUserPhotos(state, ownProps),
-  followers: state.entities.follower
+  followers: state.entities.followees
 })
 
 const mDTP = (dispatch) =>({ 

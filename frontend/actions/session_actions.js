@@ -21,11 +21,11 @@ export const receiveSessionErrors = (errors) => ({
 
 
 
-export const login = user => dispatch => (
-  APIUtil.loginUser(user)
-    .then(user => dispatch(receiveCurrentUser(user)),
+export const login = user => dispatch => {
+  return APIUtil.loginUser(user)
+    .then(user => { return dispatch(receiveCurrentUser(user))},
       errors => dispatch(receiveSessionErrors(errors.responseJSON)))
-)
+}
 //if login was successful populate slice of state with user, otherwise populate state with errors
 export const signup = user => dispatch => (
   APIUtil.signupUser(user)

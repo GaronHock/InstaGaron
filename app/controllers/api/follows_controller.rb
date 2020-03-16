@@ -1,6 +1,7 @@
   class Api::FollowsController < ApplicationController
   def index
-    @followers = Follow.all
+    @follow = Follow.all
+    render :index;
   end
 
 

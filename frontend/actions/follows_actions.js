@@ -27,13 +27,14 @@ const receiveFollowErrors = (errors) =>{
 }
 
 export const fetchAllFollowers = (followers) => dispatch =>{
-  return FollowApiUtil.fetchAllFollowers(followers).then(followers => { return dispatch(receiveAllFollowers(followers))},
+  debugger;
+  return FollowApiUtil.fetchAllFollowers(followers).then(followers => { debugger; return dispatch(receiveAllFollowers(followers))},
   errors => dispatch(receiveFollowErrors(errors)))
 }
 
 export const createFollower = follow => dispatch =>{
   return FollowApiUtil.createFollower(follow)
-  .then(follow => { debugger; return dispatch(receiveFollower(follow))},
+  .then(follow => {  return dispatch(receiveFollower(follow))},
   errors => dispatch(receiveFollowErrors(errors)))
 }
 

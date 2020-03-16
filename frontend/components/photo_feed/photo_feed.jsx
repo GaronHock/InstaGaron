@@ -4,7 +4,7 @@ class Greeting extends React.Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this);
-    //this.handleFollowers = this.handleFollowers.bind(this);
+    this.showPhotos = this.showPhotos.bind(this);
   }
   handleClick(e) {
     e.preventDefault();
@@ -20,32 +20,69 @@ class Greeting extends React.Component {
   }
 
 
-  // handleFollowers(){
-  //   debugger;
+//   handleFollowers(){
 
-  //     return <ul>
-  //       {this.props.followers.map((follower) => {
-  //         return <li>{follower.id}</li>
+//     const array = [];
+
+//   this.props.photos.map(photo => {
+//     if(this.props.followers)
+//     debugger;
+//       if (this.props.followers.includes(photo.user_id)) {
+//         array.push(photo)
+//       }
+//       debugger;
+//     return <div>
+//       <ul>
+//         {array.map((photo) => {
+//           return <li>{photo.photoUrl}</li>
+//         })}
+
+//       </ul>
+//     </div>
+//   })
+// }
+  
+
+showPhotos(){
+  return <ul>
+    {this.props.photos.map(photo =>{
+      return <li><img src={photo.photoUrl}></img></li>
+    })}
+  </ul>
+}
+
+
+
+  // handleComments() {
+  //   return <div className='user-comments-wrapper'>
+  //     <ul className='user-comments'>
+  //       {this.props.comments.map(comment => {
+  //         return <li className="comment-username-wrapper">
+  //           {comment.user}
+  //           <div className="comment-body">
+  //             {comment.body}
+  //           </div>
+  //         </li>
   //       })}
   //     </ul>
-  //   }
-
-       //     { this.handleFollowers() }
+  //   </div>
+  // }
 
   render() {
     if (!this.props.followers) {
+      debugger;
         return null;
       }else{
         return(
           
           <div>
             <NavBarContainer />
+            {this.showPhotos()}
           </div>
 
         )
       }
-   
-    }
+  }
 }
 
 

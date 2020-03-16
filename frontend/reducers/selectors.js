@@ -35,6 +35,23 @@ export const fetchCommentsForASpecificPhoto = (state, ownProps) => {
 }
 
 
+// export const fetchSpecificUserFollowers = (state) => {
+
+//   const array = [];
+//   debugger;
+//   const followers = Object.values(state.entities.follows);
+//   const photos = Object.values(state.entities.photos);
+
+//   photos.map(photo => {
+//     if(followers)
+//       if (followers.follower_user_id.includes(photo.user_id)) {
+//         array.push(photo)
+//       }
+//   })
+//   return array;
+// }
+
+
 // export const fetchUserForSpecificComment = (state, ownProps) => {
 //   const users = Object.values(state.entities.users);
 //   const photoId = state.entities.photos[ownProps.match.params.photoId];

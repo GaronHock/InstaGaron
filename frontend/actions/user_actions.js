@@ -6,7 +6,7 @@ const receiveUser = (payload) =>{
  return {type: RECEIVE_USER,
          user: payload.user,
          photos: payload.photos,
-         followers: payload.followers
+         followees: payload.followeees
         }
 
 }

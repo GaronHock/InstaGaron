@@ -15,7 +15,6 @@ const mSTP = (state, ownProps) => ({
   photo: state.entities.photos[ownProps.match.params.photoId],
   comment:{ body: ''},
   comments: fetchCommentsForASpecificPhoto(state,ownProps),
-  followers: state.entities.followers
 })
 
 const mDTP = (dispatch) => ({
