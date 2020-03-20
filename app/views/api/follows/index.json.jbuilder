@@ -1,6 +1,6 @@
 if(@followees)
-  @followees.each do |followee|
-    json.set! followees.id do
+  @followees.each do |follow|
+    json.set! follow.id do
       json.partial! 'api/follows/follows', follow: follow
     end
   end

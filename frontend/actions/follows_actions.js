@@ -5,10 +5,10 @@ export const RECEIVE_FOLLOWER = 'RECEIVE_FOLLOWER';
 export const RECEIVE_FOLLOW_ERRORS = 'RECEIVE_FOLLOW_ERRORS';
 
 
-const receiveAllFollowers = (allFollowers) =>{
+const receiveAllFollowers = (followees) =>{
   return{
     type: RECEIVE_ALL_FOLLOWERS,
-    allFollowers
+    followees
   }
 }
 

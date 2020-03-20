@@ -1,7 +1,6 @@
   class Api::FollowsController < ApplicationController
   def index
-    @follow = Follow.all
-    render :index;
+    @followees = Follow.all
   end
 
 
@@ -32,7 +31,7 @@
 
   private 
   def follow_params
-    params.require(:follow).permit(:followed_user_id)
+    params.require(:follow).permit(:follower_id, :followed_user_id)
   end
 end
 
