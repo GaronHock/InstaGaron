@@ -70,7 +70,6 @@ showPhotos(){
 
   render() {
     if (!this.props.followers) {
-      debugger;
         return null;
       }else{
         return(

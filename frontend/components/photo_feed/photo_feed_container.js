@@ -3,12 +3,12 @@ import Greeting from './photo_feed';
 import { logout } from '../../actions/session_actions';
 import {fetchAllFollowers} from '../../actions/follows_actions'
 import {fetchUser} from '../../actions/user_actions';
-import {fetchFolloweesPhotos} from '../../reducers/selectors';
+//import {fetchFolloweesPhotos} from '../../reducers/selectors';
 const mapStateToProps = (state) => ({
   currentUser: state.session.id,
   followers: Object.values(state.entities.follows),
-  photos: Object.values(state.entities.photos),
-  fetchFolloweesPhotos: fetchFolloweesPhotos(state)
+  photos: Object.values(state.entities.photos)
+  //fetchFolloweesPhotos: fetchFolloweesPhotos(state)
 })
 
 const mapDispatchToProps = (dispatch) => ({

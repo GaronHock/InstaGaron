@@ -1,5 +1,4 @@
 export const fetchAllFollowers = (user) => {
-  debugger;
   return $.ajax({
     url: `/api/users/${user}/follows`,
     method: 'GET',
