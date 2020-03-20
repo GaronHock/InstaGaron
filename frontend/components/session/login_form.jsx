@@ -31,8 +31,8 @@ class LoginForm extends React.Component {
   handleClick(e){
     e.preventDefault();
     let Demo = {
-      username: "Demo_User",
-      email: 'DemoUser@gmail.com',
+      username: "DemoUser",
+      email: 'DemoUser@yahoo.com',
       password: 'hunter12',
     }
   
