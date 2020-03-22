@@ -7,10 +7,13 @@ export const RECEIVE_NEW_PHOTO = "RECEIVE_NEW_PHOTO"
 export const RECEIVE_PHOTO_ERRORS = "RECEIVE_PHOTO_ERRORS"
 
 
-const receiveAllPhotos = allPhotos =>({
+const receiveAllPhotos = allPhotos =>{
+  debugger;
+  return {
   type: RECEIVE_ALL_PHOTOS,
   allPhotos
-})
+  }
+}
 const receivePhoto = payload => ({
   type: RECEIVE_PHOTO,
   photo: payload.photo,

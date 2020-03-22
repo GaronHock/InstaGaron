@@ -4,7 +4,7 @@ class Greeting extends React.Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this);
-    this.showPhotos = this.showPhotos.bind(this);
+   this.showPhotos = this.showPhotos.bind(this);
   }
   handleClick(e) {
     e.preventDefault();
@@ -16,8 +16,11 @@ class Greeting extends React.Component {
   componentDidMount(){
 
     this.props.fetchUser(this.props.currentUser);
-    this.props.fetchAllFollowers(this.props.currentUser)
+    this.props.fetchAllFollowers(this.props.currentUser);
+    this.props.fetchAllPhotos(this.props.currentUser);
   }
+
+  
 
 
 //   handleFollowers(){
@@ -45,8 +48,14 @@ class Greeting extends React.Component {
 
 showPhotos(){
   return <ul>
-    {this.props.photos.map(photo =>{
-      return <li><img src={photo.photoUrl}></img></li>
+    {this.props.followeesPhotos.map(photo =>{
+      debugger;
+      return <div>
+        <li>
+          <img src={photo.photoUrl}></img>
+          <p>{photo.comments}</p>
+          </li>
+      </div>
     })}
   </ul>
 }

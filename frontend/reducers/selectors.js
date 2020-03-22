@@ -20,9 +20,7 @@ export const fetchCommentsForASpecificPhoto = (state, ownProps) => {
   const photoId = state.entities.photos[ownProps.match.params.photoId];
   const comments = Object.values(state.entities.comments)
   const users = Object.values(state.entities.users);
-  console.log(users);
-  console.log(photoId);
-  console.log(comments);
+
 
   comments.map(comment => {
     if(photoId && photoId.comment_ids){
@@ -36,36 +34,26 @@ export const fetchCommentsForASpecificPhoto = (state, ownProps) => {
 
 
 
-// export const fetchFolloweesPhotos = (state) => {
+export const fetchFolloweesPhotos = (state) => {
 
-//   const array = [];
-//   const followers = Object.values(state.entities.follows);
-//   const photos = Object.values(state.entities.photos);
-//   debugger;
-//   photos.map(photo => {
-//     if(followers)
-//       if (followers.follower_user_id.includes(photo.user_id)) {
-//         array.push(photo)
-//       }
-//   })
-//   return array;
-// }
+  const userId = state.session.id
+  const followers = Object.values(state.entities.follows);
+  const photos = Object.values(state.entities.photos);
+  let array = [];
 
-
-// export const fetchUserForSpecificComment = (state, ownProps) => {
-//   const users = Object.values(state.entities.users);
-//   const photoId = state.entities.photos[ownProps.match.params.photoId];
-
-//}
+  for(let i = 0; i < followers.length; i++){
+    if(followers[i].follower_id === userId){
+      let followed_user = followers[i].followed_user_id;
+      debugger;
+      for(let j = 0; j < photos.length; j++){
+        if (photos[j].user_id === followed_user && photos[j].photoUrl) {
+            array.push(photos[j])
+        }
+      }
+    }
+  }
+  return array;
 
 
+}
 
-//make a selector
-//take in user id
-//set up array 
-// if state.entities.user.id.publishedphotos.each{id} key in to photos slice of state state.entities.photos[id]
-//push this object into empty array
-//return array
-
-
-//going to only grab photos that are associated photos. this.props.photos ---

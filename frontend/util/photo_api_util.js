@@ -9,8 +9,9 @@ export const fetchPhoto = photoId => {
 
 export const fetchPhotos = user => (
   $.ajax({
-    url: `api/users/${user.id}/photos`,
-    method: 'GET'
+    url: `api/users/${user}/photos`,
+    method: 'GET',
+    data: {user}
   })
 )
 

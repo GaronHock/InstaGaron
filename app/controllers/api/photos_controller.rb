@@ -1,6 +1,6 @@
 class Api::PhotosController < ApplicationController
   def index
-    @photos = Photo.where(user_id: params[:user_id])
+    @photos = Photo.all.includes(:user, :comments)
     render :index
   end
   def show
