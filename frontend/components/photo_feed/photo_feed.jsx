@@ -26,20 +26,39 @@ class Greeting extends React.Component {
 
 showPhotos(){
 
-  return <ul>
+  return <div className="outer-photo-feed-photo-wrapper">
     {this.props.followeesPhotos.map(photo =>{
-      let comments = Object.values(photo.comments) 
+      let comments = Object.values(photo.comments)
       debugger;
-      return <div>
-          <img src={photo.photoUrl}></img>
+      return <div className="photo-feed-photo-wrapper">
+          <div className="photo-feed-username-profile-picture-wrapper">
+            <img className="photo-feed-user-profile-picture"
+              src={photo.user_profile_pic_url}> 
+            </img>
+          <h1 className="photo-feed-username">{photo.user}</h1>
+        </div>
+          <img className="photo-feed-image"src={photo.photoUrl}>
+          </img>
+          <div>
+          <i class="far fa-heart photo-feed-heart-logo"></i>
+          <i className="far fa-comment photo-feed-comment-logo"></i>
+          </div>
+        <div>{photo.user}</div>
+        <div>{photo.description}</div>
           {comments.map(comment =>{
-            return <ul>
-              <li>{comment.body}</li>
-              </ul>
+
+            return  <div>
+                    <div>
+                    <div className="photo-feed-comments-wrapper">
+                      <div >{comment.user}</div>
+                      <div>{comment.body}</div>
+                    </div>
+                  </div>
+                  </div>
           })}
       </div>
     })}
-  </ul>
+  </div>
 }
 
 
