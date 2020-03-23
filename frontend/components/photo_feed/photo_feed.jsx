@@ -18,43 +18,25 @@ class Greeting extends React.Component {
     this.props.fetchUser(this.props.currentUser);
     this.props.fetchAllFollowers(this.props.currentUser);
     this.props.fetchAllPhotos(this.props.currentUser);
+    //this.props.fetchAllComments(this.props.currentUser)
   }
 
   
-
-
-//   handleFollowers(){
-
-//     const array = [];
-
-//   this.props.photos.map(photo => {
-//     if(this.props.followers)
-//     debugger;
-//       if (this.props.followers.includes(photo.user_id)) {
-//         array.push(photo)
-//       }
-//       debugger;
-//     return <div>
-//       <ul>
-//         {array.map((photo) => {
-//           return <li>{photo.photoUrl}</li>
-//         })}
-
-//       </ul>
-//     </div>
-//   })
-// }
   
 
 showPhotos(){
+
   return <ul>
     {this.props.followeesPhotos.map(photo =>{
+      let comments = Object.values(photo.comments) 
       debugger;
       return <div>
-        <li>
           <img src={photo.photoUrl}></img>
-          <p>{photo.comments}</p>
-          </li>
+          {comments.map(comment =>{
+            return <ul>
+              <li>{comment.body}</li>
+              </ul>
+          })}
       </div>
     })}
   </ul>

@@ -8,7 +8,6 @@ export const RECEIVE_PHOTO_ERRORS = "RECEIVE_PHOTO_ERRORS"
 
 
 const receiveAllPhotos = allPhotos =>{
-  debugger;
   return {
   type: RECEIVE_ALL_PHOTOS,
   allPhotos

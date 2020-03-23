@@ -44,7 +44,6 @@ export const fetchFolloweesPhotos = (state) => {
   for(let i = 0; i < followers.length; i++){
     if(followers[i].follower_id === userId){
       let followed_user = followers[i].followed_user_id;
-      debugger;
       for(let j = 0; j < photos.length; j++){
         if (photos[j].user_id === followed_user && photos[j].photoUrl) {
             array.push(photos[j])

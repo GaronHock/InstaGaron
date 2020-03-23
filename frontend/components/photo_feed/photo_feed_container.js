@@ -5,6 +5,9 @@ import {fetchAllFollowers} from '../../actions/follows_actions'
 import {fetchUser} from '../../actions/user_actions';
 import {fetchAllPhotos} from '../../actions/photo_actions';
 import {fetchFolloweesPhotos} from '../../reducers/selectors';
+import {fetchAllComments} from '../../actions/comment_actions';
+
+
 const mapStateToProps = (state) => ({
   currentUser: state.session.id,
   followers: Object.values(state.entities.follows),
@@ -16,7 +19,8 @@ const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
   fetchAllPhotos: (photos) => dispatch(fetchAllPhotos(photos)),
   fetchAllFollowers: (followers) => dispatch(fetchAllFollowers(followers)),
-  fetchUser: (user) => dispatch(fetchUser(user))
+  fetchUser: (user) => dispatch(fetchUser(user)),
+  fetchAllComments: (comments) => dispatch(fetchAllComments(comments))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
