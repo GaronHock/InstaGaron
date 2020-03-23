@@ -320,9 +320,16 @@ background-color: rgba(0, 0, 0, 0);
     font-size: 25px;
     position: relative;
     left: 2%;
+        border-bottom: 1px solid #e6e6e6;
 }
-.photo-feed-comments-wrapper{
-  overflow-y: auto
+.photo-feed-photo-comments-wrapper{
+list-style: none;
+    height: 150;
+    height: 122px;
+    overflow-y: auto;
+}
+.photo-feed-photo-comments{
+  display: flex
 }
 .border-between-profile-info-and-images{
     border-top: 1px solid #e6e6e6;

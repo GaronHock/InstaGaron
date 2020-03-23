@@ -120,7 +120,6 @@ class ShowUserProfile extends React.Component{
         </div>
         <div className='biography-flex-container'>
           <div className='current-user-biography'>{this.props.user.biography}</div>
-          <button onClick={this.handleFollowUser}>Follow</button>
         </div>
         <div className="border-between-profile-info-and-images"></div>
         <div className="photo-container">
@@ -131,6 +130,8 @@ class ShowUserProfile extends React.Component{
     }
   }
 }
+
+//<button onClick={this.handleFollowUser}>Follow</button>
 export default ShowUserProfile;
 
 
