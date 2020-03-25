@@ -3,8 +3,8 @@ import NavBarContainer from '../nav-bar/nav_bar_container';
 class Greeting extends React.Component {
   constructor(props) {
     super(props)
-    this.handleClick = this.handleClick.bind(this);
-  // this.showPhotos = this.showPhotos.bind(this);
+    //this.handleClick = this.handleClick.bind(this);
+   this.showPhotos = this.showPhotos.bind(this);
   }
   // handleClick(e) {
   //   e.preventDefault();
@@ -44,9 +44,9 @@ return  <div className="outer-photo-feed-photo-wrapper">
                     <ul className="photo-feed-photo-comments-wrapper">
                       {comments.map(comment =>{
                       return <li className="photo-feed-photo-comments">
-                                    <div >{comment.user}</div>
-                                    <div>{comment.body}</div>
-                                </li>
+                                <div >{comment.user}</div>
+                                <div>{comment.body}</div>
+                              </li>
                             })}
                     </ul>
                   </div>
