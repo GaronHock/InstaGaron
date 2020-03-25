@@ -4,13 +4,13 @@ class Greeting extends React.Component {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this);
-   this.showPhotos = this.showPhotos.bind(this);
+  // this.showPhotos = this.showPhotos.bind(this);
   }
-  handleClick(e) {
-    e.preventDefault();
-    this.props.logout();
-    (this.props.history.push('/'));
-  }
+  // handleClick(e) {
+  //   e.preventDefault();
+  //   this.props.logout();
+  //   (this.props.history.push('/'));
+  // }
   
 
   componentDidMount(){
