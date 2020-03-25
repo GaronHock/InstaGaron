@@ -55,10 +55,10 @@ return  <div className="outer-photo-feed-photo-wrapper">
 }
 
   render() {
-    if (!this.props.followers) {
+    if (!this.props.followers || !this.props.followeesPhotos) {
         return null;
-      }else{
-        return(
+    } else { 
+        return (
           
           <div>
             <NavBarContainer />
