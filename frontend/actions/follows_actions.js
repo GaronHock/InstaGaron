@@ -6,6 +6,7 @@ export const RECEIVE_FOLLOW_ERRORS = 'RECEIVE_FOLLOW_ERRORS';
 
 
 const receiveAllFollowers = (followees) =>{
+
   return{
     type: RECEIVE_ALL_FOLLOWERS,
     followees

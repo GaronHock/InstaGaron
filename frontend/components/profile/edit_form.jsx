@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect, Link } from 'react-router-dom';
 import NavBarContainer from '../nav-bar/nav_bar_container'
 
 class EditForm extends React.Component{

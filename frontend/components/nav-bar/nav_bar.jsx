@@ -10,19 +10,15 @@ class NavBar extends React.Component{
     this.handleClickCancel = this.handleClickCancel.bind(this);
   }
 
-
   handleClick(e) {
     e.preventDefault();
     this.props.logout()
     this.props.history.push('/');
   }
 
-
   handleClickGear() {
     document.querySelector('.popup').style.display = 'flex';
   }
-
-
 
   handleClickCancel() {
     document.querySelector('.popup').style.display = 'none';

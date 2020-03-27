@@ -29,7 +29,7 @@ class User < ApplicationRecord
 
   has_many :followings,
   through: :followees,
-  source: :followeee
+  source: :followee
 
 
 

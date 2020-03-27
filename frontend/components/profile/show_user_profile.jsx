@@ -11,7 +11,6 @@ class ShowUserProfile extends React.Component{
       photoUrl: null,
       photos: null,
     };
-
     this.handleEditButtonHiddenIfNotCurrentUser = this.handleEditButtonHiddenIfNotCurrentUser.bind(this);
     this.handlePublishedPhotosOnPage = this.handlePublishedPhotosOnPage.bind(this);
     this.handleAddPictureButtonIfNotCurrentUser = this.handleAddPictureButtonIfNotCurrentUser.bind(this);
@@ -29,7 +28,6 @@ class ShowUserProfile extends React.Component{
     }
   }
 
-
   handlePhotoClick(photo){
     this.props.history.push(`/users/${this.props.match.params.userId}/${photo.id}`)
   }
@@ -37,8 +35,8 @@ class ShowUserProfile extends React.Component{
 
   handleEditButtonHiddenIfNotCurrentUser(){
     if(this.props.currentUser.id == this.props.match.params.userId){
-    return <Link to={`/users/${this.props.currentUser.id}/edit`}>
-      <div className="edit-profile-button"><button>Edit Profile</button></div></Link>
+     return <div className="edit-profile-button">
+        <Link to={`/users/${this.props.currentUser.id}/edit`}><button>Edit Profile</button></Link></div>
     }
   }
 
@@ -46,9 +44,7 @@ class ShowUserProfile extends React.Component{
     if(this.props.currentUser.id == this.props.match.params.userId){
       return <Link className="add-profile-button"
               to={`/users/${this.props.currentUser.id}/newPhoto`}>
-              <div className="add-button">
                 <button>Add A Picture</button>
-              </div>
             </Link>
     }
   }
@@ -56,8 +52,8 @@ class ShowUserProfile extends React.Component{
       //height: "310px", width: "310px"
     return <ul className= 'flex-wrap-photos'>
         {this.props.photos.reverse().map((photo) =>{          
-          return <li className="show-page-image-li" key={photo.id}> 
-                    <img onClick={() => this.handlePhotoClick(photo)} 
+          return <li className="show-page-image-li" key={photo.id} onClick={() => this.handlePhotoClick(photo)}> 
+                    <img 
                       className="show-page-images"  
                       src={photo.photoUrl}>
                     </img>
@@ -72,8 +68,6 @@ class ShowUserProfile extends React.Component{
       } 
       </ul>
     }
-
-
 
     showProfilePicture(){
       if (!this.props.user.photoUrl){
@@ -108,8 +102,10 @@ class ShowUserProfile extends React.Component{
           {this.showProfilePicture()}
           <div className="username-edit-gear-wrapper">
             <div className='current-user-username'>{this.props.user.username}</div>
-            {this.handleEditButtonHiddenIfNotCurrentUser()}
-            {this.handleAddPictureButtonIfNotCurrentUser()}
+            <div style={{display: "flex"}}>
+             {this.handleEditButtonHiddenIfNotCurrentUser()}
+             {this.handleAddPictureButtonIfNotCurrentUser()}
+            </div>
           </div>
         </div>
         <div className="posts-followers-following-flex-container">
@@ -120,9 +116,11 @@ class ShowUserProfile extends React.Component{
         </div>
         <div className='biography-flex-container'>
           <div className='current-user-biography'>{this.props.user.biography}</div>
+          <button onClick={this.handleFollowUser}>Follow</button>
         </div>
         <div className="border-between-profile-info-and-images"></div>
         <div className="photo-container">
+          <div><i class="fas fa-border-all"></i></div>
           {this.handlePublishedPhotosOnPage()}  
         </div>
     </div>   
@@ -131,7 +129,7 @@ class ShowUserProfile extends React.Component{
   }
 }
 
-//<button onClick={this.handleFollowUser}>Follow</button>
+
 export default ShowUserProfile;
 
 

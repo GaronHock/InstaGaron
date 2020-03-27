@@ -5,12 +5,9 @@ export const RECEIVE_USER = "RECEIVE_USER";
 const receiveUser = (payload) =>{
  return {type: RECEIVE_USER,
          user: payload.user,
-         photos: payload.photos,
-         followees: payload.followeees
+         photos: payload.photos
         }
-
 }
-  
 
 export const fetchUser = (userId) => dispatch =>{
  return UserApiUtil.fetchUser(userId).then(user => dispatch(receiveUser(user)))

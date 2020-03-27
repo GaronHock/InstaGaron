@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import ShowPicture from './show_picture';
 import { fetchPhoto } from '../../actions/photo_actions';
 import {createComment} from '../../actions/comment_actions';
-//import {createFollower} from '../../actions/follows_actions';
 import {fetchUser} from '../../actions/user_actions';
 import {fetchCommentsForASpecificPhoto} from '../../reducers/selectors';
 import {fetchComment} from '../../actions/comment_actions';

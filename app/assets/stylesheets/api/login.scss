@@ -264,17 +264,19 @@ background-color: #fff;
 }
 
 .outer-photo-feed-photo-wrapper{
-  display: flex;
+    display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     padding-top: 30px;
+    background-color: rgb(250, 250, 250);
 }
 .photo-feed-photo-wrapper{
     border: 1px solid #e6e6e6;
     height: 590px;
     width: 550px;
-    margin-bottom: 60px
+    margin-bottom: 60px;
+    background-color: white;
 }
 
 .photo-feed-user-profile-picture{
@@ -288,6 +290,12 @@ background-color: #fff;
     border-radius: 50%;
     background-color: white;
 }
+
+.photo-feed-username-profile-picture-wrapper{
+    display: flex;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 10px 0px 10px 10px;
+}
 .photo-feed-username{
   font-family: 'Signika', sans-serif;
     font-weight: bolder;
@@ -296,10 +304,6 @@ background-color: #fff;
     margin-top: 10px;
 }
 
-.photo-feed-username-profile-picture-wrapper{
-    display: flex;
-    border-bottom: 1px solid #e6e6e6;
-}
 
 .photo-feed-image{
     display: block;
@@ -307,6 +311,7 @@ background-color: #fff;
     height: 375px;
     border-bottom: 1px solid #e6e6e6;
 }
+
 .photo-feed-heart-logo{
    background-color: rgba(0, 0, 0, 0);
     font-size: 25px;
@@ -320,17 +325,24 @@ background-color: rgba(0, 0, 0, 0);
     font-size: 25px;
     position: relative;
     left: 2%;
-        border-bottom: 1px solid #e6e6e6;
 }
 .photo-feed-photo-comments-wrapper{
 list-style: none;
-    height: 150;
-    height: 122px;
+    height: 100px;
     overflow-y: auto;
 }
 .photo-feed-photo-comments{
   display: flex
 }
+.comment-username{
+
+    display: flex;
+    font-family: 'Signika', sans-serif;
+    margin-left: 5px;
+    font-size: 16.5px;
+    background-color: white;
+}
+
 .border-between-profile-info-and-images{
     border-top: 1px solid #e6e6e6;
 }
@@ -383,12 +395,14 @@ list-style: none;
   top: -5px;
 }
 .edit-profile-button{
-  border: 1px solid rgba(var(--d0b,219,219,219),1);
-  padding:5px 10px 7px 10px;
-  font-size: 14px;
-  font-family: 'Lato', sans-serif;
-  border-radius: 3px;
-  cursor: pointer;
+  border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+    padding: 5px 10px 7px 10px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 18px;
+    margin-right: 10px;
 }
 
 .add-profile-button{
@@ -510,10 +524,14 @@ list-style: none;
 
 .show-page-image-comment-hover{
   display: none;
-  position: relative;
-  bottom: 200px;
-  left: 130px;
-
+    position: relative;
+    left: 15px;
+    bottom: 310px;
+    height: 295px;
+    width: 295px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
 }
 
 .comment-logo{
@@ -522,8 +540,10 @@ list-style: none;
   font-size: 30px;
 }
 
-.show-page-images:hover + .show-page-image-comment-hover{///TARGET THIS BROTHER
+.show-page-images:hover + .show-page-image-comment-hover, .show-page-image-comment-hover:hover{///TARGET THIS BROTHER
   display: flex;
+  cursor: pointer;
+  
 }
 .photo-comments-length{
   color: white; 

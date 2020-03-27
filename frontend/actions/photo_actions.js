@@ -40,6 +40,7 @@ export const fetchAllPhotos = (user) => dispatch =>(
 )
 
 export const fetchPhoto = photo => dispatch => {
+  console.log(photo)
  return PhotoAPIUtil.fetchPhoto(photo).then(photo => dispatch(receivePhoto(photo)),
     errors => dispatch(receivePhotoErrors(errors.responseJSON)))
 }

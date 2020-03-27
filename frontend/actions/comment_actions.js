@@ -5,7 +5,7 @@ export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS'
 
 const receiveAllComments = (allComments) =>{
-  
+  debugger;
   return {type: RECEIVE_ALL_COMMENTS,
           allComments}
 }

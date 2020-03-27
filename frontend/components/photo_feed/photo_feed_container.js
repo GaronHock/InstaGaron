@@ -6,6 +6,7 @@ import {fetchUser} from '../../actions/user_actions';
 import {fetchAllPhotos} from '../../actions/photo_actions';
 import {fetchFolloweesPhotos} from '../../reducers/selectors';
 import {fetchAllComments} from '../../actions/comment_actions';
+import {fetchPhoto} from '../../actions/photo_actions';
 
 
 const mapStateToProps = (state) => ({
@@ -20,7 +21,8 @@ const mapDispatchToProps = (dispatch) => ({
   fetchAllPhotos: (photos) => dispatch(fetchAllPhotos(photos)),
   fetchAllFollowers: (followers) => dispatch(fetchAllFollowers(followers)),
   fetchUser: (user) => dispatch(fetchUser(user)),
-  fetchAllComments: (comments) => dispatch(fetchAllComments(comments))
+  fetchAllComments: (comments) => dispatch(fetchAllComments(comments)),
+  fetchPhoto: (photo) => dispatch(fetchPhoto(photo)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Greeting);

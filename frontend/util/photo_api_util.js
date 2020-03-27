@@ -2,14 +2,14 @@
 
 export const fetchPhoto = photoId => {
   return $.ajax({
-    url: `api/photos/${photoId}`,
+    url: `/api/photos/${photoId}`,
     method: 'GET'
   })
 }
 
 export const fetchPhotos = user => (
   $.ajax({
-    url: `api/users/${user}/photos`,
+    url: `/api/users/${user}/photos`,
     method: 'GET',
     data: {user}
   })
@@ -30,7 +30,7 @@ export const createPhoto = (photo) => {
 
 export const updatePhoto = photo =>(
   $.ajax({
-    url: `api/photos/${photo.id}`,
+    url: `/api/photos/${photo.id}`,
     method: 'PATCH',
     data: {photo},
   })
@@ -38,7 +38,7 @@ export const updatePhoto = photo =>(
 
 export const deletePhoto = photoId =>(
   $.ajax({
-    url: `api/photos/${photoId}`,
+    url: `/api/photos/${photoId}`,
     method: 'DELETE'
   })
 )

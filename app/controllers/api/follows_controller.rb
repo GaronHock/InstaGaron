@@ -1,6 +1,6 @@
   class Api::FollowsController < ApplicationController
   def index
-    @followees = Follow.all.includes(:followee, :followers)
+    @followees = Follow.where(follower_id: current_user.id)
   end
 
 

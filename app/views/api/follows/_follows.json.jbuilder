@@ -1,3 +1,3 @@
 json.extract! follow, :id, :follower_id, :followed_user_id
+json.folowee_photos follow.followee.published_photos
 
-#json.comment_ids photo.comments.pluck(:id)  ###makes it an array

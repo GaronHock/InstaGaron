@@ -16,9 +16,8 @@ class ShowPicture extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchPhoto(this.props.match.params.photoId);
     this.props.fetchUser(this.props.match.params.userId)
-    this.props.fetchAllComments(this.props.comments);
+    this.props.fetchPhoto(this.props.match.params.photoId);
   }
 
   handleComments(){
@@ -54,9 +53,7 @@ class ShowPicture extends React.Component{
       return <div className='no-profile-pic-show'></div>
     } else {
       return <div className='show-profile-photo-wrapper-show'>
-        <div>
         <img className="profile-picture-photo-show" src={this.props.user.photoUrl}></img>
-        </div>
       </div>
     }
   }
@@ -67,11 +64,13 @@ class ShowPicture extends React.Component{
           <strong className="show-profile-username-description">{this.props.user.username}</strong>
           <div className="photo-description">{this.props.photo.description}</div>
         </div>
+    }else{
+      return null;
     }
   }
 
   render(){
-    if(!this.props.photo || !this.props.comments){  //this is done so that when page is refreshed it doesnt have the photos slice 
+    if(!this.props.photo || !this.props.comments || !this.props.user){  //this is done so that when page is refreshed it doesnt have the photos slice 
       //state immediately redux store is empty once it is done running triggers component did mount 
       //this runs the action above grabs photo from server adds it to state, props now exists 
       return null;
