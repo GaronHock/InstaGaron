@@ -258,7 +258,6 @@ background-color: #fff;
     color: black;
     background-color: white;
     background-repeat: no-repeat;
-    /* margin-top: 15px; */
     margin-left: 30px;
     cursor: pointer;
 }
@@ -291,6 +290,10 @@ background-color: #fff;
     background-color: white;
 }
 
+.photo-feed-user-profile-picture:hover{
+  cursor: pointer; 
+}
+
 .photo-feed-username-profile-picture-wrapper{
     display: flex;
     border-bottom: 1px solid #e6e6e6;
@@ -304,6 +307,9 @@ background-color: #fff;
     margin-top: 10px;
 }
 
+.photo-feed-username:hover{
+  cursor: pointer;
+}
 
 .photo-feed-image{
     display: block;
@@ -335,13 +341,13 @@ list-style: none;
   display: flex
 }
 .comment-username{
-
     display: flex;
     font-family: 'Signika', sans-serif;
     margin-left: 5px;
     font-size: 16.5px;
     background-color: white;
 }
+
 
 .border-between-profile-info-and-images{
     border-top: 1px solid #e6e6e6;
@@ -863,12 +869,16 @@ list-style: none;
   font-size: 16.5px;
   background-color: white;
  }
+  .comment-username:hover{
+   cursor: pointer;
+ }
  .comment-body{
   padding-left: 20px;
   font-size: 13px;
   font-family: 'Martel Sans', sans-serif;
     background-color: white;
  }
+
 .comment-form-input{
   height: 73px;
   border-top: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
