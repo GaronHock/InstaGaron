@@ -12,7 +12,7 @@ class ShowPicture extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleComments = this.handleComments.bind(this);
     this.showProfilePicture = this.showProfilePicture.bind(this);
-    this.handlePhotoDescription = this.handlePhotoDescription.bind(this);
+   // this.handlePhotoDescription = this.handlePhotoDescription.bind(this);
   }
 
   componentDidMount(){
@@ -23,13 +23,22 @@ class ShowPicture extends React.Component{
   handleComments(){
   return  <div className='user-comments-wrapper'>
             <ul className='user-comments'>
+              {this.props.photo.description ? 
+                  <div className="description">
+                    <strong className="show-profile-username-description" onClick={() => {
+                      this.props.history.push(`/users/${this.props.photo.user_id}`)
+                      }}>{this.props.user.username}
+                    </strong>
+                    <div className="photo-description">{this.props.photo.description}</div>
+                  </div> : 
+                 null}
               {this.props.comments.map(comment =>{
               return  <li className="comment-username-wrapper">
-                      {comment.user}
-                    <div className="comment-body">
-                      {comment.body}
-                    </div>  
-                  </li>
+                          {comment.user}
+                          <div className="comment-body">
+                            {comment.body}
+                          </div>  
+                      </li>
                 })}
             </ul>
           </div>
@@ -60,18 +69,18 @@ class ShowPicture extends React.Component{
     }
   }
 
-  handlePhotoDescription(){
-    if (this.props.photo.description) {
-      return  <div className="description">
-                <strong className="show-profile-username-description" onClick={() =>{
-                  this.props.history.push(`/users/${this.props.photo.user_id}`)
-                }}>{this.props.user.username}</strong>
-                <div className="photo-description">{this.props.photo.description}</div>
-              </div>
-    } else {
-      return null;
-    }
-  }
+  // handlePhotoDescription(){
+  //   if (this.props.photo.description) {
+  //     return  <div className="description">
+  //               <strong className="show-profile-username-description" onClick={() =>{
+  //                 this.props.history.push(`/users/${this.props.photo.user_id}`)
+  //               }}>{this.props.user.username}</strong>
+  //               <div className="photo-description">{this.props.photo.description}</div>
+  //             </div>
+  //   } else {
+  //     return null;
+  //   }
+  // }
 
   render(){
     if(!this.props.photo || !this.props.comments || !this.props.user){  //this is done so that when page is refreshed it doesnt have the photos slice 
@@ -98,7 +107,6 @@ class ShowPicture extends React.Component{
                 </h1>
               </div>
                 <div className="description-comments-wrapper">
-                  {this.handlePhotoDescription()}
                   {this.handleComments()}
                 </div>             
                   <form className="comment-form-input">

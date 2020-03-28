@@ -356,6 +356,22 @@ padding-left: 17px;
 
 .border-between-profile-info-and-images{
     border-top: 1px solid #e6e6e6;
+    width: 73.5%;
+    margin-left: 14%;
+}
+.posts-grid-square{
+position: relative;
+    display: flex;
+    justify-content: center;
+    line-height: 0;
+    margin-top: 20px;
+}
+.posts-text{
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+  margin-top: 8px;
+  padding-left: 6px;
+  color: rgb(53, 48, 48)
 }
 
 .profile-info-wrapper{
@@ -382,6 +398,7 @@ padding-left: 17px;
     position: relative;
     overflow: hidden;
     border-radius: 50%;
+    margin-right: 30px;
 }
 .profile-picture-photo{
      width: 100%;
@@ -390,23 +407,25 @@ padding-left: 17px;
 }
 
 .username-edit-gear-wrapper{
-  display:flex;
-  justify-content: space-around;
-  margin-left: 100px;
-  width:400px;
-  margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 130px;
+    width: 400px;
+    margin-top: 70px;
+
 }
 .current-user-username{
-  font-family: 'Martel Sans', sans-serif;
-  font-size: 24px;
-  font-weight:300;
-  height:40px;
-  margin-left: 30px;
-  position: relative;
-  top: -5px;
+font-family: 'Martel Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    height: 40px;
+    position: relative;
+    top: -5px;
+    margin-right: 10px;
+        margin-left: 80px;
 }
 .edit-profile-button{
-  border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
     padding: 5px 10px 7px 10px;
     font-size: 14px;
     font-family: 'Lato', sans-serif;
@@ -417,13 +436,13 @@ padding-left: 17px;
 }
 
 .add-profile-button{
-    border: 1px solid rgba(var(--d0b,219,219,219),1);
-  padding:5px 10px 9px 10px;
-  font-size: 14px;
-  height: 16px;
-  font-family: 'Lato', sans-serif;
-  border-radius: 3px;
-  cursor: pointer;
+border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+    padding: 5px 10px 9px 10px;
+    font-size: 14px;
+    height: 16px;
+    font-family: 'Lato', sans-serif;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 .gear{
@@ -436,15 +455,19 @@ padding-left: 17px;
   cursor: pointer;
 }
 .posts-followers-following-flex-container{
-    display: flex;
-    justify-content: space-around;
+display: flex;
     width: 30%;
-    position: absolute;
+    position: relative;
     top: 28%;
-    left: 39%;
+    right: 106%;
+    margin-left: 100px;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     align-items: baseline;
+}
+.numbers-for-posts-following-followers{
+  position: relative;
+    right: 5%;
 }
 .posts-followers-following-font{
     font-family: 'Martel Sans', sans-serif;
@@ -508,7 +531,7 @@ padding-left: 17px;
   display: flex;
   margin-left: 100px;
   margin-right: 100px;
-  padding-top: 3%;
+  justify-content: center;
 }
 .show-page-images{
   margin: 15px;
@@ -835,7 +858,6 @@ padding-left: 17px;
     font-family: 'Martel Sans', sans-serif;
     display: flex;
     background-color: white;
-    padding-left: 13px;
  }
 .show-profile-username-description{
   font-family: 'Signika', sans-serif;

@@ -59,7 +59,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
                     </div>
                     <ul className="photo-feed-photo-comments-wrapper">
                     {photo.description ?
-                      <div className="description">
+                      <div className="description" style={{paddingLeft: "13px"}}>
                         <div className="show-profile-username-description"
                           onClick={() => this.props.history.push(`/users/${photo.user_id}`)}>
                           {photo.user}

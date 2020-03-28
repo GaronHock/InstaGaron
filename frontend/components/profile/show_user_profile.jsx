@@ -82,10 +82,12 @@ class ShowUserProfile extends React.Component{
     }
 
     handleFollowUser(){
-      let follows = Object.values(this.props.followers)
-      let convertedToIntQueryStringWildCard = parseInt(this.props.match.params.userId)
-      for(let i = 0; i < follows.length; i++){
-        if(follows[i].followed_user_id === convertedToIntQueryStringWildCard){
+      let followed_user_arrays = Object.values(this.props.following)
+      if(this.props.currentUser.id == this.props.match.params.userId){
+        return null;
+      }
+      for(let i = 0; i < followed_user_arrays.length; i++){
+        if (followed_user_arrays[i].followed_user_id == this.props.match.params.userId){
           return <div>Already Followed</div>
         }
       }
@@ -109,22 +111,26 @@ class ShowUserProfile extends React.Component{
             <div style={{display: "flex"}}>
              {this.handleEditButtonHiddenIfNotCurrentUser()}
              {this.handleAddPictureButtonIfNotCurrentUser()}
+              <div className="posts-followers-following-flex-container">
+                <div>{this.handleShowPostsCount()}</div>
+                <div className="posts-followers-following-font">posts</div>
+                {this.props.following.length}<div className="posts-followers-following-font">following</div>
+                0<div className="posts-followers-following-font">followers</div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="posts-followers-following-flex-container">
-          <span>{this.handleShowPostsCount()}</span>
-          <span className="posts-followers-following-font">posts</span>
-          0<span className="posts-followers-following-font">following</span>
-          0<span className="posts-followers-following-font">followers</span>
-        </div>
+
         <div className='biography-flex-container'>
           <div className='current-user-biography'>{this.props.user.biography}</div>
          {this.handleFollowUser()}
         </div>
         <div className="border-between-profile-info-and-images"></div>
+        <div className="posts-grid-square">
+          <i class="fas fa-border-all"></i>
+          <div className="posts-text">POSTS</div>
+        </div>
         <div className="photo-container">
-          <div><i class="fas fa-border-all"></i></div>
           {this.handlePublishedPhotosOnPage()}  
         </div>
     </div>   
