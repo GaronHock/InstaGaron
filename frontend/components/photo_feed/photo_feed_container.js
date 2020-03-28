@@ -24,7 +24,6 @@ const mapDispatchToProps = (dispatch) => ({
   fetchAllComments: (comments) => dispatch(fetchAllComments(comments)),
   createComment: (comment) => dispatch(createComment(comment)),
   fetchPhoto: (photo) => dispatch(fetchPhoto(photo)),
-  
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Greeting);

@@ -38,7 +38,7 @@ class ShowPicture extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const comment = {body: this.state.comment, user_id: this.props.currentUser.id, photo_id: this.props.photo.id} 
-    this.props.createComment(comment).then(() => { return this.props.fetchPhoto(this.props.match.params.photoId)})
+    this.props.createComment(comment).then(() => this.props.fetchPhoto(this.props.match.params.photoId))
   }
 
   handleInput(type) {
@@ -53,7 +53,9 @@ class ShowPicture extends React.Component{
       return <div className='no-profile-pic-show'></div>
     } else {
       return <div className='show-profile-photo-wrapper-show'>
-        <img className="profile-picture-photo-show" src={this.props.user.photoUrl}></img>
+        <img className="profile-picture-photo-show" src={this.props.user.photoUrl} onClick={() => {
+          this.props.history.push(`/users/${this.props.photo.user_id}`)
+        }}></img>
       </div>
     }
   }
@@ -61,7 +63,9 @@ class ShowPicture extends React.Component{
   handlePhotoDescription(){
     if (this.props.photo.description) {
       return  <div className="description">
-                <strong className="show-profile-username-description">{this.props.user.username}</strong>
+                <strong className="show-profile-username-description" onClick={() =>{
+                  this.props.history.push(`/users/${this.props.photo.user_id}`)
+                }}>{this.props.user.username}</strong>
                 <div className="photo-description">{this.props.photo.description}</div>
               </div>
     } else {
@@ -88,13 +92,15 @@ class ShowPicture extends React.Component{
                 <div style={{backgroundColor: 'white'}}>
                   {this.showProfilePicture()}
                 </div>
-                <h1 className='show-profile-username'>{this.props.user.username}</h1>
+                <h1 
+                  className='show-profile-username'>
+                  {this.props.user.username}
+                </h1>
               </div>
                 <div className="description-comments-wrapper">
                   {this.handlePhotoDescription()}
                   {this.handleComments()}
-                </div>
-              
+                </div>             
                   <form className="comment-form-input">
                     <div className="comment-input-wrapper">
                       <input style={{width: "100%", backgroundColor: "white"}}
@@ -104,7 +110,11 @@ class ShowPicture extends React.Component{
                         onChange={this.handleInput('comment')} 
                       />
                     </div>    
-                    <button className="comment-form-button"onClick={this.handleSubmit}>Post</button> 
+                    <button 
+                      className="comment-form-button"
+                      onClick={this.handleSubmit}>
+                        Post
+                    </button> 
                   </form>
             </div>
           </div> 

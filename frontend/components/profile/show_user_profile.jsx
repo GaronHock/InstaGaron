@@ -20,6 +20,7 @@ class ShowUserProfile extends React.Component{
   }
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId);
+    this.props.fetchAllFollowers(this.props.match.params.userId)
   }
 
   componentDidUpdate(prevProps){
@@ -80,14 +81,20 @@ class ShowUserProfile extends React.Component{
       return this.props.photos.length;
     }
 
-    handleFollowUser(e){
-      e.preventDefault();
-      if(this.props.currentUser.id !== this.props.match.params.userId){
-        const followed_user_id = this.props.match.params.userId
-       const follow = { follower_id: this.props.currentUser.id, followed_user_id} 
-      this.props.createFollower(follow)
+    handleFollowUser(){
+      let follows = Object.values(this.props.followers)
+      let convertedToIntQueryStringWildCard = parseInt(this.props.match.params.userId)
+      for(let i = 0; i < follows.length; i++){
+        if(follows[i].followed_user_id === convertedToIntQueryStringWildCard){
+          return <div>Already Followed</div>
+        }
       }
-    }
+      return <button onClick={(e) => {
+                e.preventDefault();
+                this.props.createFollower(follow)
+                }}>Follow
+              </button>
+   }
   render(){
     if(!this.props.user){
       return null;
@@ -113,7 +120,7 @@ class ShowUserProfile extends React.Component{
         </div>
         <div className='biography-flex-container'>
           <div className='current-user-biography'>{this.props.user.biography}</div>
-          <button onClick={this.handleFollowUser}>Follow</button>
+         {this.handleFollowUser()}
         </div>
         <div className="border-between-profile-info-and-images"></div>
         <div className="photo-container">

@@ -11,12 +11,11 @@ class Greeting extends React.Component {
    this.handleClick = this.handleClick.bind(this);
    this.showPhotos = this.showPhotos.bind(this);
    this.handleInput = this.handleInput.bind(this);
-  // this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleClick(e) {
     e.preventDefault();
     this.props.logout();
-    (this.props.history.push('/'));
+    this.props.history.push('/');
   }
 
   componentDidMount(){
@@ -34,7 +33,6 @@ class Greeting extends React.Component {
 
 
 showPhotos(){
-   let usernameForComment = document.getElementsByClassName("comment-username")[0] 
 return  <div className="outer-photo-feed-photo-wrapper">
           {this.props.followeesPhotos.map(photo =>{
           let comments = photo.comments ? Object.values(photo.comments) : []; ///now it will map over empty array if comments do not exist
@@ -72,8 +70,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
                       </div>
                       :
                       null}
-                    {numberOfComments > 2 ?
-                    
+                    {numberOfComments > 2 ?                  
                     <button className="view-all-comments-button"onClick={() =>{
                       this.props.fetchUser(photo.user_id)
                         .then(() => this.props.history.push(`/users/${photo.user_id}/${photo.id}`))}}>
@@ -81,9 +78,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
                     </button> 
                     : 
                     null}
-
                         {comments.map(comment =>{
-                          debugger;
                           return <li className="photo-feed-photo-comments">
                             <div class="comment-username" 
                               key={comment.id} 
@@ -105,9 +100,17 @@ return  <div className="outer-photo-feed-photo-wrapper">
                         />
                       </div>
                       <button className="comment-form-button" onClick={() =>{
-                          const comment = { body: this.state.comment, user_id: this.props.currentUser, photo_id: photo.id}
+                          const comment = { 
+                            body: this.state.comment,
+                            user_id: this.props.currentUser, 
+                            photo_id: photo.id
+                          }
                           this.state.comment = "";
-                          this.props.createComment(comment).then(() => { return this.props.fetchPhoto(photo.id) })}}>Post</button>
+                          this.props.createComment(comment)
+                          .then(() => this.props.fetchPhoto(photo.id))
+                        }}>
+                        Post
+                      </button>
                     </form>
                   </div>
               })}
