@@ -34,6 +34,7 @@ class Greeting extends React.Component {
 
 
 showPhotos(){
+   let usernameForComment = document.getElementsByClassName("comment-username")[0] 
 return  <div className="outer-photo-feed-photo-wrapper">
           {this.props.followeesPhotos.map(photo =>{
           let comments = photo.comments ? Object.values(photo.comments) : []; ///now it will map over empty array if comments do not exist
@@ -72,6 +73,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
                       :
                       null}
                     {numberOfComments > 2 ?
+                    
                     <button className="view-all-comments-button"onClick={() =>{
                       this.props.fetchUser(photo.user_id)
                         .then(() => this.props.history.push(`/users/${photo.user_id}/${photo.id}`))}}>
@@ -79,14 +81,17 @@ return  <div className="outer-photo-feed-photo-wrapper">
                     </button> 
                     : 
                     null}
+
                         {comments.map(comment =>{
+                          debugger;
                           return <li className="photo-feed-photo-comments">
                             <div class="comment-username" 
                               key={comment.id} 
+                              
                               onClick={() => this.props.history.push(`/users/${comment.user_id}`)}>
-                              {comment.user}
+                              <div>{comment.user}</div>
                             </div>
-                            <div className="comment-body" key={comment.id}>{comment.body}</div>
+                            <div className="comment-body">{comment.body}</div>
                           </li>
                             })}
                     </ul>
