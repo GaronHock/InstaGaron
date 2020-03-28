@@ -21,18 +21,18 @@ class ShowPicture extends React.Component{
   }
 
   handleComments(){
-    return <div className='user-comments-wrapper'>
-      <ul className='user-comments'>
-    {this.props.comments.map(comment =>{
-      return  <li className="comment-username-wrapper">
-                {comment.user}
-                <div className="comment-body">
-                  {comment.body}
-                </div>  
-              </li>
-    })}
-    </ul>
-    </div>
+  return  <div className='user-comments-wrapper'>
+            <ul className='user-comments'>
+              {this.props.comments.map(comment =>{
+              return  <li className="comment-username-wrapper">
+                      {comment.user}
+                    <div className="comment-body">
+                      {comment.body}
+                    </div>  
+                  </li>
+                })}
+            </ul>
+          </div>
   }
 
   handleSubmit(e){
@@ -59,12 +59,12 @@ class ShowPicture extends React.Component{
   }
 
   handlePhotoDescription(){
-    if(this.props.photo.description){
-      return <div className="description">
-          <strong className="show-profile-username-description">{this.props.user.username}</strong>
-          <div className="photo-description">{this.props.photo.description}</div>
-        </div>
-    }else{
+    if (this.props.photo.description) {
+      return  <div className="description">
+                <strong className="show-profile-username-description">{this.props.user.username}</strong>
+                <div className="photo-description">{this.props.photo.description}</div>
+              </div>
+    } else {
       return null;
     }
   }

@@ -23,15 +23,6 @@ const mDTP = (dispatch) =>({
 export default connect(mSTP,mDTP)(ShowUserProfile);
 
 
-//make a selector
-//take in user id
-//set up array 
-// if state.entities.user.id.publishedphotos.each{id} key in to photos slice of state state.entities.photos[id]
-//push this object into empty array
-//return array
-
-
-//going to only grab photos that are associated photos. this.props.photos ---
 
 
 

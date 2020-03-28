@@ -272,10 +272,9 @@ background-color: #fff;
 }
 .photo-feed-photo-wrapper{
     border: 1px solid #e6e6e6;
-    height: 590px;
     width: 550px;
-    margin-bottom: 60px;
     background-color: white;
+    margin-bottom: 50px;
 }
 
 .photo-feed-user-profile-picture{
@@ -312,17 +311,16 @@ background-color: #fff;
 }
 
 .photo-feed-image{
-    display: block;
-    width: 550px;
-    height: 375px;
+   display: block;
+    width: 100%;
     border-bottom: 1px solid #e6e6e6;
 }
 
 .photo-feed-heart-logo{
-   background-color: rgba(0, 0, 0, 0);
+background-color: rgba(0, 0, 0, 0);
     font-size: 25px;
     position: relative;
-    left: 2%;
+    left: 3%;
     padding-top: 5px;
     padding-right: 10px;
 }
@@ -330,15 +328,21 @@ background-color: #fff;
 background-color: rgba(0, 0, 0, 0);
     font-size: 25px;
     position: relative;
-    left: 2%;
+    left: 4%;
 }
 .photo-feed-photo-comments-wrapper{
-list-style: none;
-    height: 100px;
-    overflow-y: auto;
+ list-style: none;
+  height: 100px;
+  background-color: white;
 }
 .photo-feed-photo-comments{
-  display: flex
+  display: flex;
+  padding-left: 3px;
+}
+.view-all-comments-button{
+padding-left: 17px;
+    padding-bottom: 2px;
+    color: gray;
 }
 .comment-username{
     display: flex;
@@ -346,6 +350,7 @@ list-style: none;
     margin-left: 5px;
     font-size: 16.5px;
     background-color: white;
+    padding-left: 10px;
 }
 
 
@@ -830,6 +835,7 @@ list-style: none;
     font-family: 'Martel Sans', sans-serif;
     display: flex;
     background-color: white;
+    padding-left: 13px;
  }
 .show-profile-username-description{
   font-family: 'Signika', sans-serif;
@@ -840,6 +846,9 @@ list-style: none;
     background-color: white;
     padding-left: 5px;
 }
+.show-profile-username-description:hover{
+  cursor: pointer;
+}
 
 .photo-description{
     font-family: 'Martel Sans', sans-serif;
@@ -848,7 +857,7 @@ list-style: none;
     top: 17%;
     background-color: white;
     font-size: 13px;
-    padding-left: 20px;
+    padding-left: 5px;
 
 }
   .show-photo{
@@ -873,7 +882,7 @@ list-style: none;
    cursor: pointer;
  }
  .comment-body{
-  padding-left: 20px;
+  padding-left: 5px;
   font-size: 13px;
   font-family: 'Martel Sans', sans-serif;
     background-color: white;
