@@ -112,10 +112,18 @@ class ShowUserProfile extends React.Component{
              {this.handleEditButtonHiddenIfNotCurrentUser()}
              {this.handleAddPictureButtonIfNotCurrentUser()}
               <div className="posts-followers-following-flex-container">
-                <div>{this.handleShowPostsCount()}</div>
-                <div className="posts-followers-following-font">posts</div>
-                {this.props.following.length}<div className="posts-followers-following-font">following</div>
-                0<div className="posts-followers-following-font">followers</div>
+                <div style={{display:"flex", marginRight: "56px"}}>
+                  <div className="numbers">{this.handleShowPostsCount()}</div>
+                  <div className="posts-followers-following-font">posts</div>
+                </div>
+                <div style={{ display: "flex", marginRight: "56px" }}>
+                  <div className="numbers">{this.props.following.length}</div>
+                  <div className="posts-followers-following-font">following</div>
+                </div>
+                <div style={{ display: "flex", marginRight: "56px" }}>
+                  <div className="numbers">0</div>
+                  <div className="posts-followers-following-font">followers</div>
+                </div>
               </div>
             </div>
           </div>

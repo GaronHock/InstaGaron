@@ -422,7 +422,7 @@ font-family: 'Martel Sans', sans-serif;
     position: relative;
     top: -5px;
     margin-right: 10px;
-        margin-left: 80px;
+   margin-left: 300px;
 }
 .edit-profile-button{
 border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
@@ -456,21 +456,22 @@ border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
 }
 .posts-followers-following-flex-container{
 display: flex;
-    width: 30%;
     position: relative;
-    top: 28%;
-    right: 106%;
+    width: 30%;
+    top: 40%;
+    right: 69.5%;
     margin-left: 100px;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     align-items: baseline;
 }
-.numbers-for-posts-following-followers{
-  position: relative;
-    right: 5%;
+.numbers{
+margin-right: 10px;
+    margin-top: 3px;
 }
 .posts-followers-following-font{
     font-family: 'Martel Sans', sans-serif;
+    margin-right: 10px;
 }
 .biography-flex-container{
   display: flex;
