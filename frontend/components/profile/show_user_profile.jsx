@@ -71,9 +71,7 @@ class ShowUserProfile extends React.Component{
       if (!this.props.user.photoUrl){
         return <div className='no-profile-pic'></div>
       }else{
-        return <div className='show-profile-photo-wrapper'>
-                <img className="profile-picture-photo" src={this.props.user.photoUrl}></img>
-              </div>
+        return  <img className="profile-picture-photo" src={this.props.user.photoUrl}></img>
       }
     }
 
@@ -107,23 +105,24 @@ class ShowUserProfile extends React.Component{
         <div className="profile-info-wrapper">
           {this.showProfilePicture()}
           <div className="username-edit-gear-wrapper">
+            <div style={{display: "flex", flexDirection: "row"}}>
             <div className='current-user-username'>{this.props.user.username}</div>
-            <div style={{display: "flex"}}>
-             {this.handleEditButtonHiddenIfNotCurrentUser()}
-             {this.handleAddPictureButtonIfNotCurrentUser()}
+            {this.handleFollowUser()}
+            {this.handleEditButtonHiddenIfNotCurrentUser()}
+            {this.handleAddPictureButtonIfNotCurrentUser()}
             </div>
-          </div>
-          <div className="posts-followers-following-flex-container">
-            <div>{this.handleShowPostsCount()}</div>
-            <div className="posts-followers-following-font">posts</div>
-            {this.props.following.length}<div className="posts-followers-following-font">following</div>
-          0<div className="posts-followers-following-font">followers</div>
-          </div>
-        </div>
+            <div className="posts-followers-following-flex-container">
+              <div className="posts-followers-following-font"> {this.handleShowPostsCount()} posts</div>
+              <div className="posts-followers-following-font"> {this.props.following.length} following</div>
+              <div className="posts-followers-following-font"> 0 followers</div>
+            </div>
+            <div className='biography-flex-container'>
+              <div className='current-user-biography'>{this.props.user.biography}</div>
+            </div>
 
-        <div className='biography-flex-container'>
-          <div className='current-user-biography'>{this.props.user.biography}</div>
-         {this.handleFollowUser()}
+          
+          
+          </div>
         </div>
         <div className="border-between-profile-info-and-images"></div>
         <div className="posts-grid-square">
