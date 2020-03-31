@@ -14,9 +14,6 @@ const photosReducer = (state = {}, action) => {
     case RECEIVE_ALL_COMMENTS:
       
       return Object.assign({}, state, action.allComments)
-    // case RECEIVE_COMMENT: 
-    // 
-    //   return Object.assign({}, state[action.photo.comment_ids])
     case RECEIVE_NEW_PHOTO:
       return Object.assign({}, state, { [action.new_photo.id]: action.new_photo })
     case REMOVE_PHOTO:

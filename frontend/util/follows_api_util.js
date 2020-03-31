@@ -13,3 +13,11 @@ export const createFollower = (follow) => {
     data:  {follow}   ///the key has to match the controller 
   })
 }
+
+export const deleteFollow = (followId) =>{
+  debugger;
+  return $.ajax({
+    url: `/api/follows/${followId}`,
+    method: 'DELETE'
+  })
+}

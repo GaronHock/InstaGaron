@@ -21,9 +21,10 @@
       followed_user_id: params[:id],
       follower_id: current_user.id 
     )
+    debugger;
     if @follow
       @follow.destroy
-      render :show
+      render "api/follows/show"
     else
       render json: ["not following user"], status: 404
     end
