@@ -189,6 +189,7 @@ body{
     padding-bottom: 7px;
     border-bottom: 1px solid #e6e6e6;
     width: 100%;
+    height: 75px;
 }
 .camera-pic{
     background-image: image_url('insta.png');
@@ -218,25 +219,25 @@ font-family: 'Cookie', cursive;
     left: 14%;
 }
 .search-text-area {
-border: solid 1px #dbdbdb;
+    border: solid 1px #dbdbdb;
     border-radius: 3px;
     height: 25px;
     margin-top: 30px;
-    left: 15%;
+    left: 29%;
     position: relative;
     text-align: center;
-    margin-left: 170px;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 
 .add-photo-link{
-font-size: 30px;
+    font-size: 30px;
     background-repeat: no-repeat;
     background-color: white;
     position: relative;
     margin-top: 30px;
     cursor: pointer;
-    left: 35%;
+    left: 49%;
+
 }
 .profile-link{
 font-size: 30px;
@@ -244,26 +245,20 @@ font-size: 30px;
     background-repeat: no-repeat;
     background-color: white;
     position: relative;
-    /* margin-left: 30px; */
     cursor: pointer;
-    left: 37%;
+    left: 52%;
 
-}
-
-.make-fully-white-link{
-  background-color: white;
 }
 
 
 .nav-log-out-cog{
-font-size: 30px;
+    font-size: 30px;
     color: black;
     background-color: white;
     background-repeat: no-repeat;
     position: relative;
-    /* margin-left: 30px; */
     cursor: pointer;
-    left: 39%;
+    left: 55%;
     margin-top: 30px;
 }
 
