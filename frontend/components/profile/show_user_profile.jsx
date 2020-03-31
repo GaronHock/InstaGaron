@@ -81,17 +81,18 @@ class ShowUserProfile extends React.Component{
 
     handleFollowUser(){
       let followed_user_arrays = Object.values(this.props.following)
+      let follow = { follower_id: this.props.currentUser.id, followed_user_id: this.props.match.params.userId} 
       if(this.props.currentUser.id == this.props.match.params.userId){
         return null;
       }
       for(let i = 0; i < followed_user_arrays.length; i++){
         if (followed_user_arrays[i].followed_user_id == this.props.match.params.userId){
-          return <button>Following </button>
+          return <button className="following-button">Following </button>
         }
       }
-      return <button onClick={(e) => {
+      return <button className="follow-button" onClick={(e) => {
                 e.preventDefault();
-                this.props.createFollower(follow)
+                this.props.createFollower(follow).then(() => this.props.fetchUser(this.props.match.params.userId))
                 }}>Follow
               </button>
    }
