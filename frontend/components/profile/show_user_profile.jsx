@@ -88,7 +88,7 @@ class ShowUserProfile extends React.Component{
       }
       for(let i = 0; i < followed_user_arrays.length; i++){
         if (followed_user_arrays[i].followed_user_id == this.props.match.params.userId){
-          return <div>Already Followed</div>
+          return <button>Following </button>
         }
       }
       return <button onClick={(e) => {
@@ -111,21 +111,13 @@ class ShowUserProfile extends React.Component{
             <div style={{display: "flex"}}>
              {this.handleEditButtonHiddenIfNotCurrentUser()}
              {this.handleAddPictureButtonIfNotCurrentUser()}
-              <div className="posts-followers-following-flex-container">
-                <div style={{display:"flex", marginRight: "56px"}}>
-                  <div className="numbers">{this.handleShowPostsCount()}</div>
-                  <div className="posts-followers-following-font">posts</div>
-                </div>
-                <div style={{ display: "flex", marginRight: "56px" }}>
-                  <div className="numbers">{this.props.following.length}</div>
-                  <div className="posts-followers-following-font">following</div>
-                </div>
-                <div style={{ display: "flex", marginRight: "56px" }}>
-                  <div className="numbers">0</div>
-                  <div className="posts-followers-following-font">followers</div>
-                </div>
-              </div>
             </div>
+          </div>
+          <div className="posts-followers-following-flex-container">
+            <div>{this.handleShowPostsCount()}</div>
+            <div className="posts-followers-following-font">posts</div>
+            {this.props.following.length}<div className="posts-followers-following-font">following</div>
+          0<div className="posts-followers-following-font">followers</div>
           </div>
         </div>
 

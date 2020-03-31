@@ -183,68 +183,70 @@ body{
 }
 
 .top-nav {
-background-color: #fff;
+    background-color: #fff;
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between; */
     padding-bottom: 7px;
     border-bottom: 1px solid #e6e6e6;
+    width: 100%;
 }
 .camera-pic{
-    background-image: image-url("insta.png");
-    background-size: 100% 100%;
-    /* position: relative; */
+    background-image: image_url('insta.png');
+background-size: 100% 100%;
     height: 30px;
     width: 30px;
+    left: 10%;
     margin-top: 24px;
-    margin-left: 150px;
-    /* left: 200px; */
-    /* padding-left: 160px; */
     background-color: white;
     cursor: pointer;
+    position: relative;
 }
 .vl{
-    border-left: 1px solid gray;
+border-left: 1px solid gray;
     height: 30px;
-    /* position: relative; */
     margin-top: 25px;
-    /* left: 10%; */
-    padding-left: 20px;
-    margin-left: 20px;
+    position: RELATIVE;
+    left: 12%;
 }
 .instatext{
-    font-family: 'Cookie', cursive;
+font-family: 'Cookie', cursive;
     background-color: #fff;
     font-size: 35px;
     margin-top: 22px;
-    padding-left: 20px;
+    position: relative;
     cursor: pointer;
+    left: 14%;
 }
 .search-text-area {
-    border: solid 1px #dbdbdb;
+border: solid 1px #dbdbdb;
     border-radius: 3px;
     height: 25px;
     margin-top: 30px;
+    left: 15%;
+    position: relative;
     text-align: center;
     margin-left: 170px;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 
 .add-photo-link{
-    font-size: 30px;
+font-size: 30px;
     background-repeat: no-repeat;
     background-color: white;
-    margin-left: 230px;
+    position: relative;
     margin-top: 30px;
     cursor: pointer;
+    left: 35%;
 }
 .profile-link{
-      font-size: 30px;
-    margin-top: 10px;
+font-size: 30px;
+    margin-top: 30px;
     background-repeat: no-repeat;
     background-color: white;
-    margin-left: 30px;
+    position: relative;
+    /* margin-left: 30px; */
     cursor: pointer;
+    left: 37%;
 
 }
 
@@ -254,12 +256,15 @@ background-color: #fff;
 
 
 .nav-log-out-cog{
-    font-size: 30px;
+font-size: 30px;
     color: black;
     background-color: white;
     background-repeat: no-repeat;
-    margin-left: 30px;
+    position: relative;
+    /* margin-left: 30px; */
     cursor: pointer;
+    left: 39%;
+    margin-top: 30px;
 }
 
 .outer-photo-feed-photo-wrapper{
@@ -364,6 +369,7 @@ position: relative;
     display: flex;
     justify-content: center;
     line-height: 0;
+    border: 1px solid black;
     margin-top: 20px;
 }
 .posts-text{
@@ -398,7 +404,6 @@ position: relative;
     position: relative;
     overflow: hidden;
     border-radius: 50%;
-    margin-right: 30px;
 }
 .profile-picture-photo{
      width: 100%;
@@ -407,25 +412,23 @@ position: relative;
 }
 
 .username-edit-gear-wrapper{
-    display: flex;
-    justify-content: space-around;
-    margin-left: 130px;
-    width: 400px;
-    margin-top: 70px;
-
+  display:flex;
+  justify-content: space-around;
+  margin-left: 100px;
+  width:400px;
+  margin-top: 70px;
 }
 .current-user-username{
-font-family: 'Martel Sans', sans-serif;
-    font-size: 24px;
-    font-weight: 300;
-    height: 40px;
-    position: relative;
-    top: -5px;
-    margin-right: 10px;
-   margin-left: 300px;
+  font-family: 'Martel Sans', sans-serif;
+  font-size: 24px;
+  font-weight:300;
+  height:40px;
+  margin-left: 30px;
+  position: relative;
+  top: -5px;
 }
 .edit-profile-button{
-border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+  border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
     padding: 5px 10px 7px 10px;
     font-size: 14px;
     font-family: 'Lato', sans-serif;
@@ -436,13 +439,13 @@ border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
 }
 
 .add-profile-button{
-border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
-    padding: 5px 10px 9px 10px;
-    font-size: 14px;
-    height: 16px;
-    font-family: 'Lato', sans-serif;
-    border-radius: 3px;
-    cursor: pointer;
+    border: 1px solid rgba(var(--d0b,219,219,219),1);
+  padding:5px 10px 9px 10px;
+  font-size: 14px;
+  height: 16px;
+  font-family: 'Lato', sans-serif;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 .gear{
@@ -455,23 +458,18 @@ border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
   cursor: pointer;
 }
 .posts-followers-following-flex-container{
-display: flex;
-    position: relative;
+    display: flex;
+    justify-content: space-around;
     width: 30%;
-    top: 40%;
-    right: 69.5%;
-    margin-left: 100px;
+    position: absolute;
+    top: 28%;
+    left: 39%;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     align-items: baseline;
 }
-.numbers{
-margin-right: 10px;
-    margin-top: 3px;
-}
 .posts-followers-following-font{
     font-family: 'Martel Sans', sans-serif;
-    margin-right: 10px;
 }
 .biography-flex-container{
   display: flex;
@@ -500,7 +498,6 @@ margin-right: 10px;
   background: #fff;
   border-radius: 5px;
   position: relative;
-  z-index: 5;
   background-color:  none;
 }
 .pop-up-delete-button{
@@ -533,6 +530,7 @@ margin-right: 10px;
   display: flex;
   margin-left: 100px;
   margin-right: 100px;
+  padding-top: 3%;
   justify-content: center;
 }
 .show-page-images{

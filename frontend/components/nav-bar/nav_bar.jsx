@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import thunk from 'redux-thunk';
 
 class NavBar extends React.Component{
   constructor(props){
@@ -8,12 +9,12 @@ class NavBar extends React.Component{
     this.handleClick = this.handleClick.bind(this);
     this.handleClickGear = this.handleClickGear.bind(this);
     this.handleClickCancel = this.handleClickCancel.bind(this);
+    this.handleUserClick = this.handleUserClick.bind(this);
   }
 
   handleClick(e) {
     e.preventDefault();
     this.props.logout()
-    this.props.history.push('/');
   }
 
   handleClickGear() {
@@ -22,6 +23,9 @@ class NavBar extends React.Component{
 
   handleClickCancel() {
     document.querySelector('.popup').style.display = 'none';
+  }
+  handleUserClick(){
+    this.props.history.push(`/users/${this.props.currentUser.id}`)
   }
 render(){
   return(
@@ -36,14 +40,9 @@ render(){
           size='26' 
           results='0' 
         />
-        <div className='compass-heart-link-profile-link-wrapper'>
           <i className="far fa-plus-square add-photo-link"></i>   
-          <Link className="make-fully-white-link" 
-            to={`/users/${this.props.currentUser.id}`}>
-            <i className="fas fa-user-circle profile-link"></i>
-          </Link>
+          <i className="fas fa-user-circle profile-link" onClick={this.handleUserClick}></i>
           <i className="fas fa-cog nav-log-out-cog" onClick={this.handleClickGear}></i>
-        </div>
       </div>
       <div className="popup">
         <div className='popup-content'>
@@ -58,3 +57,4 @@ render(){
 
 
 export default NavBar;
+
