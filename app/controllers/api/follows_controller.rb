@@ -21,7 +21,6 @@
       followed_user_id: params[:id],
       follower_id: current_user.id 
     )
-    debugger;
     if @follow
       @follow.destroy
       render "api/follows/show"
