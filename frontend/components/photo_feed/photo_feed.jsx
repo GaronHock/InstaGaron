@@ -63,8 +63,6 @@ return  <div className="outer-photo-feed-photo-wrapper">
                     </div>
                     <img className="photo-feed-image"key={photo.id}src={photo.photoUrl}></img>
                     <div className="heart-comment-wrapper">
-                      <i className="far fa-comment photo-feed-comment-logo"
-                      onClick={this.focusTextInput}></i>
                     </div>
                     <ul className="photo-feed-photo-comments-wrapper">
                     {photo.description ?
@@ -98,9 +96,10 @@ return  <div className="outer-photo-feed-photo-wrapper">
                           </li>
                             })}
                     </ul>
-                    <form className="comment-form-input">
-                      <div className="comment-input-wrapper">
-                        <input style={{ width: "100%", backgroundColor: "white" }}
+                    <form className="photo-feed-comment-form-input">
+                      <div className="photo-feed-comment-input-wrapper">
+                        <input
+                          className = "photo-show-comment-input"
                           placeholder='Add a comment...'
                           type="text"
                           ref={this.textInput}

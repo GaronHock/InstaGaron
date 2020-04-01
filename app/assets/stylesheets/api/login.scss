@@ -333,12 +333,26 @@ background-color: rgba(0, 0, 0, 0);
 }
 .photo-feed-photo-comments-wrapper{
  list-style: none;
-  height: 100px;
   background-color: white;
+}
+.photo-feed-comment-input-wrapper{
+  display: flex;
+    position: relative;
+    height: 60px;
+    padding-top: 10px;
+    flex-direction: row;
+    align-items: center;
+    width: 84%;
 }
 .photo-feed-photo-comments{
   display: flex;
   padding-left: 3px;
+}
+.photo-feed-comment-form-input{
+  border-top: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+    display: flex;
+    flex-direction: row;
+    background-color: white;
 }
 .view-all-comments-button{
 padding-left: 17px;
