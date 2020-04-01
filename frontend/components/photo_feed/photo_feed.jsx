@@ -17,7 +17,7 @@ class Greeting extends React.Component {
 
 
   focusTextInput(){
-    this.textInput.current.form.focus();
+    this.textInput.current.focus();
   }
   handleClick(e) {
     e.preventDefault();
