@@ -27,6 +27,8 @@ class NavBar extends React.Component{
   handleUserClick(){
     this.props.history.push(`/users/${this.props.currentUser.id}`)
   }
+
+  ///  <i className="far fa-plus-square add-photo-link"></i>   <<<<<<<ADD PHOTO LINK
 render(){
   return(
   <div>
@@ -40,7 +42,6 @@ render(){
           size='26' 
           results='0' 
         />
-          <i className="far fa-plus-square add-photo-link"></i>   
           <i className="fas fa-user-circle profile-link" onClick={this.handleUserClick}></i>
           <i className="fas fa-cog nav-log-out-cog" onClick={this.handleClickGear}></i>
       </div>

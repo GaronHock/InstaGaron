@@ -16,7 +16,6 @@
   end
   
   def destroy
-
     @follow = Follow.find_by(
       followed_user_id: params[:id],
       follower_id: current_user.id 

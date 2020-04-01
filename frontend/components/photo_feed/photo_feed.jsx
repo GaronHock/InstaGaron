@@ -8,9 +8,16 @@ class Greeting extends React.Component {
       loading: false,
       comment: "",
     }
+   this.textInput = React.createRef();
+   this.focusTextInput = this.focusTextInput.bind(this);
    this.handleClick = this.handleClick.bind(this);
    this.showPhotos = this.showPhotos.bind(this);
    this.handleInput = this.handleInput.bind(this);
+  }
+
+
+  focusTextInput(){
+    this.textInput.current.form.focus();
   }
   handleClick(e) {
     e.preventDefault();
@@ -30,6 +37,8 @@ class Greeting extends React.Component {
       this.setState({ [type]: input });
     }
   }
+
+  // <i class="far fa-heart photo-feed-heart-logo"></i> HEART LOGO <<<<<<<<<<<<<
 
 
 showPhotos(){
@@ -53,9 +62,9 @@ return  <div className="outer-photo-feed-photo-wrapper">
                       </h1>
                     </div>
                     <img className="photo-feed-image"src={photo.photoUrl}></img>
-                    <div class="heart-comment-wrapper">
-                      <i class="far fa-heart photo-feed-heart-logo"></i>
-                      <i className="far fa-comment photo-feed-comment-logo"></i>
+                    <div className="heart-comment-wrapper">
+                      <i className="far fa-comment photo-feed-comment-logo"
+                      onClick={this.focusTextInput}></i>
                     </div>
                     <ul className="photo-feed-photo-comments-wrapper">
                     {photo.description ?
@@ -95,6 +104,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
                         <input style={{ width: "100%", backgroundColor: "white" }}
                           placeholder='Add a comment...'
                           type="text"
+                          ref={this.textInput}
                           value={this.state.comment}
                           onChange={this.handleInput('comment')}
                         />
