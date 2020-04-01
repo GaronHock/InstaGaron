@@ -61,7 +61,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
                        {photo.user}
                       </h1>
                     </div>
-                    <img className="photo-feed-image"src={photo.photoUrl}></img>
+                    <img className="photo-feed-image"key={photo.id}src={photo.photoUrl}></img>
                     <div className="heart-comment-wrapper">
                       <i className="far fa-comment photo-feed-comment-logo"
                       onClick={this.focusTextInput}></i>
@@ -89,9 +89,8 @@ return  <div className="outer-photo-feed-photo-wrapper">
                     null}
                         {comments.map(comment =>{
                           return <li className="photo-feed-photo-comments">
-                            <div class="comment-username" 
-                              key={comment.id} 
-                              
+                            <div className="comment-username" 
+                              key={comment.id}  
                               onClick={() => this.props.history.push(`/users/${comment.user_id}`)}>
                               <div>{comment.user}</div>
                             </div>

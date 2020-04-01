@@ -326,9 +326,10 @@ background-color: rgba(0, 0, 0, 0);
 }
 .photo-feed-comment-logo{
 background-color: rgba(0, 0, 0, 0);
-    font-size: 25px;
+    font-size: 30px;
     position: relative;
     left: 4%;
+    padding: 5px;
 }
 .photo-feed-photo-comments-wrapper{
  list-style: none;
@@ -926,22 +927,34 @@ display: flex;
  }
 
 .comment-form-input{
-  height: 73px;
-  border-top: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
-  display: flex;
-  background-color: white;
- // border-bottom: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+border-top: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
 }
 
 .comment-input-wrapper{
-  display: flex;
-  width: 88%;
-  margin-left: 10px;
+display: flex;
+    border-top: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+    position: relative;
+    /* height: 60px; */
+    padding-top: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+.photo-show-comment-input{
+width: 81%;
+    background-color: white;
+    position: relative;
+    left: 4%;
+    height: 40px;
 }
 
 .comment-form-button{
-  background-color: white;
-  color: rgba(var(--h5f,56,151,240),0.5); 
+background-color: white;
+    color: rgba(var(--h5f, 56, 151, 240), 0.5);
+    position: relative;
+    left: 10%;
 }
 .comment-form-button:hover{
   background-color: white;

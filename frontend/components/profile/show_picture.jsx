@@ -8,16 +8,22 @@ class ShowPicture extends React.Component{
       comment : "",
       comments: this.props.comments
     }
+       this.textInput = React.createRef();
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleComments = this.handleComments.bind(this);
     this.showProfilePicture = this.showProfilePicture.bind(this);
+    this.focusTextInput = this.focusTextInput.bind(this);
    // this.handlePhotoDescription = this.handlePhotoDescription.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId)
     this.props.fetchPhoto(this.props.match.params.photoId);
+  }
+
+  focusTextInput(){
+    this.textInput.current.focus();
   }
 
   handleComments(){
@@ -108,21 +114,25 @@ class ShowPicture extends React.Component{
               </div>
                 <div className="description-comments-wrapper">
                   {this.handleComments()}
-                </div>             
+                </div>      
                   <form className="comment-form-input">
+                    <i className="far fa-comment photo-feed-comment-logo"
+                    onClick={this.focusTextInput}></i> 
                     <div className="comment-input-wrapper">
-                      <input style={{width: "100%", backgroundColor: "white"}}
+                      <input 
+                         ref={this.textInput}
+                        className="photo-show-comment-input"
                         placeholder='Add a comment...'
                         type="text"
                         value={this.state.comment}
                         onChange={this.handleInput('comment')} 
                       />
-                    </div>    
                     <button 
                       className="comment-form-button"
                       onClick={this.handleSubmit}>
                         Post
                     </button> 
+                    </div>    
                   </form>
             </div>
           </div> 
