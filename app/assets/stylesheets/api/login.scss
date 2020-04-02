@@ -274,7 +274,14 @@ font-size: 30px;
 position: fixed;
     left: 70%;
     background-color: white;
+    border: 1px solid #e6e6e6;
 
+}
+.photo-feed-users-to-follow-header{
+  color: gray;
+    font-family: 'Signika', sans-serif;
+    position: relative;
+    left: 10%;
 }
 .photo-feed-user-to-follow-list-item{
 border: 1px solid black;

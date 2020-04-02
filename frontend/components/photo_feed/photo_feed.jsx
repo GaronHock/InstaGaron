@@ -65,8 +65,7 @@ class Greeting extends React.Component {
       i += 1;
     }
     this.setState( {threeUniqueUsers: Object.values(everyUserExceptCurrentUser.slice(0, 3))}) 
-    console.log(users)
-    console.log(this.state.threeUniqueUsers)
+
     console.log(Object.values(everyUserExceptCurrentUser.slice(0, 3)))
   }
 
@@ -164,17 +163,20 @@ return  <div className="outer-photo-feed-photo-wrapper">
       }else{
         let recommendedFollowers = this.state.threeUniqueUsers.map(uniqueUser => {
           let user = Object.values(uniqueUser)[0]
-          if (user.photoUrl) {
-            return <div className="photo-feed-user-to-follow-list-item">
-              <img className="photo-feed-user-profile-picture" src={user.photoUrl}></img>
-              <div>{user.username} </div>
-            </div>
-          } else {
-            return <div className="photo-feed-user-to-follow-list-item">
-              {user.username}
-            </div>
-          }
-        })
+            return  <div className="photo-feed-user-to-follow-list-item-wrapper">
+                      <div className="photo-feed-user-to-follow-list-item">
+                        {user.photoUrl ? 
+                          <img
+                            className="photo-feed-user-profile-picture"
+                            src={user.photoUrl}>
+                          </img> :
+                          null}  
+                        <div>
+                          {user.username}
+                        </div>
+                      </div>
+                    </div>
+              })
         return(
           
           <div>
@@ -182,6 +184,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
             <div style={{ display: "flex", flexDirection: "row-reverse", backgroundColor: "#fafafa"}}>
                 {this.showPhotos()}
               <div className="photo-feed-users-to-follow-wrapper">
+                <h2 className="photo-feed-users-to-follow-header">Suggestions For You</h2>
                 {recommendedFollowers}
               </div>
               </div>
