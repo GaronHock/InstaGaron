@@ -7,14 +7,15 @@ class Greeting extends React.Component {
     this.state = {
       loading: false,
       comment: "",
+      threeUniqueUsers: [],
     }
    this.textInput = React.createRef();
    this.focusTextInput = this.focusTextInput.bind(this);
    this.handleClick = this.handleClick.bind(this);
    this.showPhotos = this.showPhotos.bind(this);
    this.handleInput = this.handleInput.bind(this);
+   this.handleFollowSuggestions = this.handleFollowSuggestions.bind(this);
   }
-
 
   focusTextInput(){
     this.textInput.current.focus();
@@ -28,6 +29,7 @@ class Greeting extends React.Component {
   componentDidMount(){
     this.props.fetchAllFollowers(this.props.currentUser);
     this.props.fetchAllPhotos(this.props.currentUser);
+    this.props.fetchAllUsers().then(() => {this.handleFollowSuggestions()});
   }
 
 
@@ -38,7 +40,35 @@ class Greeting extends React.Component {
     }
   }
 
-  // <i class="far fa-heart photo-feed-heart-logo"></i> HEART LOGO <<<<<<<<<<<<<
+
+  handleFollowSuggestions(){
+    let users = this.props.users
+    let counter = this.props.users.length;
+    while (counter > 0) {
+      // Pick a random index
+      let index = Math.floor(Math.random() * counter);
+
+      // Decrease counter by 1
+      counter--;
+
+      // And swap the last element with it
+      let temp = users[counter];
+      users[counter] = users[index];
+      users[index] = temp;
+    }
+    let i = 0;
+          let everyUserExceptCurrentUser = [];
+    while (i < users.length){
+      if (users[i].id !== this.props.currentUser){
+        everyUserExceptCurrentUser.push(users[i])
+      }
+      i += 1;
+    }
+    this.setState( {threeUniqueUsers: Object.values(everyUserExceptCurrentUser.slice(0, 3))}) 
+    console.log(users)
+    console.log(this.state.threeUniqueUsers)
+    console.log(Object.values(everyUserExceptCurrentUser.slice(0, 3)))
+  }
 
 
 showPhotos(){
@@ -128,14 +158,33 @@ return  <div className="outer-photo-feed-photo-wrapper">
 ///this.state.comment - points to another object - keys that correspond with ids given to all of the text boxes- all of the keys point to
 
   render() {
+
     if (this.state.loading) {
       return null;
       }else{
+        let recommendedFollowers = this.state.threeUniqueUsers.map(uniqueUser => {
+          let user = Object.values(uniqueUser)[0]
+          if (user.photoUrl) {
+            return <div className="photo-feed-user-to-follow-list-item">
+              <img className="photo-feed-user-profile-picture" src={user.photoUrl}></img>
+              <div>{user.username} </div>
+            </div>
+          } else {
+            return <div className="photo-feed-user-to-follow-list-item">
+              {user.username}
+            </div>
+          }
+        })
         return(
           
           <div>
             <NavBarContainer />
-            {this.showPhotos()}
+            <div style={{ display: "flex", flexDirection: "row-reverse", backgroundColor: "#fafafa"}}>
+                {this.showPhotos()}
+              <div className="photo-feed-users-to-follow-wrapper">
+                {recommendedFollowers}
+              </div>
+              </div>
           </div>
 
         )

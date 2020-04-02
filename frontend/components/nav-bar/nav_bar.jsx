@@ -25,6 +25,7 @@ class NavBar extends React.Component{
     document.querySelector('.popup').style.display = 'none';
   }
   handleUserClick(){
+    debugger;
     this.props.history.push(`/users/${this.props.currentUser.id}`)
   }
 

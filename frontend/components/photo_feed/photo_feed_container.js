@@ -2,18 +2,17 @@ import { connect } from 'react-redux';
 import Greeting from './photo_feed';
 import { logout } from '../../actions/session_actions';
 import {fetchAllFollowers} from '../../actions/follows_actions'
-import {fetchUser} from '../../actions/user_actions';
-import {fetchAllPhotos} from '../../actions/photo_actions';
+import {fetchUser, fetchAllUsers} from '../../actions/user_actions';
+import {fetchAllPhotos, fetchPhoto} from '../../actions/photo_actions';
 import {fetchFolloweesPhotos} from '../../reducers/selectors';
-import {fetchAllComments} from '../../actions/comment_actions';
-import {fetchPhoto} from '../../actions/photo_actions';
-import {createComment} from '../../actions/comment_actions';
+import {fetchAllComments, createComment} from '../../actions/comment_actions';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.id,
   followers: Object.values(state.entities.follows),
   photos: Object.values(state.entities.photos),
-  followeesPhotos: fetchFolloweesPhotos(state)
+  followeesPhotos: fetchFolloweesPhotos(state),
+  users: Object.values(state.entities.users)
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -24,6 +23,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchAllComments: (comments) => dispatch(fetchAllComments(comments)),
   createComment: (comment) => dispatch(createComment(comment)),
   fetchPhoto: (photo) => dispatch(fetchPhoto(photo)),
+  fetchAllUsers: () => dispatch(fetchAllUsers())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Greeting);

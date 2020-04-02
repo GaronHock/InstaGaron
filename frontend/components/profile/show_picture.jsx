@@ -8,13 +8,12 @@ class ShowPicture extends React.Component{
       comment : "",
       comments: this.props.comments
     }
-       this.textInput = React.createRef();
+    this.textInput = React.createRef();
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleComments = this.handleComments.bind(this);
     this.showProfilePicture = this.showProfilePicture.bind(this);
     this.focusTextInput = this.focusTextInput.bind(this);
-   // this.handlePhotoDescription = this.handlePhotoDescription.bind(this);
   }
 
   componentDidMount(){
