@@ -69,7 +69,7 @@ class ShowUserProfile extends React.Component{
 
     showProfilePicture(){
       if (!this.props.user.photoUrl){
-        return <div className='no-profile-pic'></div>
+        return <i class="fas fa-user-circle no-profile-pic"></i>
       }else{
         return  <img className="profile-picture-photo" src={this.props.user.photoUrl}></img>
       }

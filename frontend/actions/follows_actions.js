@@ -28,7 +28,6 @@ const receiveFollowErrors = (errors) =>{
 }
 
 export const deleteFollower = (followerId) => {
-  debugger;
   return {
     type: REMOVE_FOLLOWER,
     followerId
