@@ -59,7 +59,7 @@ class Greeting extends React.Component {
     let i = 0;
           let everyUserExceptCurrentUser = [];
     while (i < users.length){
-      if (users[i].id !== this.props.currentUser){
+      if (Object.values(users[i])[0].id !== this.props.currentUser){
         everyUserExceptCurrentUser.push(users[i])
       }
       i += 1;
