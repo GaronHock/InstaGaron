@@ -49,31 +49,35 @@ class AddPictureForm extends React.Component{
     <div>
       <NavBarContainer />
       <div className='add-profile-wrapper'>
-        <form className='add-form'>
-          <h2 className='add-photo-text'>Add a New Photo!</h2>
-          <div className='image-preview'>{preview}</div>
-          <input 
-            className='choose-file-button' 
-            type="file" 
-            onChange={this.handleFile}/>
-          <div className='preview-flex'>
-            <label htmlFor="photo-description">
-              <input 
-                className ='caption-textarea'
-                rows="4" cols="50"
-                type="textarea"
-                placeholder = "Write a caption..."
-                id="photo-description"
-                value={this.state.description}
-                onChange={this.handleInput} />
-            </label>
-            <button 
-              className='add-photo-submit'
-              onClick={this.handleSubmit}>
-              Make a new Post!
-            </button>
-          </div>
-        </form>
+        <div style={{display:"flex", justifyContent: "center"}}>
+          <form className='add-form'>
+            <h2 className='add-photo-text'>Add a New Photo!</h2>
+            <div className='image-preview'>{preview}</div>
+            <input 
+              className='choose-file-button' 
+              type="file" 
+              onChange={this.handleFile}/>
+            <div className='preview-flex'>
+              <label htmlFor="photo-description">
+                <input 
+                  className ='caption-textarea'
+                  rows="4" cols="50"
+                  type="textarea"
+                  placeholder = "Write a caption..."
+                  id="photo-description"
+                  value={this.state.description}
+                  onChange={this.handleInput} />
+              </label>
+              <div>
+                <button 
+                  className='add-photo-submit'
+                  onClick={this.handleSubmit}>
+                  Make a new Post!
+                </button>
+                </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     )

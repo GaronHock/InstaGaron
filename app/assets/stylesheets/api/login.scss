@@ -684,51 +684,78 @@ display: flex;
   background-color:  rgba(var(--b3f,250,250,250),1);
 }
 .add-form{
- display: block;
-  margin: auto;
-  width: 70%;
-  height: 650px;
-  background-color: white;
-  margin-top: 30px;
-  padding-top: 10%;
-  border: 1px solid lightgray;
+ //display: block;
+//  margin: auto;
+//  width: 70%;
+//  height: 650px;
+ // background-color: white;
+ // margin-top: 30px;
+//  padding-top: 10%;
+  //border: 1px solid lightgray;
+
+    /* justify-content: center; */
+
+    background-color: white;
+    display: flex;
+    height: 400px;
+    width: 600px;
+    flex-direction: column;
+    border: 1px solid black;
+    align-items: center;
+  
 }
 .add-photo-text{
     font-family: 'Lato', sans-serif;
     font-weight: bold;
-    position: relative;
-    bottom: 80px;
-    text-align: center;
-    background-color: white;
+  //  position: relative;
+  //  bottom: 80px;
+  //  text-align: center;
+  //  background-color: white;
     font-size: 25px;
+
+
+    position: relative;
 }
 .image-preview{
-  height:340px;
-  width: 400px;
-  position: absolute;
-  left: 34%;
-  border: 1px solid black;
-  top: 33%;
-  border: 1px solid lightgray;
+//  height:340px;
+//  width: 400px;
+ // position: absolute;
+ // left: 34%;
+//  border: 1px solid black;
+//  top: 33%;
+//  border: 1px solid lightgray;
+
+
+      height: 200px;
+    border: 1px solid black
 }
 .image-preview > img{
   height:340px;
   width: 100%;
 }
 .choose-file-button{
-    position: absolute;
-    left: 42%;
-    bottom: 15%;
-    background-color: white;
+    // position: absolute;
+    // left: 42%;
+    // bottom: 15%;
+    // background-color: white;
+        position: relative;
+    left: 20%;
 }
 .preview-flex{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  top:55%;
-  height:120px;
-  background-color: white;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // position: relative;
+  // top:55%;
+  // height:120px;
+  // background-color: white;
+
+      display: flex;
+     flex-direction: column;
+    justify-content: center;
+    /* flex-direction: column; */
+    border: 1px solid green;
+        align-items: center;
 }
 .caption-textarea{
  background-color: white;
