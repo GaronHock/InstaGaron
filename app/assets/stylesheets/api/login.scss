@@ -334,11 +334,17 @@ border: 1px solid #e6e6e6;
     border-radius: 50%;
     background-color: white;
 }
+.who-to-follow-photo-feed-user-profile-picture:hover{
+  cursor: pointer;
+}
 .who-to-follow-username{
   font-family: 'Signika', sans-serif;
     position: relative;
     left: 10%;
     top: 10%;
+}
+.who-to-follow-username:hover{
+  cursor: pointer;
 }
 .photo-feed-user-profile-picture:hover{
   cursor: pointer; 
