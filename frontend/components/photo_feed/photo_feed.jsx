@@ -163,15 +163,26 @@ return  <div className="outer-photo-feed-photo-wrapper">
       }else{
         let recommendedFollowers = this.state.threeUniqueUsers.map(uniqueUser => {
           let user = Object.values(uniqueUser)[0]
+          let handleClick = () => {
+            this.props.history.push(`/users/${user.id}`)
+          }
             return  <div className="photo-feed-user-to-follow-list-item-wrapper">
                       <div className="photo-feed-user-to-follow-list-item">
                         {user.photoUrl ? 
-                          <img
-                            className="who-to-follow-photo-feed-user-profile-picture"
-                            src={user.photoUrl}>
-                          </img> :
-                        <div className='fas fa-user-circle photo-feed-no-user-profile-pic'></div>}  
-                        <div className="who-to-follow-username">
+                        <img
+                          className="who-to-follow-photo-feed-user-profile-picture"
+                          src={user.photoUrl}
+                          onClick={handleClick}>
+                        </img> 
+                        :
+                        <div 
+                          className='fas fa-user-circle photo-feed-no-user-profile-pic'
+                          onClick={handleClick}>
+                        </div>
+                        }  
+                        <div 
+                          className="who-to-follow-username"
+                          onClick={handleClick}>
                           {user.username}
                         </div>
                       </div>
