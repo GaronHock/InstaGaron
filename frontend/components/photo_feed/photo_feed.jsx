@@ -167,11 +167,11 @@ return  <div className="outer-photo-feed-photo-wrapper">
                       <div className="photo-feed-user-to-follow-list-item">
                         {user.photoUrl ? 
                           <img
-                            className="photo-feed-user-profile-picture"
+                            className="who-to-follow-photo-feed-user-profile-picture"
                             src={user.photoUrl}>
                           </img> :
-                          null}  
-                        <div>
+                        <div className='fas fa-user-circle photo-feed-no-user-profile-pic'></div>}  
+                        <div className="who-to-follow-username">
                           {user.username}
                         </div>
                       </div>

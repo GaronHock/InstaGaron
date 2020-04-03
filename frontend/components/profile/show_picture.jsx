@@ -64,7 +64,7 @@ class ShowPicture extends React.Component{
 
   showProfilePicture() {
     if (!this.props.user.photoUrl) {
-      return <div className='no-profile-pic-show'></div>
+      return <div className='fas fa-user-circle no-profile-pic-show'></div>
     } else {
       return <div className='show-profile-photo-wrapper-show'>
         <img className="profile-picture-photo-show" src={this.props.user.photoUrl} onClick={() => {

@@ -275,19 +275,21 @@ position: fixed;
     left: 70%;
     background-color: white;
     border: 1px solid #e6e6e6;
-
+        top: 40%;
 }
 .photo-feed-users-to-follow-header{
-  color: gray;
+color: gray;
     font-family: 'Signika', sans-serif;
     position: relative;
-    left: 10%;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .photo-feed-user-to-follow-list-item{
-border: 1px solid black;
     display: flex;
-    height: 100px;
-    width: 250px;
+    height: 60px;
+    width: 290px;
+    margin-top: 10px;
 }
 .photo-feed-photo-wrapper{
 border: 1px solid #e6e6e6;
@@ -311,6 +313,33 @@ border: 1px solid #e6e6e6;
     background-color: white;
 }
 
+.photo-feed-no-user-profile-pic{
+    font-size: 40px;
+    height: 40px;
+    left: 5%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1000px;
+    background-color: white;
+}
+.who-to-follow-photo-feed-user-profile-picture{
+      display: block;
+    height: 40px;
+    width: 40px;
+    top: 7%;
+    left: 5%;
+    border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: white;
+}
+.who-to-follow-username{
+  font-family: 'Signika', sans-serif;
+    position: relative;
+    left: 10%;
+    top: 10%;
+}
 .photo-feed-user-profile-picture:hover{
   cursor: pointer; 
 }
@@ -874,11 +903,12 @@ display: flex;
  }
 
  .no-profile-pic-show{
-  background-image: image-url('user.png');
    background-size: 100% 100%;
-   width: 40px;
-   height: 40px;
-   background-color: white;
+    font-size: 40px;
+    background-color: white;
+    position: relative;
+    left: 10%;
+    top: 10%;
  }
 
 
