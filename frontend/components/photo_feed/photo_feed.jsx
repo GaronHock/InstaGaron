@@ -29,7 +29,9 @@ class Greeting extends React.Component {
   componentDidMount(){
     this.props.fetchAllFollowers(this.props.currentUser);
     this.props.fetchAllPhotos(this.props.currentUser);
-    this.props.fetchAllUsers().then(() => {this.handleFollowSuggestions()});
+    this.props.fetchAllUsers().then(() => {
+      this.handleFollowSuggestions()
+    });
   }
 
 

@@ -25,7 +25,9 @@ class NavBar extends React.Component{
     document.querySelector('.popup').style.display = 'none';
   }
   handleUserClick(){
+    this.props.history.location.pathname === "/welcome" ?
     this.props.history.push(`/users/${Object.values(this.props.currentUser)[0].id}`)
+    : this.props.history.push(`/users/${this.props.currentUser.id}`)
   }
 
   ///  <i className="far fa-plus-square add-photo-link"></i>   <<<<<<<ADD PHOTO LINK

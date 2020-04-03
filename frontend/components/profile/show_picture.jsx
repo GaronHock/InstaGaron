@@ -38,6 +38,7 @@ class ShowPicture extends React.Component{
                   </div> : 
                  null}
               {this.props.comments.map(comment =>{
+                debugger;
               return  <li className="comment-username-wrapper">
                           {comment.user}
                           <div className="comment-body">
@@ -73,19 +74,6 @@ class ShowPicture extends React.Component{
       </div>
     }
   }
-
-  // handlePhotoDescription(){
-  //   if (this.props.photo.description) {
-  //     return  <div className="description">
-  //               <strong className="show-profile-username-description" onClick={() =>{
-  //                 this.props.history.push(`/users/${this.props.photo.user_id}`)
-  //               }}>{this.props.user.username}</strong>
-  //               <div className="photo-description">{this.props.photo.description}</div>
-  //             </div>
-  //   } else {
-  //     return null;
-  //   }
-  // }
 
   render(){
     if(!this.props.photo || !this.props.comments || !this.props.user){  //this is done so that when page is refreshed it doesnt have the photos slice 
