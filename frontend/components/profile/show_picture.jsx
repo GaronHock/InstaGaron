@@ -38,7 +38,6 @@ class ShowPicture extends React.Component{
                   </div> : 
                  null}
               {this.props.comments.map(comment =>{
-                debugger;
               return  <li className="comment-username-wrapper">
                           {comment.user}
                           <div className="comment-body">
