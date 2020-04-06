@@ -87,11 +87,10 @@ class ShowUserProfile extends React.Component{
       }
       for(let i = 0; i < followed_user_arrays.length; i++){
         if (followed_user_arrays[i].followed_user_id == this.props.match.params.userId){
-          return <button className="following-button" onClick={(e) =>{
+          return <button className="following-button" onClick={() =>{
             debugger;
-            e.preventDefault();
             this.props.removeFollower(this.props.match.params.userId)
-            
+            console.log(followed_user_arrays[i].followed_user_id)
           }}>Following </button>
         }
       }
