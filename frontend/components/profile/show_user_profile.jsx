@@ -36,14 +36,14 @@ class ShowUserProfile extends React.Component{
 
 
   handleEditButtonHiddenIfNotCurrentUser(){
-    if(this.props.currentUser.id == this.props.match.params.userId){
+    if (this.props.currentUser.id == this.props.match.params.userId){
      return <div className="edit-profile-button">
         <Link to={`/users/${this.props.currentUser.id}/edit`}><button>Edit Profile</button></Link></div>
     }
   }
 
   handleAddPictureButtonIfNotCurrentUser(){
-    if(this.props.currentUser.id == this.props.match.params.userId){
+    if (this.props.currentUser.id == this.props.match.params.userId){
       return <Link className="add-profile-button"
               to={`/users/${this.props.currentUser.id}/newPhoto`}>
                 <button>Add A Picture</button>
