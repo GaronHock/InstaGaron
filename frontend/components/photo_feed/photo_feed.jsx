@@ -152,9 +152,9 @@ return  <div className="outer-photo-feed-photo-wrapper">
                             user_id: this.props.currentUser, 
                             photo_id: photo.id
                           }
-                          this.state.comment = "";
                           this.props.createComment(comment)
                           .then(() => this.props.fetchPhoto(photo.id))
+                          this.state.comment = "";
                         }}>
                         Post
                       </button>

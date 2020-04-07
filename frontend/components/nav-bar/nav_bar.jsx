@@ -13,7 +13,7 @@ class NavBar extends React.Component{
 
   handleClick(e) {
     e.preventDefault();
-    this.props.logout()
+    this.props.logout();
   }
 
   handleClickGear() {

@@ -45,7 +45,7 @@ class AddPictureForm extends React.Component{
 
   render(){
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
-    return(
+    return (
     <div>
       <NavBarContainer />
       <div className='add-profile-wrapper'>
