@@ -10,16 +10,12 @@ class Greeting extends React.Component {
       threeUniqueUsers: [],
     }
    this.textInput = React.createRef();
-   this.focusTextInput = this.focusTextInput.bind(this);
    this.handleClick = this.handleClick.bind(this);
    this.showPhotos = this.showPhotos.bind(this);
    this.handleInput = this.handleInput.bind(this);
    this.handleFollowSuggestions = this.handleFollowSuggestions.bind(this);
   }
 
-  focusTextInput(){
-    this.textInput.current.focus();
-  }
   handleClick(e) {
     e.preventDefault();
     this.props.logout();
@@ -61,10 +57,10 @@ class Greeting extends React.Component {
     let i = 0;
           let everyUserExceptCurrentUser = [];
     while (i < users.length){
-      if (Object.values(users[i])[0].id !== this.props.currentUser){
-        everyUserExceptCurrentUser.push(users[i])
-      }
-      i += 1;
+        if (Object.values(users[i])[0].id !== this.props.currentUser){
+          everyUserExceptCurrentUser.push(users[i])
+        }
+        i += 1;
     }
     this.setState( {threeUniqueUsers: Object.values(everyUserExceptCurrentUser.slice(0, 3))}) 
 
@@ -74,7 +70,7 @@ class Greeting extends React.Component {
 
 showPhotos(){
 return  <div className="outer-photo-feed-photo-wrapper">
-          {this.props.followeesPhotos.reverse().map(photo =>{
+          {this.props.followeesPhotos.map(photo =>{
           let comments = photo.comments ? Object.values(photo.comments) : []; ///now it will map over empty array if comments do not exist
           let numberOfComments = comments.length;
           if (comments.length > 2 && !photo.description) {
