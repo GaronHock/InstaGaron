@@ -74,7 +74,7 @@ class Greeting extends React.Component {
 
 showPhotos(){
 return  <div className="outer-photo-feed-photo-wrapper">
-          {this.props.followeesPhotos.map(photo =>{
+          {this.props.followeesPhotos.reverse().map(photo =>{
           let comments = photo.comments ? Object.values(photo.comments) : []; ///now it will map over empty array if comments do not exist
           let numberOfComments = comments.length;
           if (comments.length > 2 && !photo.description) {
@@ -89,8 +89,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
                         <div className="photo-feed-user-profile-picture"
                           style={{ backgroundImage: `url(${photo.user_profile_pic_url})` }}
                           onClick={handleUsernameLogoClick}>
-                        </div>
-                        
+                        </div>                      
                         : 
                         <div
                           className='fas fa-user-circle photo-feed-picture-no-user-profile-pic'
