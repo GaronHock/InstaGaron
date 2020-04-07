@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../nav-bar/nav_bar_container';
-import { Redirect, Link } from 'react-router-dom';
+
 class Greeting extends React.Component {
   constructor(props) {
     super(props)
@@ -91,7 +91,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
                         </img>
                         : 
                         <div
-                          className='fas fa-user-circle photo-feed-no-user-profile-pic'
+                          className='fas fa-user-circle photo-feed-picture-no-user-profile-pic'
                         >
                         </div>}
                      <h1 className="photo-feed-username" 
@@ -197,8 +197,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
                       </div>
                     </div>
               })
-        return(
-          
+        return(         
           <div>
             <NavBarContainer />
             <div style={{ display: "flex", flexDirection: "row-reverse", backgroundColor: "#fafafa"}}>

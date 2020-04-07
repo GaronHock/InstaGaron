@@ -312,7 +312,15 @@ border: 1px solid #e6e6e6;
     border-radius: 50%;
     background-color: white;
 }
-
+.photo-feed-picture-no-user-profile-pic{
+    font-size: 40px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1000px;
+    background-color: white;
+    color: rgba(var(--h5f, 56, 151, 240), 1)
+}
 .photo-feed-no-user-profile-pic{
     font-size: 40px;
     height: 40px;
