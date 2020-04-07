@@ -1,11 +1,9 @@
 import { connect } from 'react-redux';
 import ShowPicture from './show_picture';
-import { fetchPhoto } from '../../actions/photo_actions';
-import {createComment} from '../../actions/comment_actions';
+import {fetchPhoto} from '../../actions/photo_actions';
 import {fetchUser} from '../../actions/user_actions';
 import {fetchCommentsForASpecificPhoto} from '../../reducers/selectors';
-import {fetchComment} from '../../actions/comment_actions';
-import {fetchAllComments} from  '../../actions/comment_actions';
+import { fetchComment, createComment, fetchAllComments } from '../../actions/comment_actions';
 
 const mSTP = (state, ownProps) => ({
   currentUser: state.entities.users[state.session.id],

@@ -9,7 +9,7 @@ class Greeting extends React.Component {
       comment: "",
       threeUniqueUsers: [],
     }
-   this.textInput = React.createRef();
+   //this.textInput = React.createRef();
    this.handleClick = this.handleClick.bind(this);
    this.showPhotos = this.showPhotos.bind(this);
    this.handleInput = this.handleInput.bind(this);
@@ -43,13 +43,9 @@ class Greeting extends React.Component {
     let users = this.props.users
     let counter = this.props.users.length;
     while (counter > 0) {
-      // Pick a random index
       let index = Math.floor(Math.random() * counter);
 
-      // Decrease counter by 1
       counter--;
-
-      // And swap the last element with it
       let temp = users[counter];
       users[counter] = users[index];
       users[index] = temp;
