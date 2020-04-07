@@ -17,6 +17,7 @@ class ShowUserProfile extends React.Component{
     this.showProfilePicture = this.showProfilePicture.bind(this);
     this.handlePhotoClick = this.handlePhotoClick.bind(this);
     this.handleFollowUser = this.handleFollowUser.bind(this);
+    this.handleFollowingCount = this.handleFollowingCount.bind(this);
   }
   componentDidMount(){
     this.props.fetchUser(this.props.match.params.userId);
@@ -95,11 +96,28 @@ class ShowUserProfile extends React.Component{
       }
       return <button className="follow-button" onClick={(e) => {
                 e.preventDefault();
-                debugger;
                 this.props.createFollower(follow).then(() => this.props.fetchUser(this.props.match.params.userId))
                 }}>Follow
               </button>
    }
+   handleFollowingCount(){
+     let count = 0;
+    for (let i = 0; i < this.props.following.length; i++){
+      if (this.props.match.params.userId == this.props.following[i].follower_id){
+        count += 1;
+      }
+    }
+     return count;
+   }
+  handleFollowersCount() {
+    let count = 0;
+    for (let i = 0; i < this.props.following.length; i++) {
+      if (this.props.match.params.userId == this.props.following[i].followed_user_id) {
+        count += 1;
+      }
+    }
+    return count;
+  }
   render(){
     if(!this.props.user){
       return null;
@@ -118,8 +136,8 @@ class ShowUserProfile extends React.Component{
             </div>
             <div className="posts-followers-following-flex-container">
               <div className="posts-followers-following-font"> {this.handleShowPostsCount()} posts</div>
-              <div className="posts-followers-following-font"> {this.props.following.length} following</div>
-              <div className="posts-followers-following-font"> 0 followers</div>
+              <div className="posts-followers-following-font"> {this.handleFollowingCount()} following</div>
+              <div className="posts-followers-following-font"> {this.handleFollowersCount()} followers</div>
             </div>
             <div className='biography-flex-container'>
               <div className='current-user-biography'>{this.props.user.biography}</div>
