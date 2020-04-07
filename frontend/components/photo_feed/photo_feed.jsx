@@ -86,10 +86,11 @@ return  <div className="outer-photo-feed-photo-wrapper">
           return  <div className="photo-feed-photo-wrapper">
                     <div className="photo-feed-username-profile-picture-wrapper">
                       {photo.user_profile_pic_url ? 
-                        <img className="photo-feed-user-profile-picture"
-                          src={photo.user_profile_pic_url}
+                        <div className="photo-feed-user-profile-picture"
+                          style={{ backgroundImage: `url(${photo.user_profile_pic_url})` }}
                           onClick={handleUsernameLogoClick}>
-                        </img>
+                        </div>
+                        
                         : 
                         <div
                           className='fas fa-user-circle photo-feed-picture-no-user-profile-pic'

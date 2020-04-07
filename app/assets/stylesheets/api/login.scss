@@ -302,15 +302,18 @@ border: 1px solid #e6e6e6;
 }
 
 .photo-feed-user-profile-picture{
-      display: block;
-    height: 40px;
-    width: 40px;
-    top: 7%;
-    border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-    background-color: white;
+  display: block;
+  height: 40px;
+  width: 40px;
+  top: 7%;
+  border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: white;
 }
 .photo-feed-picture-no-user-profile-pic{
     font-size: 40px;
