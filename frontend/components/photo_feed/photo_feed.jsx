@@ -82,20 +82,21 @@ return  <div className="outer-photo-feed-photo-wrapper">
           }else if (comments.length > 2 && photo.description) {
             comments = comments.slice(-1);
           }
+          let handleUsernameLogoClick = () => this.props.history.push(`/users/${photo.user_id}`)
           return  <div className="photo-feed-photo-wrapper">
                     <div className="photo-feed-username-profile-picture-wrapper">
                       {photo.user_profile_pic_url ? 
                         <img className="photo-feed-user-profile-picture"
                           src={photo.user_profile_pic_url}
-                          onClick={() => this.props.history.push(`/users/${photo.user_id}`)}>
+                          onClick={handleUsernameLogoClick}>
                         </img>
                         : 
                         <div
                           className='fas fa-user-circle photo-feed-picture-no-user-profile-pic'
-                        >
+                          onClick={handleUsernameLogoClick}>
                         </div>}
                      <h1 className="photo-feed-username" 
-                        onClick={() => this.props.history.push(`/users/${photo.user_id}`)}>
+                        onClick={handleUsernameLogoClick}>
                        {photo.user}
                       </h1>
                     </div>
@@ -106,7 +107,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
                     {photo.description ?
                       <div className="description" style={{paddingLeft: "13px"}}>
                         <div className="show-profile-username-description"
-                          onClick={() => this.props.history.push(`/users/${photo.user_id}`)}>
+                          onClick={handleUsernameLogoClick}>
                           {photo.user}
                         </div>
                         <div className="photo-description">
@@ -116,7 +117,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
                       :
                       null}
                     {numberOfComments > 2 ?                  
-                    <button className="view-all-comments-button"onClick={() =>{
+                    <button className="view-all-comments-button" onClick={() =>{
                       this.props.fetchUser(photo.user_id)
                         .then(() => this.props.history.push(`/users/${photo.user_id}/${photo.id}`))}}>
                         View all {`${numberOfComments}`} comments
