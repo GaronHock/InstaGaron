@@ -53,6 +53,7 @@ class ShowPicture extends React.Component{
     e.preventDefault();
     const comment = {body: this.state.comment, user_id: this.props.currentUser.id, photo_id: this.props.photo.id} 
     this.props.createComment(comment).then(() => this.props.fetchPhoto(this.props.match.params.photoId))
+    this.state.comment = "";
   }
 
   handleInput(type) {
