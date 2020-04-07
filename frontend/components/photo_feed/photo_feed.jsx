@@ -84,9 +84,16 @@ return  <div className="outer-photo-feed-photo-wrapper">
           }
           return  <div className="photo-feed-photo-wrapper">
                     <div className="photo-feed-username-profile-picture-wrapper">
-                      <img className="photo-feed-user-profile-picture"src={photo.user_profile_pic_url}
-                        onClick={() => this.props.history.push(`/users/${photo.user_id}`)}>   
-                      </img>
+                      {photo.user_profile_pic_url ? 
+                        <img className="photo-feed-user-profile-picture"
+                          src={photo.user_profile_pic_url}
+                          onClick={() => this.props.history.push(`/users/${photo.user_id}`)}>
+                        </img>
+                        : 
+                        <div
+                          className='fas fa-user-circle photo-feed-no-user-profile-pic'
+                        >
+                        </div>}
                      <h1 className="photo-feed-username" 
                         onClick={() => this.props.history.push(`/users/${photo.user_id}`)}>
                        {photo.user}
