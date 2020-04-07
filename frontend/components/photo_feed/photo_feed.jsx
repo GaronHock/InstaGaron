@@ -79,7 +79,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
           let numberOfComments = comments.length;
           if (comments.length > 2 && !photo.description) {
             comments = comments.slice(-2);          
-          }else if (comments.length > 2 && photo.description) {
+          } else if (comments.length > 2 && photo.description) {
             comments = comments.slice(-1);
           }
           let handleUsernameLogoClick = () => this.props.history.push(`/users/${photo.user_id}`)
@@ -100,17 +100,25 @@ return  <div className="outer-photo-feed-photo-wrapper">
                        {photo.user}
                       </h1>
                     </div>
-                    <img className="photo-feed-image"key={photo.id}src={photo.photoUrl}></img>
+                    <img 
+                      className="photo-feed-image" 
+                      key={photo.id} 
+                      src={photo.photoUrl}>
+                    </img>
                     <div className="heart-comment-wrapper">
                     </div>
                     <ul className="photo-feed-photo-comments-wrapper">
                     {photo.description ?
-                      <div className="description" style={{paddingLeft: "13px"}}>
-                        <div className="show-profile-username-description"
+                      <div 
+                        className="description" 
+                        style={{paddingLeft: "13px"}}>
+                        <div 
+                          className="show-profile-username-description"
                           onClick={handleUsernameLogoClick}>
                           {photo.user}
                         </div>
-                        <div className="photo-description">
+                        <div 
+                          className="photo-description">
                           {photo.description}
                         </div>
                       </div>
