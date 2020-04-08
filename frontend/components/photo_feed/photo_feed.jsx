@@ -65,8 +65,13 @@ class Greeting extends React.Component {
 
 
 showPhotos(){
+
+  const sortedPhotos = this.props.followeesPhotos.sort(
+    (a,b) => new Date(b.created_at) - new Date(a.created_at)
+  )
 return  <div className="outer-photo-feed-photo-wrapper">
-          {this.props.followeesPhotos.map(photo =>{
+
+          {sortedPhotos.map(photo =>{
           let comments = photo.comments ? Object.values(photo.comments) : []; ///now it will map over empty array if comments do not exist
           let numberOfComments = comments.length;
           if (comments.length > 2 && !photo.description) {
