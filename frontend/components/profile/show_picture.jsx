@@ -5,7 +5,7 @@ class ShowPicture extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      comment : "",
+      comment: "",
       comments: this.props.comments
     }
     this.textInput = React.createRef();

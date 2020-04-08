@@ -9,7 +9,6 @@ class Greeting extends React.Component {
       comment: "",
       threeUniqueUsers: [],
     }
-   //this.textInput = React.createRef();
    this.handleClick = this.handleClick.bind(this);
    this.showPhotos = this.showPhotos.bind(this);
    this.handleInput = this.handleInput.bind(this);
