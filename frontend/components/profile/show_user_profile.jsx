@@ -124,7 +124,7 @@ class ShowUserProfile extends React.Component{
       return null;
     }else{
     return(
-      <div>
+      <div style={{ backgroundColor: "rgb(250, 250, 250)"}}>
         <NavBarContainer />
         <div className="profile-info-wrapper">
           {this.showProfilePicture()}
