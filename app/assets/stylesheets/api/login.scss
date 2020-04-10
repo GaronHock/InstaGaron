@@ -83,7 +83,6 @@ body{
     font-weight: 600;
     padding: 5px 105px 5px 105px;
 }
-
 .demo-login-button{
     background-color: rgb(74, 209, 74);
     color: rgba(var(--eca,255,255,255),1);
@@ -94,8 +93,6 @@ body{
     font-weight: 600;
     padding: 5px 84px 5px 84px;
     margin-top: 10px;
-    
-
 }
 .errors-list{
   color: red;
@@ -103,7 +100,6 @@ body{
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   background-color: white;
 }
-
 .errors-list li{
   background-color: white;
 }
@@ -129,16 +125,13 @@ body{
   font-size: 17px;
   margin: 0 40px 10px;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-
 }
-
 .login-form{
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
 }
-
 .signup-form{
   width: 379px;
   margin-top: 110px;
@@ -182,7 +175,6 @@ body{
     padding-left: 90px;
     text-align: center;
 }
-
 .top-nav {
 background-color: #fff;
     display: flex;
@@ -238,7 +230,6 @@ font-family: 'Cookie', cursive;
     left: 41.2%;
     width: 215px;
     top: 8%;
-    /* height: 20px; */
     height: 100px;
     overflow-y: scroll;
     position: fixed;
@@ -273,10 +264,7 @@ font-size: 30px;
     position: relative;
     cursor: pointer;
     left: 52%;
-
 }
-
-
 .nav-log-out-cog{
     font-size: 30px;
     color: black;
@@ -287,7 +275,6 @@ font-size: 30px;
     left: 55%;
     margin-top: 30px;
 }
-
 .outer-photo-feed-photo-wrapper{
     display: flex;
     justify-content: center;
@@ -327,7 +314,6 @@ border: 1px solid #e6e6e6;
     top: 3%;
     border-radius: 0.5%;
 }
-
 .photo-feed-user-profile-picture{
   display: block;
   height: 40px;
@@ -393,7 +379,6 @@ display: block;
 .photo-feed-user-profile-picture:hover{
   cursor: pointer; 
 }
-
 .photo-feed-username-profile-picture-wrapper{
     display: flex;
     border-bottom: 1px solid #e6e6e6;
@@ -406,17 +391,14 @@ display: block;
     left: 3%;
     margin-top: 10px;
 }
-
 .photo-feed-username:hover{
   cursor: pointer;
 }
-
 .photo-feed-image{
    display: block;
     width: 100%;
     border-bottom: 1px solid #e6e6e6;
 }
-
 .photo-feed-heart-logo{
 background-color: rgba(0, 0, 0, 0);
     font-size: 25px;
@@ -468,8 +450,6 @@ padding-left: 17px;
     background-color: white;
     padding-left: 10px;
 }
-
-
 .border-between-profile-info-and-images{
     border-top: 1px solid #e6e6e6;
     width: 73.5%;
@@ -489,7 +469,6 @@ position: relative;
   padding-left: 6px;
   color: rgb(53, 48, 48)
 }
-
 .profile-info-wrapper{
   display: flex;
     flex-direction: row;
@@ -509,7 +488,6 @@ position: relative;
     text-align: center;
     border-radius: 18000px;
 }
-
 .profile-picture-photo{
 object-fit: cover;
     margin-top: 30px;
@@ -521,7 +499,6 @@ object-fit: cover;
     width: 130px;
     height: 130px;
 }
-
 .username-edit-gear-wrapper{
   display: flex;
     flex-direction: column;
@@ -552,7 +529,6 @@ border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
     position: relative;
     margin-top: -7px;
 }
-
 .add-profile-button{
 border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
     padding: 5px 10px 9px 10px;
@@ -595,7 +571,6 @@ border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
     margin-top: -5px;
     font-weight: bolder;
 }
-
 .posts-followers-following-flex-container{
     display: flex;
     justify-content: space-between;
@@ -656,7 +631,6 @@ display: flex;
   cursor: pointer;
 }
 ///images
-
 .flex-wrap-photos{
   display: flex;
   flex-wrap: wrap;
@@ -684,14 +658,12 @@ display: flex;
     height: 320px;
     width: 320px;
 }
-
 .show-page-images:hover{
   cursor: pointer;
    -webkit-filter: brightness(80%);
    transition: 0.5s;
    filter: brightness(80%);
 }
-
 .show-page-image-comment-hover{
   display: none;
     position: relative;
@@ -703,17 +675,14 @@ display: flex;
     align-items: center;
     background-color: rgba(0,0,0,0.5);
 }
-
 .comment-logo{
   background-color: rgba(0, 0, 0, 0);
   color: white;
   font-size: 30px;
 }
-
 .show-page-images:hover + .show-page-image-comment-hover, .show-page-image-comment-hover:hover{///TARGET THIS BROTHER
   display: flex;
-  cursor: pointer;
-  
+  cursor: pointer; 
 }
 .photo-comments-length{
   color: white; 
@@ -729,7 +698,6 @@ display: flex;
   background-color:  rgba(var(--b3f,250,250,250),1);
 }
 .add-form{
-
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -737,8 +705,7 @@ display: flex;
     align-items: center;
     height: 750px;
         margin-top: 50px;
-        width: 750px;
-  
+        width: 750px; 
 }
 .add-photo-text{
     font-family: 'Lato', sans-serif;
@@ -790,9 +757,7 @@ display: flex;
      margin-top: 20px;
      right: 1%;
 }
-
 //edit form
-
 .edit-profile-wrapper{
   height: 1000px;
   display: flex;
@@ -899,8 +864,7 @@ display: flex;
   bottom: 18%;
   background-color: white;
  }
-
- .edit-new-profile-pic-wrapper{
+.edit-new-profile-pic-wrapper{
   height:140px;
   width:140px;
   border: 1px solid black;
@@ -912,20 +876,17 @@ display: flex;
    border: 1px solid #e6e6e6;
    overflow: hidden;
  }
-
  .edit-profile-picture-photo{
   background-color: white;
   height: 100%;
   width: 100%;
 }
-
  .choose-profile-picture-file-button{
    position: relative;
    left:36%;
    top:-15px;
    background-color: white;
  }
-
  .edit-profile-picture-text{
     font-family: 'Lato', sans-serif;
     font-weight: bold;
@@ -946,7 +907,6 @@ display: flex;
     margin-top: 30px;
     border: 1px solid #e6e6e6;
  }
-
   .show-profile-picture-wrapper{
    height: 10%;
    display: flex;
@@ -954,7 +914,6 @@ display: flex;
   background-color: white;
   width: 350px;
  }
-
  .no-profile-pic-show{
    background-size: 100% 100%;
     font-size: 40px;
@@ -963,8 +922,6 @@ display: flex;
     left: 10%;
     top: 10%;
  }
-
-
  .show-profile-photo-wrapper-show{
    height: 40px;
     width: 40px;
@@ -976,7 +933,6 @@ display: flex;
     border-radius: 50%;
     background-color: white;
  }
-
 .profile-picture-photo-show{
     width: 100%;
     height: 100%;
@@ -1008,7 +964,6 @@ display: flex;
 .show-profile-username-description:hover{
   cursor: pointer;
 }
-
 .photo-description{
     font-family: 'Martel Sans', sans-serif;
     position: relative;
@@ -1017,14 +972,12 @@ display: flex;
     background-color: white;
     font-size: 13px;
     padding-left: 5px;
-
 }
   .show-photo{
   width: 500px;
   height: 500px;
   border-right: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
  }
-
  .user-comments-wrapper{
    height: 350px;
   overflow-y: auto;
@@ -1046,14 +999,12 @@ display: flex;
   font-family: 'Martel Sans', sans-serif;
     background-color: white;
  }
-
 .comment-form-input{
 border-top: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
     display: flex;
     flex-direction: column;
     background-color: white;
 }
-
 .comment-input-wrapper{
   display: flex;
   border-top: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
@@ -1069,7 +1020,6 @@ width: 81%;
     left: 4%;
     height: 40px;
 }
-
 .comment-form-button{
 background-color: white;
     color: rgba(var(--h5f, 56, 151, 240), 0.5);
@@ -1080,5 +1030,3 @@ background-color: white;
   background-color: white;
   color: rgba(var(--h5f,56,151,240),1); 
 }
-
-
