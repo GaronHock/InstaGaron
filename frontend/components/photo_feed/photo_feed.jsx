@@ -197,11 +197,17 @@ class Greeting extends React.Component {
             return  <div className="photo-feed-user-to-follow-list-item-wrapper">
                       <div className="photo-feed-user-to-follow-list-item">
                         {user.photoUrl ? 
-                        <img
-                          className="who-to-follow-photo-feed-user-profile-picture"
-                          src={user.photoUrl}
-                          onClick={handleClick}>
-                        </img> 
+                        // <img
+                        //   className="who-to-follow-photo-feed-user-profile-picture"
+                        //   src={user.photoUrl}
+                        //   onClick={handleClick}>
+                        // </img> 
+                  <div
+                    className="who-to-follow-photo-feed-user-profile-picture"
+                    style={{ backgroundImage: `url(${user.photoUrl})` }}
+                    onClick={handleClick}>
+                    </div>
+
                         :
                         <div 
                           className='fas fa-user-circle photo-feed-no-user-profile-pic'
