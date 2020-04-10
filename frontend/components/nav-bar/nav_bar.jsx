@@ -63,12 +63,12 @@ class NavBar extends React.Component{
                             <div className="photo-feed-user-profile-picture"
                               style={{ backgroundImage: `url(${user.photoUrl})` }}
                               onClick={handleClick}>
-                              <div>{user.username}</div>
+                            <div className="who-to-follow-username">{user.username}</div>
                             </div> :  
-                            <div
+                            <div style={{display:"flex"}}
                               className='fas fa-user-circle photo-feed-no-user-profile-pic'
                               onClick={handleClick}>
-                                <div>{user.username}</div>
+                                <div className="who-to-follow-username">{user.username}</div>
                             </div>}
                           </div>
                   })}
