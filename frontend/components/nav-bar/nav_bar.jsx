@@ -41,7 +41,7 @@ class NavBar extends React.Component{
   handleReturnUser(){
     let array = [];
     Object.values(this.props.users).forEach(user => {
-     // array.push(Object.values(user)[0].username)
+
      if (Object.values(user)[0].username){
        array.push(Object.values(user)[0])
      }
@@ -57,23 +57,34 @@ class NavBar extends React.Component{
         return  <div className="searched-users-wrapper">
                   {array.map(user => {
                     let handleClick = () => this.props.history.push(`/users/${user.id}`)
-                    return <div className="single-searched-user-wrapper"
-                            onClick={handleClick}>
-                            {user.photoUrl ? 
-                            <div className="photo-feed-user-profile-picture"
-                              style={{ backgroundImage: `url(${user.photoUrl})` }}
+                    return  <div 
+                              className="single-searched-user-wrapper"
                               onClick={handleClick}>
-                            <div className="who-to-follow-username">{user.username}</div>
-                            </div> :  
-                            <div style={{display:"flex"}}
-                              className='fas fa-user-circle photo-feed-no-user-profile-pic'
-                              onClick={handleClick}>
-                                <div className="who-to-follow-username">{user.username}</div>
-                            </div>}
-                          </div>
-                  })}
+                              {user.photoUrl ? 
+                              <div style={{display:"flex"}}>
+                                <div
+                                  className="photo-feed-user-profile-picture"
+                                  style={{ backgroundImage: `url(${user.photoUrl})` }}
+                                  onClick={handleClick}>
+                                </div>
+                                <div>
+                                  {user.username}
+                                </div>
+                              </div>
+                              : 
+                              <div style={{display:"flex"}}>
+                                <div
+                                  className='fas fa-user-circle photo-feed-no-user-profile-pic'
+                                  onClick={handleClick}>
+                                </div>
+                                <div>
+                                  {user.username}
+                                </div>
+                              </div>}
+                            </div>
+                        })}
                 </div>
-    }
+            }
 
   }
 
