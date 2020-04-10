@@ -9,6 +9,7 @@ import {fetchAllComments, createComment} from '../../actions/comment_actions';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.id,
+  currentUserObject: state.entities.users[state.session.id],
   followers: Object.values(state.entities.follows),
   photos: Object.values(state.entities.photos),
   followeesPhotos: fetchFolloweesPhotos(state),

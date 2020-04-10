@@ -5,28 +5,17 @@ class NavBar extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      input: ""
+      input: "",
+      users: false
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleClickGear = this.handleClickGear.bind(this);
     this.handleClickCancel = this.handleClickCancel.bind(this);
     this.handleUserClick = this.handleUserClick.bind(this);
-    this.handleInput = this.handleInput.bind(this);
+    this.updateSearch = this.updateSearch.bind(this);
     this.handleReturnUser = this.handleReturnUser.bind(this);
   }
 
-  // componentDidMount(){
-  //   this.props.fetchAllUsers();
-  // }
-
-
-
-  handleInput(type) {
-    return (e) => {
-      let input = e.target.value;
-      this.setState({ [type]: input });
-    }
-  }
 
   handleClick(e) {
     e.preventDefault();
@@ -45,13 +34,32 @@ class NavBar extends React.Component{
     this.props.history.push(`/users/${Object.values(this.props.currentUser)[0].id}`)
   }
 
+  updateSearch(e){
+      this.setState({input: e.currentTarget.value})
+      this.handleReturnUser();
+  }
+
   handleReturnUser(){
-    let array = [];
+        let array = [];
     Object.values(this.props.users).forEach(user => {
       array.push(Object.values(user)[0].username)
     })
+    if (array.includes(this.state.input)){
+     array = array.filter(username =>{
+      return  username.includes(this.state.input)
+      })
     
+      return <ul>
+        {array.map(username => {
+        return <li>{username}</li>
+      })
+    }
+      </ul>
+    }
   }
+
+
+
 render(){
   return(
   <div>
@@ -66,8 +74,10 @@ render(){
           size='26' 
           results='0'
          value={this.state.input}
-         onChange={this.handleInput('input')}
+         // onClick={this.handleReturnUser}
+         onChange={(e) => this.updateSearch(e)}
         />
+        {this.handleReturnUser()}
           <i className="fas fa-user-circle profile-link" onClick={this.handleUserClick}></i>
           <i className="fas fa-cog nav-log-out-cog" onClick={this.handleClickGear}></i>
       </div>
@@ -77,11 +87,12 @@ render(){
           <div className="cancel" onClick={this.handleClickCancel}>Cancel</div>
         </div>
       </div>
-      <div>{this.handleReturnUser}</div>
+
     </div>
     )
   }
 }
+
 
 
 

@@ -13,6 +13,7 @@ class Greeting extends React.Component {
    this.showPhotos = this.showPhotos.bind(this);
    this.handleInput = this.handleInput.bind(this);
    this.handleFollowSuggestions = this.handleFollowSuggestions.bind(this);
+   //this.handleCurrentUserPhoto = this.handleCurrentUserPhoto.bind(this);
   }
 
   handleClick(e) {
@@ -36,6 +37,20 @@ class Greeting extends React.Component {
       this.setState({ [type]: input });
     }
   }
+
+ // handleCurrentUserPhoto(){
+  //   let array = [];
+  //   for (let i = 0; i < this.props.users.length; i++) {
+  //     if(Object.values(Object.values(this.props.users)[i])[0].id === this.props.currentUser){
+  //       array.push(Object.values(Object.values(this.props.users)[i])[0])
+  //     }
+  //   }
+
+
+  //  return <div style={{backgroundImage: `url(${this.props.currentUser.photoUr})`}}></div>
+  //  style = {{ backgroundImage: `url(${photo.user_profile_pic_url})` }
+
+  // }
 
 
   handleFollowSuggestions(){
@@ -62,111 +77,111 @@ class Greeting extends React.Component {
     console.log(Object.values(everyUserExceptCurrentUser.slice(0, 3)))
   }
 
+  showPhotos(){
+    const sortedPhotos = this.props.followeesPhotos.sort(
+      (a,b) => new Date(b.created_at) - new Date(a.created_at)
+    )
+  return  <div className="outer-photo-feed-photo-wrapper">
 
-showPhotos(){
-
-  const sortedPhotos = this.props.followeesPhotos.sort(
-    (a,b) => new Date(b.created_at) - new Date(a.created_at)
-  )
-return  <div className="outer-photo-feed-photo-wrapper">
-
-          {sortedPhotos.map(photo =>{
-          let comments = photo.comments ? Object.values(photo.comments) : []; ///now it will map over empty array if comments do not exist
-          let numberOfComments = comments.length;
-          if (comments.length > 2 && !photo.description) {
-            comments = comments.slice(-2);          
-          } else if (comments.length > 2 && photo.description) {
-            comments = comments.slice(-1);
-          }
-          let handleUsernameLogoClick = () => this.props.history.push(`/users/${photo.user_id}`)
-          return  <div className="photo-feed-photo-wrapper">
-                    <div className="photo-feed-username-profile-picture-wrapper">
-                      {photo.user_profile_pic_url ? 
-                        <div className="photo-feed-user-profile-picture"
-                          style={{ backgroundImage: `url(${photo.user_profile_pic_url})` }}
+            {sortedPhotos.map(photo =>{
+            let comments = photo.comments ? Object.values(photo.comments) : []; ///now it will map over empty array if comments do not exist
+            let numberOfComments = comments.length;
+            if (comments.length > 2 && !photo.description) {
+              comments = comments.slice(-2);          
+            } else if (comments.length > 2 && photo.description) {
+              comments = comments.slice(-1);
+            }
+            let handleUsernameLogoClick = () => {
+             return this.props.history.push(`/users/${photo.user_id}`)
+            }
+            return  <div className="photo-feed-photo-wrapper">
+                      <div className="photo-feed-username-profile-picture-wrapper">
+                        {photo.user_profile_pic_url ? 
+                          <div className="photo-feed-user-profile-picture"
+                            style={{ backgroundImage: `url(${photo.user_profile_pic_url})` }}
+                            onClick={handleUsernameLogoClick}>
+                          </div>                      
+                          : 
+                          <div
+                            className='fas fa-user-circle photo-feed-picture-no-user-profile-pic'
+                            onClick={handleUsernameLogoClick}>
+                          </div>}
+                      <h1 className="photo-feed-username" 
                           onClick={handleUsernameLogoClick}>
-                        </div>                      
-                        : 
-                        <div
-                          className='fas fa-user-circle photo-feed-picture-no-user-profile-pic'
-                          onClick={handleUsernameLogoClick}>
-                        </div>}
-                     <h1 className="photo-feed-username" 
-                        onClick={handleUsernameLogoClick}>
-                       {photo.user}
-                      </h1>
-                    </div>
-                    <img 
-                      className="photo-feed-image" 
-                      key={photo.id} 
-                      src={photo.photoUrl}>
-                    </img>
-                    <div className="heart-comment-wrapper">
-                    </div>
-                    <ul className="photo-feed-photo-comments-wrapper">
-                    {photo.description ?
-                      <div 
-                        className="description" 
-                        style={{paddingLeft: "13px"}}>
-                        <div 
-                          className="show-profile-username-description"
-                          onClick={handleUsernameLogoClick}>
-                          {photo.user}
-                        </div>
-                        <div 
-                          className="photo-description">
-                          {photo.description}
-                        </div>
+                        {photo.user}
+                        </h1>
                       </div>
-                      :
+                      <img 
+                        className="photo-feed-image" 
+                        key={photo.id} 
+                        src={photo.photoUrl}>
+                      </img>
+                      <div className="heart-comment-wrapper">
+                      </div>
+                      <ul className="photo-feed-photo-comments-wrapper">
+                      {photo.description ?
+                        <div 
+                          className="description" 
+                          style={{paddingLeft: "13px"}}>
+                          <div 
+                            className="show-profile-username-description"
+                            onClick={handleUsernameLogoClick}>
+                            {photo.user}
+                          </div>
+                          <div 
+                            className="photo-description">
+                            {photo.description}
+                          </div>
+                        </div>
+                        :
+                        null}
+                      {numberOfComments > 2 ?                  
+                      <button className="view-all-comments-button" onClick={() =>{
+                        this.props.fetchUser(photo.user_id)
+                          .then(() => this.props.history.push(`/users/${photo.user_id}/${photo.id}`))}}>
+                          View all {`${numberOfComments}`} comments
+                      </button> 
+                      : 
                       null}
-                    {numberOfComments > 2 ?                  
-                    <button className="view-all-comments-button" onClick={() =>{
-                      this.props.fetchUser(photo.user_id)
-                        .then(() => this.props.history.push(`/users/${photo.user_id}/${photo.id}`))}}>
-                        View all {`${numberOfComments}`} comments
-                    </button> 
-                    : 
-                    null}
-                        {comments.map(comment =>{
-                          return <li className="photo-feed-photo-comments">
-                            <div className="comment-username" 
-                              key={comment.id}  
-                              onClick={() => this.props.history.push(`/users/${comment.user_id}`)}>
-                              <div>{comment.user}</div>
-                            </div>
-                            <div className="comment-body">{comment.body}</div>
-                          </li>
-                            })}
-                    </ul>
-                    <form className="photo-feed-comment-form-input">
-                      <div className="photo-feed-comment-input-wrapper">
-                        <input
-                          className = "photo-show-comment-input"
-                          placeholder='Add a comment...'
-                          type="text"
-                          ref={this.textInput}
-                          value={this.state.comment}
-                          onChange={this.handleInput('comment')}
-                        />
-                      </div>
-                      <button className="comment-form-button" onClick={() =>{
-                          const comment = { 
-                            body: this.state.comment,
-                            user_id: this.props.currentUser, 
-                            photo_id: photo.id
-                          }
-                          this.props.createComment(comment)
-                          .then(() => this.props.fetchPhoto(photo.id))
-                          this.state.comment = "";
-                        }}>
-                        Post
-                      </button>
-                    </form>
-                  </div>
-              })}
-      </div>
-}
+                          {comments.map(comment =>{
+                            return <li className="photo-feed-photo-comments">
+                              <div className="comment-username" 
+                                key={comment.id}  
+                                onClick={() => this.props.history.push(`/users/${comment.user_id}`)}>
+                                <div>{comment.user}</div>
+                              </div>
+                              <div className="comment-body">{comment.body}</div>
+                            </li>
+                              })}
+                      </ul>
+                      <form className="photo-feed-comment-form-input">
+                        <div className="photo-feed-comment-input-wrapper">
+                          <input
+                            className = "photo-show-comment-input"
+                            placeholder='Add a comment...'
+                            type="text"
+                            ref={this.textInput}
+                            value={this.state.comment}
+                            onChange={this.handleInput('comment')}
+                          />
+                        </div>
+                        <button className="comment-form-button" onClick={() =>{
+                            const comment = { 
+                              body: this.state.comment,
+                              user_id: this.props.currentUser, 
+                              photo_id: photo.id
+                            }
+                            this.props.createComment(comment)
+                            .then(() => this.props.fetchPhoto(photo.id))
+                            this.state.comment = "";
+                          }}>
+                          Post
+                        </button>
+                      </form>
+                    </div>
+                })}
+        </div>
+  }
 
 ///this.state.comment - points to another object - keys that correspond with ids given to all of the text boxes- all of the keys point to
 
@@ -207,6 +222,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
             <NavBarContainer />
             <div style={{ display: "flex", flexDirection: "row-reverse", backgroundColor: "#fafafa"}}>
                 {this.showPhotos()}
+      
               <div className="photo-feed-users-to-follow-wrapper">
                 <h2 className="photo-feed-users-to-follow-header">Suggestions For You</h2>
                 {recommendedFollowers}
@@ -218,6 +234,7 @@ return  <div className="outer-photo-feed-photo-wrapper">
       }
   }
 }
+//<div>{this.handleCurrentUserPhoto()}</div>
 
 export default Greeting;
 
