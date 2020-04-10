@@ -42,50 +42,51 @@ class NavBar extends React.Component{
     let array = [];
     Object.values(this.props.users).forEach(user => {
 
-     if (Object.values(user)[0].username){
+     if (Object.values(user)[0].username) {
        array.push(Object.values(user)[0])
      }
     })
 
-    if(this.state.input === ""){
+    if (this.state.input === "") {
       return null;
-    }else{
+    } else {
         array = array.filter(user => {
-          return user.username.includes(this.state.input)
-        })
+        return user.username.includes(this.state.input)
+    })
 
-        return  <div className="searched-users-wrapper">
-                  {array.map(user => {
-                    let handleClick = () => this.props.history.push(`/users/${user.id}`)
-                    return  <div 
-                              className="single-searched-user-wrapper"
-                              onClick={handleClick}>
-                              {user.photoUrl ? 
-                              <div style={{display:"flex"}}>
-                                <div
-                                  className="photo-feed-user-profile-picture"
-                                  style={{ backgroundImage: `url(${user.photoUrl})` }}
-                                  onClick={handleClick}>
-                                </div>
-                                <div>
-                                  {user.username}
-                                </div>
-                              </div>
-                              : 
-                              <div style={{display:"flex"}}>
-                                <div
-                                  className='fas fa-user-circle photo-feed-no-user-profile-pic'
-                                  onClick={handleClick}>
-                                </div>
-                                <div>
-                                  {user.username}
-                                </div>
-                              </div>}
-                            </div>
-                        })}
+    if(array.length > 0){
+        return <div className="searched-users-wrapper">
+          {array.map(user => {
+            let handleClick = () => this.props.history.push(`/users/${user.id}`)
+            return <div
+              className="single-searched-user-wrapper"
+              onClick={handleClick}>
+              {user.photoUrl ?
+                <div style={{ display: "flex" }}>
+                  <div
+                    className="photo-feed-user-profile-picture"
+                    style={{ backgroundImage: `url(${user.photoUrl})` }}
+                    onClick={handleClick}>
+                  </div>
+                  <div>
+                    {user.username}
+                  </div>
                 </div>
-            }
-
+                :
+                <div style={{ display: "flex" }}>
+                  <div
+                    className='fas fa-user-circle photo-feed-no-user-profile-pic'
+                    onClick={handleClick}>
+                  </div>
+                  <div>
+                    {user.username}
+                  </div>
+                </div>}
+            </div>
+          })}
+        </div>
+      }
+    }
   }
 
 
