@@ -6,7 +6,6 @@ class NavBar extends React.Component{
     super(props)
     this.state = {
       input: "",
-      users: false
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleClickGear = this.handleClickGear.bind(this);
@@ -40,56 +39,65 @@ class NavBar extends React.Component{
   }
 
   handleReturnUser(){
-        let array = [];
+    let array = [];
     Object.values(this.props.users).forEach(user => {
-      array.push(Object.values(user)[0].username)
+     // array.push(Object.values(user)[0].username)
+     if (Object.values(user)[0].username){
+       array.push(Object.values(user)[0])
+     }
     })
-    if (array.includes(this.state.input)){
-     array = array.filter(username =>{
-      return  username.includes(this.state.input)
-      })
-    
-      return <ul>
-        {array.map(username => {
-        return <li>{username}</li>
-      })
+
+    if(this.state.input === ""){
+      return null;
+    }else{
+        array = array.filter(user => {
+          return user.username.includes(this.state.input)
+        })
+
+        return  <div>
+                  {array.map(user => {
+                    return <div>{user.username}</div>
+                  })}
+                </div>
     }
-      </ul>
-    }
+
   }
 
 
-
 render(){
-  return(
-  <div>
-      <div className="top-nav">
-        <Link to='/welcome' className='camera-pic'></Link>
-        <div className='vl'></div>
-        <div className="instatext">InstaGaron</div>
-        <input className='search-text-area' 
-          type='text' 
-          autoCapitalize='none' 
-          placeholder='Search' 
-          size='26' 
-          results='0'
-         value={this.state.input}
-         // onClick={this.handleReturnUser}
-         onChange={(e) => this.updateSearch(e)}
-        />
-        {this.handleReturnUser()}
+  if (!this.props.users){
+    return null;
+  }else{
+    return (
+      <div>
+        <div className="top-nav">
+          <Link to='/welcome' className='camera-pic'></Link>
+          <div className='vl'></div>
+          <div className="instatext">InstaGaron</div>
+          <input className='search-text-area'
+            type='text'
+            autoCapitalize='none'
+            placeholder='Search'
+            size='26'
+            results='0'
+            value={this.state.input}
+            // onClick={this.handleReturnUser}
+            onChange={(e) => this.updateSearch(e)}
+          />
+          {this.handleReturnUser()}
           <i className="fas fa-user-circle profile-link" onClick={this.handleUserClick}></i>
           <i className="fas fa-cog nav-log-out-cog" onClick={this.handleClickGear}></i>
-      </div>
-      <div className="popup">
-        <div className='popup-content'>
-          <div className="pop-up-delete-button" onClick={this.handleClick}>Log Out</div>
-          <div className="cancel" onClick={this.handleClickCancel}>Cancel</div>
         </div>
-      </div>
+        <div className="popup">
+          <div className='popup-content'>
+            <div className="pop-up-delete-button" onClick={this.handleClick}>Log Out</div>
+            <div className="cancel" onClick={this.handleClickCancel}>Cancel</div>
+          </div>
+        </div>
 
-    </div>
+      </div>
     )
+  }
   }
 }
 
