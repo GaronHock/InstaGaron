@@ -229,7 +229,22 @@ font-family: 'Cookie', cursive;
     text-align: center;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
-
+.searched-users-wrapper{
+  display: flex;
+    flex-direction: column;
+    z-index: 1;
+    left: 12%;
+    width: 215px;
+    top: 80%;
+    height: auto;
+    overflow-y: scroll;
+    position: relative;
+    border: 1px solid #e6e6e6;
+}
+.single-searched-user-wrapper{
+  border-bottom: 1px solid #e6e6e6;
+  background-color: white;
+}
 .add-photo-link{
     font-size: 30px;
     background-repeat: no-repeat;

@@ -54,9 +54,23 @@ class NavBar extends React.Component{
           return user.username.includes(this.state.input)
         })
 
-        return  <div>
+        return  <div className="searched-users-wrapper">
                   {array.map(user => {
-                    return <div>{user.username}</div>
+                    let handleClick = () => this.props.history.push(`/users/${user.id}`)
+                    return <div className="single-searched-user-wrapper"
+                            onClick={handleClick}>
+                            {user.photoUrl ? 
+                            <div className="photo-feed-user-profile-picture"
+                              style={{ backgroundImage: `url(${user.photoUrl})` }}
+                              onClick={handleClick}>
+                              <div>{user.username}</div>
+                            </div> :  
+                            <div
+                              className='fas fa-user-circle photo-feed-no-user-profile-pic'
+                              onClick={handleClick}>
+                                <div>{user.username}</div>
+                            </div>}
+                          </div>
                   })}
                 </div>
     }

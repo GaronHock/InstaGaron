@@ -13,7 +13,6 @@ class Greeting extends React.Component {
    this.showPhotos = this.showPhotos.bind(this);
    this.handleInput = this.handleInput.bind(this);
    this.handleFollowSuggestions = this.handleFollowSuggestions.bind(this);
-   //this.handleCurrentUserPhoto = this.handleCurrentUserPhoto.bind(this);
   }
 
   handleClick(e) {
@@ -74,7 +73,7 @@ class Greeting extends React.Component {
     }
     this.setState( {threeUniqueUsers: Object.values(everyUserExceptCurrentUser.slice(0, 3))}) 
 
-    console.log(Object.values(everyUserExceptCurrentUser.slice(0, 3)))
+   // console.log(Object.values(everyUserExceptCurrentUser.slice(0, 3)))
   }
 
   showPhotos(){
