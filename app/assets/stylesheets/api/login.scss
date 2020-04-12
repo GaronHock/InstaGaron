@@ -224,28 +224,46 @@ font-family: 'Cookie', cursive;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 .searched-users-wrapper{
- display: flex;
-    flex-direction: column;
+//  display: flex;
+//     flex-direction: column;
     z-index: 2;
     left: 41.2%;
     width: 215px;
     top: 8%;
-    height: 100px;
     overflow-y: scroll;
     position: fixed;
     border: 1px solid #e6e6e6;
     max-height: 120px;
 }
 .single-searched-user-wrapper{
-  border-bottom: 1px solid #e6e6e6;
-  background-color: white;
-
+border-bottom: 1px solid #e6e6e6;
+    background-color: white;
+    padding: 5px;
 }
-.searched-username{
+.search-users-wrapper:focus + .single-searched-user-wrapper, .single-searched-user-wrapper:active {
+  display: flex;
+  flex-direction: column;
+}
+.search-photo-feed-user-profile-picture{
+  display: block;
+    height: 40px;
+    width: 40px;
+    top: 7%;
+    border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: white;
+    left: 4%;
+}
+.search-username{
     font-family: 'Signika', sans-serif;
-      color: black;
-    font-size: 20px;
-
+    position: relative;
+    left: 10%;
+    margin-top: 10px;
 }
 .add-photo-link{
     font-size: 30px;
