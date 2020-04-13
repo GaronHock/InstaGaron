@@ -24,6 +24,16 @@ export const updateUser = user =>{
     processData: false
   })
 }
+
+export const updateUserInfo = (user) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/users/${user.id}`,
+    data: user,
+    contentType: false,
+    processData: false,
+  });
+};
 export const showUsersPhotos = user => (
   $.ajax({
     url: `api/users/${user.id}`,

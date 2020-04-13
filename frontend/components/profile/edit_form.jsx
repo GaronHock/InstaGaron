@@ -9,7 +9,7 @@ class EditForm extends React.Component{
       username: this.props.currentUser.username,
       email: this.props.currentUser.email,
       biography: this.props.currentUser.biography,  
-      photoFile: this.props.currentUser.photoUrl
+      photoFile: null
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,16 +42,19 @@ class EditForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
-    if (this.state.photoFile) {
-      formData.append('user[profile_picture]', this.state.photoFile);
+      formData.append("user[id]", this.state.id);
+      formData.append("user[username]", this.state.username);
+      formData.append("user[biography]", this.state.biography);
+      formData.append("user[email]", this.state.email);
+    if (this.state.photoFile){
+        formData.append("user[profile_picture]", this.state.photoFile);
     }
-    formData.append('user[id]', this.state.id)
-    formData.append('user[username]', this.state.username);
-    formData.append('user[biography]', this.state.biography);
-    formData.append('user[email]', this.state.email);
-    this.props.updateUserInformation(formData).then( () =>{
-      this.props.history.push(`/users/${this.props.currentUser.id}`)
+
+    this.props.updateUserInformation(formData).then(() =>{
+      debugger;
+     return  this.props.history.push(`/users/${this.props.currentUser.id}`)
     })
+
   }
 
   showProfilePicture() {

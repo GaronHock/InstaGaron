@@ -1,5 +1,5 @@
 import React from 'react';
-import onClickOutside from 'react-onclickoutside';
+//import onClickOutside from 'react-onclickoutside';
 import {Link} from 'react-router-dom';
 
 class NavBar extends React.Component {
@@ -155,5 +155,5 @@ class NavBar extends React.Component {
 
 
 
-export default onClickOutside(NavBar);
+export default NavBar;
 

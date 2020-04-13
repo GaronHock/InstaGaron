@@ -247,18 +247,11 @@ font-family: 'Cookie', cursive;
   flex-direction: column;
   
 }
-// .search-text-area::placeholder {////apply css to second element, search results active? 
-//   //last thing. prevents it from being closing before it gets clicked.
-//   color:gray !important;
-//  // flex-direction: column;
-  
-// }
-// .search-text-area:focus, .search-text-area::placeholder {////apply css to second element, search results active? 
-//   //last thing. prevents it from being closing before it gets clicked.
-//   color: white !important;
-//   //flex-direction: column;
-  
-// }
+.single-searched-user-wrapper:hover{
+  cursor: pointer;
+  background-color: #fafafa;
+}
+
 .search-photo-feed-user-profile-picture{
   display: block;
     height: 40px;

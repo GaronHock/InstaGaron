@@ -6,7 +6,7 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const receiveCurrentUser = (current_user) => ({
   type: RECEIVE_CURRENT_USER,
   user: current_user.user,   /// keys i set up in jbuilder file
-  photos: current_user.photos
+  photos: current_user.photos,
 })
 
 export const logoutCurrentUser = () => ({
@@ -38,6 +38,11 @@ export const update = user => dispatch => (
    errors => dispatch(receiveSessionErrors(errors.responseJSON)))
 )
 
+// export const updateUser = user => dispatch => {
+//   debugger
+//  return  APIUtil.updateUserInfo(user).then(user => dispatch(receiveCurrentUser(user)),
+//   errors => dispatch(receiveSessionErrors(errors.responseJSON)))
+// }
 export const logout = () => dispatch => (
   APIUtil.logoutUser().then(() => dispatch(logoutCurrentUser()))
 )
