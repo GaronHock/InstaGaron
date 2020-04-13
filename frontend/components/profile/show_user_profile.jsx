@@ -83,10 +83,10 @@ class ShowUserProfile extends React.Component{
     handleFollowUser(){
       let followed_user_arrays = Object.values(this.props.following)
       let follow = { follower_id: this.props.currentUser.id, followed_user_id: this.props.match.params.userId} 
-      if(this.props.currentUser.id == this.props.match.params.userId){
+      if (this.props.currentUser.id == this.props.match.params.userId){
         return null;
       }
-      for(let i = 0; i < followed_user_arrays.length; i++){
+      for (let i = 0; i < followed_user_arrays.length; i++){
         if (followed_user_arrays[i].followed_user_id == this.props.match.params.userId){
           return <button className="following-button" onClick={() =>{
             this.props.removeFollower(this.props.match.params.userId)
@@ -109,7 +109,7 @@ class ShowUserProfile extends React.Component{
       }
     }
      return count;
-   }
+  }
   handleFollowersCount() {
     let count = 0;
     for (let i = 0; i < this.props.following.length; i++) {
@@ -120,40 +120,40 @@ class ShowUserProfile extends React.Component{
     return count;
   }
   render(){
-    if(!this.props.user){
+    if (!this.props.user) {
       return null;
-    }else{
-    return(
-      <div style={{ backgroundColor: "rgb(250, 250, 250)"}}>
-        <NavBarContainer />
-        <div className="profile-info-wrapper">
-          {this.showProfilePicture()}
-          <div className="username-edit-gear-wrapper">
-            <div style={{display: "flex", flexDirection: "row"}}>
-            <div className='current-user-username'>{this.props.user.username}</div>
-            {this.handleFollowUser()}
-            {this.handleEditButtonHiddenIfNotCurrentUser()}
-            {this.handleAddPictureButtonIfNotCurrentUser()}
+    } else {
+      return(
+        <div style={{ backgroundColor: "rgb(250, 250, 250)", minHeight: "750px"}}>
+          <NavBarContainer />
+          <div className="profile-info-wrapper">
+            {this.showProfilePicture()}
+            <div className="username-edit-gear-wrapper">
+              <div style={{display: "flex", flexDirection: "row"}}>
+              <div className='current-user-username'>{this.props.user.username}</div>
+              {this.handleFollowUser()}
+              {this.handleEditButtonHiddenIfNotCurrentUser()}
+              {this.handleAddPictureButtonIfNotCurrentUser()}
             </div>
-            <div className="posts-followers-following-flex-container">
-              <div className="posts-followers-following-font"> {this.handleShowPostsCount()} posts</div>
-              <div className="posts-followers-following-font"> {this.handleFollowingCount()} following</div>
-              <div className="posts-followers-following-font"> {this.handleFollowersCount()} followers</div>
+              <div className="posts-followers-following-flex-container">
+                <div className="posts-followers-following-font"> {this.handleShowPostsCount()} posts</div>
+                <div className="posts-followers-following-font"> {this.handleFollowingCount()} following</div>
+                <div className="posts-followers-following-font"> {this.handleFollowersCount()} followers</div>
+              </div>
+              <div className='biography-flex-container'>
+                <div className='current-user-biography'>{this.props.user.biography}</div>
+              </div>         
             </div>
-            <div className='biography-flex-container'>
-              <div className='current-user-biography'>{this.props.user.biography}</div>
-            </div>         
           </div>
-        </div>
-        <div className="border-between-profile-info-and-images"></div>
-        <div className="posts-grid-square">
-          <i class="fas fa-border-all"></i>
-          <div className="posts-text">POSTS</div>
-        </div>
-        <div className="photo-container">
-          {this.handlePublishedPhotosOnPage()}  
-        </div>
-    </div>   
+          <div className="border-between-profile-info-and-images"></div>
+          <div className="posts-grid-square">
+            <i class="fas fa-border-all"></i>
+            <div className="posts-text">POSTS</div>
+          </div>
+          <div className="photo-container">
+            {this.handlePublishedPhotosOnPage()}  
+          </div>
+      </div>   
       )
     }
   }

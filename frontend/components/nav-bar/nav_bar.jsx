@@ -18,24 +18,6 @@ class NavBar extends React.Component {
     this.handleSearchClick = this.handleSearchClick.bind(this);
     //this.handleNavClick = this.handleNavClick.bind(this);
   }
-
-  //   import React, { Component } from 'react'
-  // import onClickOutside from 'react-onclickoutside'
-
-  // class Dropdown extends Component {
-  //   constructor() {
-  //     this.state = { open: false }
-  //   }
-
-  //   // Method automatically executed by the library.
-  //   handleClickOutside() {
-  //     this.setState({ open: false })
-  //   }
-
-  //   render() { ... }
-  //}
-
-  //export default onClickOutside(Dropdown)
   handleClick(e) {
     e.preventDefault();
     this.props.logout();
@@ -65,23 +47,6 @@ class NavBar extends React.Component {
     this.setState({ clicked: true });
     document.getElementsByClassName("search-text-area")[0].placeholder = "";
   }
-    handleClickOutside() {
-      this.setState({ clicked: false })
-    }
-
-  // handleOtherClick(){
-  //   if (this.state.clicked === true && this.state.)
-  // }
-  // handleNavClick(){
-  //   this.setState({clicked:false})
-  //   document.getElementsByClassName("search-text-area")[0].placeholder = "Search"
-  // }
-
-  // handleOffClick(){
-  //   window.addEventListener("click", this.setState({clicked:false}))
-  // }
-  //   var placeholder = document.getElementById("demo").getAttribute("placeholder");
-  // console.log(placeholder);
 
   handleReturnUser() {
     let array = [];
@@ -137,6 +102,9 @@ class NavBar extends React.Component {
   }
 
   render() {
+  //  if (document.querySelector(".searched-users-wrapper").style.display === "none"){
+  //    this.setState({clicked: false})
+  //  }
     if (!this.props.users) {
       return null;
     } else {
