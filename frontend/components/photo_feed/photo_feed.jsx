@@ -46,17 +46,20 @@ class Greeting extends React.Component {
       }
     }
 
-
     if (!array.length) {
       return null;
     } else {
+      let currentUserOnClick = () => this.props.history.push(`/users/${array[0].id}`);
       return (
         <div className="photo-feed-current-user-username-profile-picture-wrapper">
           <div
+            onClick={currentUserOnClick}
             className="photo-feed-current-user-profile-picture"
             style={{ backgroundImage: `url(${array[0].photoUrl})` }}>   
           </div>
-          <div className="photo-feed-current-user-username">
+          <div 
+            onClick={currentUserOnClick}
+            className="photo-feed-current-user-username">
             {array[0].username}
           </div>
         </div>

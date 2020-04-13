@@ -396,11 +396,18 @@ display: flex;
     overflow: hidden;
     border-radius: 50%;
 }
+.photo-feed-current-user-profile-picture:hover{
+  cursor: pointer;
+}
 .photo-feed-current-user-username{
 font-family: 'Signika', sans-serif;
     position: relative;
     left: 10%;
     margin-top: 10px;
+    height: 20px;
+}
+.photo-feed-current-user-username:hover{
+  cursor: pointer;
 }
 .who-to-follow-photo-feed-user-profile-picture{
 display: block;
