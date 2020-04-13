@@ -13,6 +13,7 @@ class Greeting extends React.Component {
    this.showPhotos = this.showPhotos.bind(this);
    this.handleInput = this.handleInput.bind(this);
    this.handleFollowSuggestions = this.handleFollowSuggestions.bind(this);
+   this.handleCurrentUserPhoto = this.handleCurrentUserPhoto.bind(this);
   }
 
   handleClick(e) {
@@ -37,19 +38,31 @@ class Greeting extends React.Component {
     }
   }
 
- // handleCurrentUserPhoto(){
-  //   let array = [];
-  //   for (let i = 0; i < this.props.users.length; i++) {
-  //     if(Object.values(Object.values(this.props.users)[i])[0].id === this.props.currentUser){
-  //       array.push(Object.values(Object.values(this.props.users)[i])[0])
-  //     }
-  //   }
+ handleCurrentUserPhoto(){
+    let array = [];
+    for (let i = 0; i < this.props.users.length; i++) {
+      if(Object.values(Object.values(this.props.users)[i])[0].id === this.props.currentUser){
+        array.push(Object.values(Object.values(this.props.users)[i])[0])
+      }
+    }
 
 
-  //  return <div style={{backgroundImage: `url(${this.props.currentUser.photoUr})`}}></div>
-  //  style = {{ backgroundImage: `url(${photo.user_profile_pic_url})` }
-
-  // }
+    if (!array.length) {
+      return null;
+    } else {
+      return (
+        <div className="photo-feed-current-user-username-profile-picture-wrapper">
+          <div
+            className="photo-feed-current-user-profile-picture"
+            style={{ backgroundImage: `url(${array[0].photoUrl})` }}>   
+          </div>
+          <div className="photo-feed-current-user-username">
+            {array[0].username}
+          </div>
+        </div>
+      );
+    }
+  }
 
 
   handleFollowSuggestions(){
@@ -186,7 +199,7 @@ class Greeting extends React.Component {
 
   render() {
 
-    if (this.state.loading) {
+    if (!this.props.users) {
       return null;
       }else{
         let recommendedFollowers = this.state.threeUniqueUsers.map(uniqueUser => {
@@ -227,7 +240,7 @@ class Greeting extends React.Component {
             <NavBarContainer />
             <div style={{ display: "flex", flexDirection: "row-reverse", backgroundColor: "#fafafa"}}>
                 {this.showPhotos()}
-      
+                {this.handleCurrentUserPhoto()}
               <div className="photo-feed-users-to-follow-wrapper">
                 <h2 className="photo-feed-users-to-follow-header">Suggestions For You</h2>
                 {recommendedFollowers}

@@ -46,12 +46,12 @@ class EditForm extends React.Component{
       formData.append("user[username]", this.state.username);
       formData.append("user[biography]", this.state.biography);
       formData.append("user[email]", this.state.email);
+    
     if (this.state.photoFile){
         formData.append("user[profile_picture]", this.state.photoFile);
     }
 
     this.props.updateUserInformation(formData).then(() =>{
-      debugger;
      return  this.props.history.push(`/users/${this.props.currentUser.id}`)
     })
 

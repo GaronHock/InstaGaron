@@ -378,6 +378,30 @@ border: 1px solid #e6e6e6;
 .photo-feed-no-user-profile-pic:hover{
   cursor: pointer;
 }
+.photo-feed-current-user-username-profile-picture-wrapper{
+display: flex;
+    height: 50px;
+    width: 15%;
+    left: 70%;
+    margin-top: 180px;
+    position: fixed;
+}
+.photo-feed-current-user-profile-picture{
+    height: 50px;
+    width: 50px;
+    border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.photo-feed-current-user-username{
+font-family: 'Signika', sans-serif;
+    position: relative;
+    left: 10%;
+    margin-top: 10px;
+}
 .who-to-follow-photo-feed-user-profile-picture{
 display: block;
     height: 40px;
