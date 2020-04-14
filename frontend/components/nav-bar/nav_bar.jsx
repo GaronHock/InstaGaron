@@ -63,7 +63,7 @@ class NavBar extends React.Component {
         return user.username.includes(this.state.input);
       });
 
-      if (array.length > 0) {
+      if (array.length) {
         return (
           <div className="searched-users-wrapper">
             {array.map((user) => {
