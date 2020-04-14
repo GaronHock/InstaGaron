@@ -957,10 +957,12 @@ height: 620px;
     text-align: center;
  }
  .show-photo-wrapper{
-    width: 70%;
+width: 70%;
     display: flex;
     margin: auto;
-    background-color: white
+    background-color: white;
+    padding-top: 100px;
+    padding-bottom: 20px;
  }
  .photo-wrapper{
     display: flex;
