@@ -532,7 +532,8 @@ position: relative;
   display: flex;
     flex-direction: row;
     height: 200px;
-        padding-top: 100px;
+    min-width: 1000px;
+    padding-top: 100px;
 }
 .no-profile-pic{
       background-size: 100% 100%;
@@ -584,17 +585,23 @@ border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
     border-radius: 3px;
     cursor: pointer;
     height: 18px;
-    width: 70px;
+    min-width: 80px;
+    max-width: 100px;
     margin-right: 10px;
     position: relative;
     margin-top: -7px;
+    display: flex;
+    justify-content: center;
 }
 .add-profile-button{
 border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
     padding: 5px 10px 9px 10px;
     font-size: 14px;
     height: 16px;
-    width: 90px;
+    min-width: 100px;
+    max-width: 120px;
+    display: flex;
+    justify-content: center;
     font-family: 'Lato', sans-serif;
     border-radius: 3px;
     cursor: pointer;
