@@ -35,8 +35,8 @@ class EditForm extends React.Component{
     this.setState({ photoFile: file, photoUrl: fileReader.result });
     };
     if (file) {
-    fileReader.readAsDataURL(file);
-      }
+      fileReader.readAsDataURL(file);
+    }
   }
 
   handleSubmit(e) {

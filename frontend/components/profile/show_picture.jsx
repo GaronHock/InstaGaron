@@ -38,7 +38,10 @@ class ShowPicture extends React.Component{
                   </div> : 
                  null}
               {this.props.comments.map(comment =>{
-              return  <li className="comment-username-wrapper">
+                debugger;
+              return  <li 
+                        className="comment-username-wrapper"
+                        onClick={() => this.props.history.push(`/users/${comment.user_id}`)}>
                           {comment.user}
                           <div className="comment-body">
                             {comment.body}
