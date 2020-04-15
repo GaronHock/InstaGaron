@@ -250,9 +250,9 @@ class Greeting extends React.Component {
                 {recommendedFollowers}
               </div>
               <div className="creator-wrapper">
-                <a href="https://www.linkedin.com/in/garon-hock-15770327/"><div>LinkedIn!</div></a>
-                <a href="https://github.com/GaronHock"><div>GitHub!</div></a>
-                <a href="https://angel.co/u/garon-hock"><div>AngelList!</div></a>
+                <a className="photo-feed-user-to-follow-list-item" href="https://www.linkedin.com/in/garon-hock-15770327/"><div>LinkedIn!</div></a>
+                <a className="photo-feed-user-to-follow-list-item" href="https://github.com/GaronHock"><div>GitHub!</div></a>
+                <a className="photo-feed-user-to-follow-list-item" href="https://angel.co/u/garon-hock"><div>AngelList!</div></a>
               </div>
               </div>
           </div>

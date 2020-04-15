@@ -337,8 +337,9 @@ color: gray;
   left: 70%;
   top: 80%;
   border: 1px solid;
-  height: 100px;
-  width: 100px;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 2%;
 }
 .photo-feed-photo-wrapper{
 border: 1px solid #e6e6e6;
@@ -391,7 +392,7 @@ display: flex;
     height: 50px;
     width: 15%;
     left: 70%;
-    margin-top: 180px;
+    margin-top: 145px;
     position: fixed;
 }
 .photo-feed-current-user-profile-picture{
