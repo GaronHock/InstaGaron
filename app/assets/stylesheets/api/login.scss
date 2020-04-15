@@ -342,6 +342,11 @@ color: gray;
   border: 1px solid #e6e6e6;
   border-radius: 2%;
 }
+.creator-favicon-links{
+    font-size: 35px;
+    position: relative;
+    left: 7%;
+}
 .photo-feed-photo-wrapper{
 border: 1px solid #e6e6e6;
     width: 550px;
@@ -436,11 +441,12 @@ display: block;
 .who-to-follow-photo-feed-user-profile-picture:hover{
   cursor: pointer;
 }
-.who-to-follow-username{
+.who-to-follow-username-or-creator-page-link-name{
   font-family: 'Signika', sans-serif;
     position: relative;
     left: 10%;
 }
+
 .who-to-follow-username:hover{
   cursor: pointer;
 }

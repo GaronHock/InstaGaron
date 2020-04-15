@@ -232,7 +232,7 @@ class Greeting extends React.Component {
                         </div>
                         }  
                         <div 
-                          className="who-to-follow-username"
+                          className="who-to-follow-username-or-creator-page-link-name"
                           onClick={handleClick}>
                           {user.username}
                         </div>
@@ -250,9 +250,24 @@ class Greeting extends React.Component {
                 {recommendedFollowers}
               </div>
               <div className="creator-wrapper">
-                <a className="photo-feed-user-to-follow-list-item" href="https://www.linkedin.com/in/garon-hock-15770327/"><div>LinkedIn!</div></a>
-                <a className="photo-feed-user-to-follow-list-item" href="https://github.com/GaronHock"><div>GitHub!</div></a>
-                <a className="photo-feed-user-to-follow-list-item" href="https://angel.co/u/garon-hock"><div>AngelList!</div></a>
+                <a 
+                  className="photo-feed-user-to-follow-list-item" 
+                  href="https://www.linkedin.com/in/garon-hock-15770327/">
+                  <i class="fab fa-linkedin creator-favicon-links"></i>
+                  <div className="who-to-follow-username-or-creator-page-link-name">LinkedIn!</div>
+                </a>
+                <a 
+                  className="photo-feed-user-to-follow-list-item" 
+                  href="https://github.com/GaronHock">
+                  <i class="fab fa-github-square creator-favicon-links"></i>
+                  <div className="who-to-follow-username-or-creator-page-link-name">GitHub!</div>
+                </a>
+                <a 
+                  className="photo-feed-user-to-follow-list-item" 
+                  href="https://angel.co/u/garon-hock">
+                  <i class="fab fa-angellist creator-favicon-links"></i>
+                  <div className="who-to-follow-username-or-creator-page-link-name">AngelList!</div>
+                </a>
               </div>
               </div>
           </div>

@@ -1,5 +1,4 @@
 import React from 'react';
-//import onClickOutside from 'react-onclickoutside';
 import {Link} from 'react-router-dom';
 
 class NavBar extends React.Component {
