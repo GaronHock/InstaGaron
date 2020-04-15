@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../nav-bar/nav_bar_container';
+import {Link} from 'react-router-dom';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -247,6 +248,11 @@ class Greeting extends React.Component {
               <div className="photo-feed-users-to-follow-wrapper">
                 <h2 className="photo-feed-users-to-follow-header">Suggestions For You</h2>
                 {recommendedFollowers}
+              </div>
+              <div className="creator-wrapper">
+                <a href="https://www.linkedin.com/in/garon-hock-15770327/"><div>LinkedIn!</div></a>
+                <a href="https://github.com/GaronHock"><div>GitHub!</div></a>
+                <a href="https://angel.co/u/garon-hock"><div>AngelList!</div></a>
               </div>
               </div>
           </div>

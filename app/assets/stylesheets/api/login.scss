@@ -332,6 +332,14 @@ color: gray;
     height: 60px;
     width: 290px;
 }
+.creator-wrapper{
+  position: fixed;
+  left: 70%;
+  top: 80%;
+  border: 1px solid;
+  height: 100px;
+  width: 100px;
+}
 .photo-feed-photo-wrapper{
 border: 1px solid #e6e6e6;
     width: 550px;
@@ -591,7 +599,7 @@ border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
     position: relative;
     margin-top: -7px;
     display: flex;
-    justify-content: center;
+    justify-content: center; 
 }
 .add-profile-button{
 border: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
