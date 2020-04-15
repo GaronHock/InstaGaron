@@ -331,6 +331,7 @@ color: gray;
     display: flex;
     height: 60px;
     width: 290px;
+    align-items: center;
 }
 .creator-wrapper{
   position: fixed;
@@ -439,7 +440,6 @@ display: block;
   font-family: 'Signika', sans-serif;
     position: relative;
     left: 10%;
-    top: 10%;
 }
 .who-to-follow-username:hover{
   cursor: pointer;
