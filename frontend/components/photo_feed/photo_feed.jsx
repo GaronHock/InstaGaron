@@ -40,13 +40,15 @@ class Greeting extends React.Component {
   }
 
  handleCurrentUserPhoto(){
-    let array = [];
+   let array =[];
     for (let i = 0; i < this.props.users.length; i++) {
-      if(Object.values(Object.values(this.props.users)[i])[0].id === this.props.currentUser){
+      if (Object.values(Object.values(this.props.users)[i])[0].id === this.props.currentUser){
         array.push(Object.values(Object.values(this.props.users)[i])[0])
       }
     }
-
+    // const result = words.filter(word => word.length > 6);
+    // let array = Object.values(this.props.users).filter(user => Object.values(Object.values(user))[0].id === this.props.currentUser)
+    // console.log(array[0])
     if (!array.length) {
       return null;
     } else {

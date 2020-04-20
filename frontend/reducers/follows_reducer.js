@@ -1,4 +1,3 @@
-
 import {RECEIVE_ALL_FOLLOWERS, RECEIVE_FOLLOWER, REMOVE_FOLLOWER} from '../actions/follows_actions';
 import {RECEIVE_USER} from '../actions/user_actions';
 import {merge} from "lodash"
