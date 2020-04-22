@@ -8,7 +8,7 @@ class AddPictureForm extends React.Component{
       description: "",
       photoFile: null,
       photoUrl: null,
-      photos:null,
+      photos: null,
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
