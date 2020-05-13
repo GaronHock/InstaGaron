@@ -1,4 +1,5 @@
 import * as CommentApiUtil from '../util/comment_api_util';
+import { fetchPhoto } from "./photo_actions";
 
 export const RECEIVE_ALL_COMMENTS = 'RECEIVE_ALL_COMMENTS';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
@@ -45,9 +46,8 @@ export const createComment = comment => dispatch =>{
   }
 
 export const removeComment = (commentId) => dispatch => {
-  debugger;
   return CommentApiUtil.deleteComment(commentId).then(comment => {
-    debugger; return dispatch(deleteComment(comment))
+     return dispatch(fetchPhoto(comment.photo_id))
   }), 
   errors => dispatch(receiveCommentErrors(errors.responseJSON))
 }
