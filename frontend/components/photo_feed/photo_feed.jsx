@@ -95,6 +95,11 @@ class Greeting extends React.Component {
    // console.log(Object.values(everyUserExceptCurrentUser.slice(0, 3)))
   }
 
+
+  // handledeleteComment(){
+    
+  // }
+
   showPhotos(){
     const sortedPhotos = this.props.followeesPhotos.sort(
       (a,b) => new Date(b.created_at) - new Date(a.created_at)
@@ -162,6 +167,7 @@ class Greeting extends React.Component {
                       : 
                       null}
                           {comments.map(comment =>{
+                            console.log(comment)
                             return <li className="photo-feed-photo-comments">
                               <div className="comment-username" 
                                 key={comment.id}  
@@ -169,6 +175,7 @@ class Greeting extends React.Component {
                                 <div>{comment.user}</div>
                               </div>
                               <div className="comment-body">{comment.body}</div>
+                                {this.props.currentUser === comment.user_id ? <div>X</div> : null}
                             </li>
                               })}
                       </ul>
@@ -208,6 +215,8 @@ class Greeting extends React.Component {
     if (!this.props.users) {
       return null;
       }else{
+        console.log(this.props.currentUser)
+        console.log(this.props.currentUserObject)
         let recommendedFollowers = this.state.threeUniqueUsers.map(uniqueUser => {
           let user = Object.values(uniqueUser)[0]
           let handleClick = () => {
