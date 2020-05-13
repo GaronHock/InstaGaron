@@ -96,9 +96,6 @@ class Greeting extends React.Component {
   }
 
 
-  // handledeleteComment(){
-    
-  // }
 
   showPhotos(){
     const sortedPhotos = this.props.followeesPhotos.sort(
@@ -175,7 +172,7 @@ class Greeting extends React.Component {
                                 <div>{comment.user}</div>
                               </div>
                               <div className="comment-body">{comment.body}</div>
-                                {this.props.currentUser === comment.user_id ? <div>X</div> : null}
+                                {this.props.currentUser === comment.user_id ? <div onClick={() => this.props.removeComment(comment.id)}>X</div> : null}
                             </li>
                               })}
                       </ul>
