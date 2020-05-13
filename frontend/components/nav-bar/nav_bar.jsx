@@ -30,13 +30,12 @@ class NavBar extends React.Component {
     document.querySelector(".popup").style.display = "none";
   }
   handleUserClick() {
-    this.props.currentUser.id
-      ? this.props.history.push(`/users/${this.props.currentUser.id}`)
-      : this.props.history.push(
-          `/users/${Object.values(this.props.currentUser)[0].id}`
-        );
+    this.props.currentUser.id ? 
+    this.props.history.push(`/users/${this.props.currentUser.id}`)
+    : this.props.history.push(`/users/${Object.values(this.props.currentUser)[0].id}`);
   }
 
+  
   updateSearch(e) {
     this.setState({ input: e.currentTarget.value });
     this.handleReturnUser();
