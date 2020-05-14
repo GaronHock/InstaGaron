@@ -19,15 +19,4 @@ const commentsReducer = (state = {}, action) =>{
     }
 }
 
-      // case REMOVE_FOLLOWER:
-      //   let nextState = merge({}, state)
-      //   delete nextState[action.followerId]
-      //   return nextState;
-
-//     case RECEIVE_NEW_PHOTO_COMMENT:
-// let photo = Object.assign({}, state[action.photo])
-// let newArray = photo.comment_ids.slice() // making  copy of published photos 
-// newArray.push(action.comments); // pushing id into new array 
-// photo.comment_ids = newArray;
-
 export default commentsReducer;
