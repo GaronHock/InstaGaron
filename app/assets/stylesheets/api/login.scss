@@ -1094,6 +1094,14 @@ width: 70%;
   font-family: 'Martel Sans', sans-serif;
     background-color: white;
  }
+
+
+
+ .trashcan{
+   display: flex;
+    position: relative;
+   left: 70%;
+ }
 .comment-form-input{
 border-top: 1px solid rgba(var(--d0b, 219, 219, 219), 1);
     display: flex;
@@ -1116,10 +1124,12 @@ width: 81%;
     height: 40px;
 }
 .comment-form-button{
-background-color: white;
+    background-color: white;
     color: rgba(var(--h5f, 56, 151, 240), 0.5);
     position: relative;
     left: 8%;
+    top: 26px;
+    height: 20px;
 }
 .comment-form-button:hover{
   background-color: white;

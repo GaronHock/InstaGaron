@@ -165,15 +165,33 @@ class Greeting extends React.Component {
                       null}
                           {comments.map(comment =>{
                             console.log(comment)
-                            return <li className="photo-feed-photo-comments">
-                              <div className="comment-username" 
-                                key={comment.id}  
-                                onClick={() => this.props.history.push(`/users/${comment.user_id}`)}>
-                                <div>{comment.user}</div>
-                              </div>
-                              <div className="comment-body">{comment.body}</div>
-                                {this.props.currentUser === comment.user_id ? <div onClick={() => this.props.removeComment(comment.id)}>X</div> : null}
-                            </li>
+                            return (
+                              <li className="photo-feed-photo-comments">
+                                <div
+                                  className="comment-username"
+                                  key={comment.id}
+                                  onClick={() =>
+                                    this.props.history.push(
+                                      `/users/${comment.user_id}`
+                                    )
+                                  }
+                                >
+                                  <div>{comment.user}</div>
+                                </div>
+                                <div className="comment-body">
+                                  {comment.body}
+                                </div>
+                                {this.props.currentUser === comment.user_id ? (
+                                  <div className="trashcan"
+                                    onClick={() =>
+                                      this.props.removeComment(comment.id)
+                                    }
+                                  >
+                                  <i class="far fa-trash-alt"></i>
+                                  </div>
+                                ) : null}
+                              </li>
+                            );
                               })}
                       </ul>
                       <form className="photo-feed-comment-form-input">
